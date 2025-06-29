@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_mediadudes_foundationpress=self.webpackChunk_mediadudes_foundationpress||[]).push([[502],{117:(d,e,n)=>{var o=n(939);function a(d){d.find("[data-accordion]").foundation(),o.tT.i2svg({node:d[0]})}jQuery((d=>{d(".b-accordion").each(((e,n)=>{a(d(n))}))})),window.acf&&window.acf.addAction("render_block_preview/type=accordion",a)}},d=>{d.O(0,[524],(()=>d(d.s=117))),d.O()}]);
+//# sourceMappingURL=accordion.js.map

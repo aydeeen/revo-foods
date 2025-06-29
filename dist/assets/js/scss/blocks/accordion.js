@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_mediadudes_foundationpress=self.webpackChunk_mediadudes_foundationpress||[]).push([[440],{915:()=>{}},s=>{s(s.s=915)}]);
