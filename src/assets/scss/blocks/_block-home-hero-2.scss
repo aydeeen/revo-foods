@@ -1,0 +1,69 @@
+.b-home-hero-2 {
+	background: no-repeat center center / cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include breakpoint(large) {
+		height: calc(100vh - 88px);
+	}
+
+	@include breakpoint(medium only) {
+		height: 50vh;
+	}
+
+	&__content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: rem-calc(20);
+	}
+
+	&__image-wrapper {
+		margin-bottom: 0;
+	}
+
+	&__title {
+		max-width: rem-calc(670);
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 0;
+		text-align: center;
+		color: $white;
+	}
+
+	&__buttons-wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		gap: rem-calc(10);
+		flex-wrap: wrap;
+	}
+
+	&__button-wrapper {
+		a {
+			@include button-outlined;
+		}
+
+		&--2 {
+			a {
+				border-color: $red;
+
+				&:hover {
+					background-color: $red;
+				}
+			}
+		}
+
+		&--3 {
+			a {
+				border-color: $jade;
+
+				&:hover {
+					background-color: $jade;
+				}
+			}
+		}
+	}
+}

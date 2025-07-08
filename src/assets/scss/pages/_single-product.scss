@@ -1,0 +1,56 @@
+.single-product {
+	.woocommerce-breadcrumb {
+		display: none;
+	}
+
+	.breadcrumbs {
+		color: $primary;
+		font-size: rem-calc(14);
+		opacity: 0.4;
+		margin-bottom: 0;
+
+		* {
+			color: inherit;
+			font-size: inherit;
+		}
+
+		a:hover,
+		a:active {
+			color: $red;
+		}
+	}
+
+	.product_title {
+		@include heading;
+	}
+
+	.woocommerce-product-details__short-description {
+		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(20);
+	}
+
+	.price.price.price {
+		font-family: 'Asap Condensed', sans-serif;
+		font-weight: 700;
+		font-size: rem-calc(34);
+		color: $primary;
+		margin-bottom: rem-calc(20);
+	}
+
+	div.product {
+		form.cart {
+			margin-bottom: rem-calc(30);
+		}
+	}
+
+	.quantity {
+		.qty {
+			margin-bottom: 0;
+		}
+	}
+
+	.additional-info {
+		font-size: rem-calc(12);
+		margin-bottom: 0;
+	}
+}

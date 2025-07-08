@@ -1,0 +1,131 @@
+.b-faq {
+	@include breakpoint(large) {
+		padding-top: rem-calc(100);
+	}
+
+	&__title {
+		@include heading;
+
+		text-align: center;
+	}
+
+	&__description {
+		max-width: rem-calc(620);
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	&__section {
+		max-width: rem-calc(800);
+		margin-left: auto;
+		margin-right: auto;
+
+		&:not(:last-child) {
+			margin-bottom: rem-calc(40);
+		}
+	}
+
+	&__section-title {
+		@include heading-small;
+
+		margin-bottom: rem-calc(15);
+		text-align: center;
+	}
+
+	&__accordion {
+		margin-bottom: 0;
+
+		.accordion-title.accordion-title.accordion-title {
+			display: flex;
+			align-items: center;
+			gap: rem-calc(10);
+			border: 1px solid #daf0f5;
+			border-radius: rem-calc(20);
+			font-size: rem-calc(22);
+			font-weight: 500;
+			font-family: 'Asap Condensed', sans-serif;
+			color: $primary;
+			padding-right: rem-calc(50);
+
+			&::before {
+				content: '';
+				border-radius: 105%;
+				width: rem-calc(24);
+				height: rem-calc(14);
+				background: url('../images/accordion-arrow-down.png') no-repeat;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: $jade;
+			}
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(21);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(20);
+			}
+
+			svg {
+				flex-shrink: 0;
+			}
+		}
+
+		.accordion-item {
+			&:not(:last-child) {
+				padding-bottom: rem-calc(20);
+			}
+
+			&.is-active {
+				.accordion-title.accordion-title.accordion-title {
+					border-bottom: none;
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+					background-color: $jade;
+
+					&::before {
+						content: '';
+						background: url('../images/accordion-arrow-up.png') no-repeat;
+					}
+				}
+			}
+		}
+
+		.accordion-content.accordion-content.accordion-content {
+			border: 1px solid rgb(218, 240, 245);
+			border-top: none;
+			border-radius: rem-calc(20);
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-size: rem-calc(25);
+				font-weight: 700;
+
+				@include breakpoint(medium only) {
+					font-size: rem-calc(23);
+				}
+
+				@include breakpoint(small only) {
+					font-size: rem-calc(21);
+				}
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+
+			ul {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}

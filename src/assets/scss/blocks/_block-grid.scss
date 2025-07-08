@@ -1,0 +1,131 @@
+.b-grid {
+	background: url('../images/careers-bg.jpg') no-repeat center center / cover;
+
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem-calc(20);
+		justify-content: center;
+	}
+
+	&__image {
+		border-radius: rem-calc(20);
+		object-fit: cover;
+
+		@media (min-width: rem-calc(1060)) {
+			&--1 {
+				width: 31%;
+			}
+
+			&--2 {
+				width: 31%;
+			}
+
+			&--3 {
+				width: 48%;
+			}
+
+			&--4 {
+				width: 17%;
+			}
+		}
+
+		@media (min-width: rem-calc(800)) and (max-width: rem-calc(1059)) {
+			&--1 {
+				width: 37%;
+			}
+
+			&--2 {
+				width: 37%;
+			}
+
+			&--3 {
+				width: 40%;
+			}
+
+			&--4 {
+				width: 17%;
+			}
+		}
+
+		@media (min-width: rem-calc(640)) and (max-width: rem-calc(799)) {
+			&--1 {
+				width: 39%;
+			}
+
+			&--2 {
+				width: 39%;
+			}
+
+			&--3 {
+				width: 37%;
+			}
+
+			&--4 {
+				width: 17%;
+			}
+		}
+	}
+
+	&__content {
+		background: no-repeat center center / cover;
+		border-radius: rem-calc(20);
+		padding: rem-calc(100) rem-calc(20);
+		width: 100%;
+
+		@include breakpoint(medium only) {
+			padding: rem-calc(80) rem-calc(20);
+		}
+
+		@include breakpoint(small only) {
+			padding: rem-calc(60) rem-calc(20);
+		}
+
+		@media (min-width: rem-calc(1060)) {
+			width: 67%;
+		}
+
+		@media (min-width: rem-calc(800)) and (max-width: rem-calc(1059)) {
+			width: 60%;
+		}
+
+		@media (min-width: rem-calc(640)) and (max-width: rem-calc(799)) {
+			width: 57%;
+		}
+	}
+
+	&__title {
+		@include heading-small;
+
+		color: $white;
+		max-width: rem-calc(440);
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	&__description {
+		color: #9bd6d7;
+		max-width: rem-calc(440);
+		font-size: rem-calc(16) !important;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(30);
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		max-width: rem-calc(440);
+
+		&:hover {
+			background-color: $orange;
+		}
+
+		&:hover::before {
+			background-color: $dark-orange;
+		}
+	}
+}

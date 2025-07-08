@@ -13,7 +13,7 @@
 		"url": "https://github.com/MEDIADUDES/FoundationPress/issues"
 	},
 	"scripts": {
-		"start": "grunt",
+		"start": "cross-env NODE_OPTIONS=--openssl-legacy-provider npx grunt watch",
 		"build": "cross-env NODE_ENV=production grunt build",
 		"autofix": "grunt autofix",
 		"dev": "cross-env NODE_ENV=development grunt",
@@ -25,6 +25,7 @@
 		"@babel/polyfill": "7.12.1",
 		"@fortawesome/fontawesome-svg-core": "1.2.35",
 		"@fortawesome/free-solid-svg-icons": "5.15.3",
+		"flickity": "^3.0.0",
 		"foundation-sites": "6.6.3",
 		"motion-ui": "2.0.3",
 		"prop-types": "15.7.2",
@@ -45,7 +46,7 @@
 		"babel-loader": "8.2.2",
 		"babel-plugin-transform-class-properties": "6.24.1",
 		"copy-webpack-plugin": "8.1.1",
-		"cross-env": "7.0.3",
+		"cross-env": "^7.0.3",
 		"css-loader": "5.2.4",
 		"eslint": "7.25.0",
 		"eslint-config-airbnb": "18.2.1",

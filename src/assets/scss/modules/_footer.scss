@@ -1,61 +1,297 @@
 .footer {
-	@include xy-grid-container($global-width);
+	background: $primary url('../images/footer-bg.png') no-repeat center bottom /
+		contain;
 
-	border-top: 1px solid $medium-gray;
-	margin-top: rem-calc(60);
-}
+	&__col-3 {
+		.button-wrapper {
+			@include button;
 
-.footer-grid {
-	@include xy-grid;
+			margin-left: 0;
+			height: rem-calc(45);
+			width: rem-calc(137);
+			background-color: $jade;
 
-	padding: rem-calc(30) 0;
+			&:hover {
+				background-color: $orange;
 
-	section {
-		@include xy-cell();
+				a {
+					color: $white;
 
-		@include breakpoint(large) {
-			@include xy-cell(auto);
+					svg {
+						path {
+							fill: $white;
+						}
+					}
+				}
+			}
+
+			&::before {
+				background-color: $dark-orange;
+			}
+
+			a {
+				color: $primary;
+				display: inline-flex;
+				gap: rem-calc(5);
+				font-size: rem-calc(16);
+				transition: all 0.3s ease-in-out;
+
+				svg {
+					path {
+						fill: $primary;
+						transition: all 0.3s ease-in-out;
+					}
+				}
+			}
 		}
 	}
 
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-}
-
-.legal-navigation {
-	text-align: center;
-
-	&__menu {
-		display: inline;
-		text-align: center;
-		line-height: 1;
-	}
-
-	.menu-item {
-		display: inline;
-		line-height: 1;
-		font-size: rem-calc(14);
-
-		&:not(:first-child)::before {
-			content: '';
-			display: inline-block;
-			height: 10px;
-			width: 1px;
-			background: $dark-gray;
-			margin-left: -2px;
+	&__info-wrapper {
+		@include breakpoint(medium down) {
+			text-align: center;
 		}
 	}
 
-	a {
-		display: inline-block;
-		padding: 0.7rem 0.5rem;
+	&__info {
+		font-size: rem-calc(16);
+		color: $white;
+		font-weight: 400;
+		margin-top: rem-calc(20);
+		margin-bottom: 0;
+	}
 
-		&:hover,
-		a:focus {
-			text-decoration: underline;
+	&__title {
+		@include heading-small;
+
+		color: $white;
+		margin-bottom: rem-calc(20);
+
+		@include breakpoint(medium down) {
+			text-align: center;
+		}
+
+		&--1 {
+			@include breakpoint(medium down) {
+				text-align: left;
+			}
+
+			@include breakpoint(small only) {
+				margin-top: rem-calc(10);
+				text-align: center;
+			}
+		}
+
+		&--2 {
+			@include breakpoint(medium down) {
+				margin-top: rem-calc(30);
+			}
+		}
+
+		&--3 {
+			@include breakpoint(large) {
+				margin-top: rem-calc(84);
+			}
+		}
+	}
+
+	.legal-navigation {
+		ul {
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			gap: rem-calc(10);
+
+			@include breakpoint(medium down) {
+				gap: rem-calc(10) rem-calc(20);
+			}
+
+			@include breakpoint(small only) {
+				justify-content: center;
+			}
+
+			li {
+				flex-basis: calc(50% - 5px);
+
+				@include breakpoint(medium down) {
+					flex-basis: 40%;
+				}
+
+				a {
+					color: $white;
+					padding: 0;
+
+					&:hover,
+					&:active {
+						color: $orange;
+					}
+
+					@include breakpoint(medium down) {
+						margin-right: auto;
+					}
+
+					@include breakpoint(small only) {
+						text-align: center;
+					}
+				}
+
+				&.current_page_item {
+					> a {
+						color: $orange;
+						background: transparent;
+					}
+				}
+			}
+		}
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		height: rem-calc(45);
+		width: rem-calc(137);
+		background-color: $jade;
+		margin-top: rem-calc(30);
+		display: none;
+
+		@include breakpoint(medium) {
+			margin-left: 0;
+		}
+
+		&:hover {
+			background-color: $orange;
+
+			a {
+				color: $white;
+			}
+		}
+
+		&:hover::before {
+			background-color: $dark-orange;
+		}
+
+		a {
+			font-size: rem-calc(16);
+			transition: all 0.3s ease-in-out;
+			color: $primary;
+		}
+	}
+
+	&__socials-wrapper {
+		display: flex;
+		gap: rem-calc(10);
+
+		@include breakpoint(medium down) {
+			justify-content: center;
+		}
+	}
+
+	&__social {
+		position: relative;
+
+		img:last-child {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s;
+		}
+
+		&:hover {
+			img:last-child {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	&__bottom-part {
+		@include breakpoint(medium down) {
+			text-align: center;
+		}
+
+		p {
+			font-size: rem-calc(12);
+			color: $white;
+			font-weight: 400;
+
+			&:first-child {
+				margin-bottom: rem-calc(10);
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+
+				a {
+					text-decoration: underline;
+					color: $white;
+
+					&:hover,
+					&:active {
+						color: $orange;
+					}
+				}
+			}
+		}
+	}
+
+	#form_newsletter {
+		position: relative;
+		max-width: rem-calc(320);
+
+		@include breakpoint(medium down) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.frm_fields_container {
+			border-radius: rem-calc(20);
+			border: solid 1px #707070;
+			padding: rem-calc(10);
+			background-color: #fff;
+			height: rem-calc(55);
+		}
+
+		#field_sslgv_label {
+			display: none;
+		}
+
+		input {
+			color: $primary;
+			font-family: 'Asap Condensed', sans-serif;
+			font-size: rem-calc(20);
+			padding-left: rem-calc(10);
+			box-shadow: none;
+			border: none;
+			padding-right: rem-calc(50);
+
+			&::placeholder {
+				color: $primary;
+			}
+		}
+
+		.frm_submit {
+			button {
+				background: url('../images/send.svg') no-repeat center center / contain;
+				width: rem-calc(49);
+				height: rem-calc(49);
+				position: absolute;
+				right: rem-calc(5);
+				top: rem-calc(3);
+				border-radius: 50%;
+				border: none;
+				box-shadow: none;
+				font-size: rem-calc(30);
+				padding: 0;
+				margin: 0;
+				font-weight: 700;
+			}
+		}
+
+		.frm_error {
+			margin-top: rem-calc(25);
+			font-size: rem-calc(15);
+			color: $red;
 		}
 	}
 }

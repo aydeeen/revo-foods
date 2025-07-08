@@ -1,0 +1,424 @@
+{
+	"key": "group_67faa4c3e176a",
+	"title": "Block: Grid Cards",
+	"fields": [
+		{
+			"key": "field_67faa50e14949",
+			"label": "Card 1 Image",
+			"name": "card_1_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67fc0fae0e9f2",
+			"label": "Card 1 Image Mobile",
+			"name": "card_1_image_mobile",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa5441494a",
+			"label": "Card 1 Title",
+			"name": "card_1_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_67faa54d1494b",
+			"label": "Card 1 Button",
+			"name": "card_1_button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa56a11203",
+			"label": "Card 2 Image",
+			"name": "card_2_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67fc0fba0e9f3",
+			"label": "Card 2 Image Mobile",
+			"name": "card_2_image_mobile",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa57811204",
+			"label": "Card 2 Title",
+			"name": "card_2_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_67faa58711205",
+			"label": "Card 2 Subtitle",
+			"name": "card_2_subtitle",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_67faa59511206",
+			"label": "Card 2 Button",
+			"name": "card_2_button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa5cb11208",
+			"label": "Card 3 Image",
+			"name": "card_3_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa5ba11207",
+			"label": "Card 3 Image Mobile",
+			"name": "card_3_image_mobile",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa5eb11209",
+			"label": "Card 3 Title",
+			"name": "card_3_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_67faa5f71120a",
+			"label": "Card 3 Subtitle",
+			"name": "card_3_subtitle",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_67faa6051120b",
+			"label": "Card 3 Button 1",
+			"name": "card_3_button_1",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa6111120c",
+			"label": "Card 3 Button 2",
+			"name": "card_3_button_2",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa6341120d",
+			"label": "Card 4 Image",
+			"name": "card_4_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67fc0fc50e9f4",
+			"label": "Card 4 Image Mobile",
+			"name": "card_4_image_mobile",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67faa6431120e",
+			"label": "Card 4 Title",
+			"name": "card_4_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_67faa6581120f",
+			"label": "Card 4 Button",
+			"name": "card_4_button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"translations": "copy_once"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/grid-cards"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1744573254
+}

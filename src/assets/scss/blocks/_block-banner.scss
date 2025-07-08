@@ -1,0 +1,36 @@
+.b-banner {
+	background: no-repeat center center / cover;
+
+	&__logo {
+		margin-bottom: rem-calc(10);
+	}
+
+	&__title {
+		@include heading;
+
+		color: $white;
+		margin-bottom: 0;
+
+		span {
+			color: $orange;
+		}
+	}
+
+	&__subtitle {
+		font-size: rem-calc(24);
+		font-family: 'Asap Condensed', sans-serif;
+		color: $white;
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		&:hover {
+			background-color: $orange;
+		}
+
+		&:hover::before {
+			background-color: $dark-orange;
+		}
+	}
+}

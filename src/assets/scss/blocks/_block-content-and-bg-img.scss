@@ -1,0 +1,70 @@
+.b-content-and-bg-img {
+	background: no-repeat center center / cover;
+	position: relative;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(80);
+		padding-bottom: rem-calc(80);
+	}
+
+	@include breakpoint(medium only) {
+		padding-top: rem-calc(60);
+		padding-bottom: rem-calc(60);
+	}
+
+	&__subtitle {
+		font-size: rem-calc(24);
+		margin-bottom: 0;
+		color: $white;
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(22);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(20);
+		}
+	}
+
+	&__title {
+		@include heading;
+
+		margin-bottom: rem-calc(20);
+		color: $white;
+	}
+
+	&__description {
+		max-width: rem-calc(600);
+		color: $white;
+		margin-bottom: rem-calc(20);
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		margin-left: 0;
+
+		i {
+			display: none;
+		}
+	}
+}
+
+#content-and-bg-img__sustainability {
+	@include breakpoint(large) {
+		height: rem-calc(800);
+	}
+
+	.b-content-and-bg-img__button-wrapper {
+		display: none;
+
+		@include breakpoint(large) {
+			display: block;
+			position: absolute;
+			bottom: rem-calc(50);
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+		}
+	}
+}

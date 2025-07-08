@@ -1,0 +1,41 @@
+.b-seafood-revolution {
+	background: no-repeat center center / cover;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(100);
+		padding-bottom: rem-calc(100);
+	}
+
+	&__title {
+		font-size: rem-calc(80);
+		font-weight: 40;
+
+		@include breakpoint(medium) {
+			line-height: 1.1;
+		}
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(70);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(60);
+		}
+
+		span {
+			font-weight: 700;
+		}
+	}
+
+	&__list {
+		li {
+			display: flex;
+			gap: rem-calc(5);
+			font-size: rem-calc(18);
+
+			svg {
+				flex-shrink: 0;
+			}
+		}
+	}
+}

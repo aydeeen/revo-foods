@@ -1,0 +1,298 @@
+{
+	"key": "group_6468b63557c8d",
+	"title": "Shop",
+	"fields": [
+		{
+			"key": "field_6468b6bb59bb1",
+			"label": "Hero BG Image",
+			"name": "hero_bg_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": ""
+		},
+		{
+			"key": "field_6468b6d959bb2",
+			"label": "Hero Title",
+			"name": "hero_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_6468b6e859bb3",
+			"label": "Hero Button",
+			"name": "hero_button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "url"
+		},
+		{
+			"key": "field_6468b70b59bb4",
+			"label": "Hero Button Text",
+			"name": "hero_button_text",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_6469033c81875",
+			"label": "CTA 1 BG Image",
+			"name": "cta_1_bg_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": ""
+		},
+		{
+			"key": "field_6469035f81877",
+			"label": "CTA 1 Title",
+			"name": "cta_1_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_6469038581879",
+			"label": "CTA 1 Button",
+			"name": "cta_1_button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "url"
+		},
+		{
+			"key": "field_646903d18187b",
+			"label": "CTA 1 Button Text",
+			"name": "cta_1_button_text",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_6469035381876",
+			"label": "CTA 2 BG Image",
+			"name": "cta_2_bg_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": ""
+		},
+		{
+			"key": "field_6469036a81878",
+			"label": "CTA 2 Title",
+			"name": "cta_2_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_6469039f8187a",
+			"label": "CTA 2 Button",
+			"name": "cta_2_button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "url"
+		},
+		{
+			"key": "field_646903e38187d",
+			"label": "CTA 2 Button Text",
+			"name": "cta_2_button_text",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_64695d37f22a1",
+			"label": "Newsletter BG Image",
+			"name": "newsletter_bg_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": ""
+		},
+		{
+			"key": "field_64695d48f22a2",
+			"label": "Newsletter Title",
+			"name": "newsletter_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "page",
+				"operator": "==",
+				"value": "7965"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1743357609
+}

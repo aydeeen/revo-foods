@@ -1,0 +1,85 @@
+.b-home-hero-3 {
+	background: no-repeat center / cover;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include breakpoint(large) {
+		height: calc(100vh - 88px);
+	}
+
+	@include breakpoint(medium only) {
+		height: 50vh;
+	}
+
+	@include breakpoint(small only) {
+		background-position: center;
+		background-image: url('../images/home-hero-mobile-new.jpg') !important;
+		padding-bottom: rem-calc(400);
+	}
+
+	&__grid {
+		width: 100%;
+	}
+
+	&__content {
+		max-width: 400px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__pattern {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+
+	&__title-wrapper {
+		margin-bottom: 0;
+
+		@include breakpoint(small only) {
+			margin-left: auto;
+			margin-right: auto;
+
+			img {
+				max-width: 70%;
+			}
+		}
+	}
+
+	&__title {
+		font-size: rem-calc(16);
+		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(20);
+		color: $white;
+	}
+
+	&__button-wrapper {
+		&:first-of-type {
+			margin-bottom: 20px;
+		}
+
+		@include button;
+
+		background-color: $orange;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+
+		&:hover {
+			background-color: $jade;
+		}
+
+		&:hover::before {
+			background-color: #70c6c8;
+		}
+	}
+}

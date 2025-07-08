@@ -1,3 +1,8 @@
-// Places styles for single pages here.
-// Make sure to use a identifier like .page-id-{ID}, .home, etc.
-// Note: in gerneral it's not recommended. Better use a modifier class for the elements you want to change.
+@import 'blog';
+@import 'single-post';
+@import 'recipes';
+@import 'single-recipe';
+@import 'single-product';
+@import 'job-post';
+@import 'shop';
+@import 'page-default';

@@ -1,0 +1,407 @@
+.single-recipe {
+	&__boxes-wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		@include breakpoint(medium down) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__box-1 {
+		padding: rem-calc(100);
+
+		@include breakpoint(large) {
+			max-width: rem-calc(660);
+			margin-left: auto;
+			width: 100%;
+			padding-top: rem-calc(200);
+			padding-bottom: 0;
+		}
+
+		@include breakpoint(medium down) {
+			order: 2;
+		}
+
+		@include breakpoint(medium only) {
+			padding: rem-calc(60) rem-calc(40);
+		}
+
+		@include breakpoint(small only) {
+			padding: rem-calc(40);
+		}
+
+		@media (min-width: rem-calc(1024)) and (max-width: rem-calc(1199)) {
+			padding: rem-calc(60) rem-calc(40);
+		}
+	}
+
+	&__box-1-top-part {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem-calc(25);
+
+		.link {
+			font-size: rem-calc(14);
+			color: $primary;
+
+			svg {
+				margin-right: rem-calc(5);
+
+				path {
+					transition: all 0.3s;
+				}
+			}
+
+			&:hover,
+			&:active {
+				color: $red;
+
+				svg {
+					path {
+						fill: $red;
+					}
+				}
+			}
+		}
+
+		.date {
+			font-size: rem-calc(14);
+			margin-bottom: 0;
+			color: $orange;
+		}
+	}
+
+	&__box-1-title {
+		@include heading;
+
+		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(20);
+	}
+
+	&__box-1-middle-part {
+		display: flex;
+		align-items: center;
+		gap: rem-calc(20);
+
+		span {
+			font-size: rem-calc(18);
+			font-weight: 700;
+
+			&:first-child {
+				color: $white;
+				background: $orange;
+				border-radius: 4px;
+				padding: rem-calc(10);
+			}
+		}
+	}
+
+	&__box-1-excerpt {
+		margin-top: rem-calc(30);
+		margin-bottom: rem-calc(20);
+
+		p {
+			font-size: rem-calc(16);
+		}
+	}
+
+	&__box-1-cook-time {
+		font-size: rem-calc(20);
+		color: $jade;
+		margin-bottom: rem-calc(-5);
+	}
+
+	&__box-1-time {
+		font-family: 'Asap Condensed', sans-serif;
+		font-weight: 700;
+		font-size: rem-calc(36);
+		margin-bottom: 0;
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(31);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(26);
+		}
+	}
+
+	&__box-2 {
+		@include breakpoint(medium down) {
+			order: 1;
+		}
+	}
+
+	&__box-2-featured-image-wrapper {
+		img {
+			width: 100%;
+			max-height: rem-calc(640);
+			object-fit: cover;
+		}
+	}
+
+	&__box-2-bottom-part {
+		display: flex;
+		align-items: center;
+		padding-left: rem-calc(20);
+		padding-right: rem-calc(20);
+
+		@include breakpoint(small only) {
+			padding-left: rem-calc(10);
+			padding-right: rem-calc(10);
+		}
+
+		img {
+			margin-top: rem-calc(-40);
+
+			@include breakpoint(small only) {
+				max-width: 35%;
+				margin-top: rem-calc(-30);
+			}
+
+			@media (min-width: rem-calc(320)) and (max-width: rem-calc(389)) {
+				max-width: 30%;
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			margin-right: 20px;
+
+			span:first-child {
+				font-size: rem-calc(14);
+				transform: translateY(rem-calc(6));
+
+				@include breakpoint(small only) {
+					transform: translateY(rem-calc(4));
+				}
+			}
+
+			span:last-child {
+				font-family: 'Asap Condensed', sans-serif;
+				font-size: rem-calc(28);
+				font-weight: 700;
+				margin-top: 4px;
+				line-height: 1;
+
+				@include breakpoint(small only) {
+					font-size: rem-calc(23);
+				}
+			}
+		}
+
+		.link {
+			font-family: 'Asap Condensed', sans-serif;
+			font-weight: 700;
+			color: $primary;
+			display: inline-flex;
+			align-items: center;
+			gap: rem-calc(10);
+			margin-left: auto;
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(15);
+				gap: rem-calc(5);
+			}
+
+			@media (min-width: rem-calc(320)) and (max-width: rem-calc(389)) {
+				font-size: rem-calc(14);
+			}
+
+			svg {
+				path {
+					transition: all 0.3s;
+				}
+			}
+
+			&:hover,
+			&:active {
+				color: $red;
+
+				svg {
+					path {
+						fill: $red;
+					}
+				}
+			}
+		}
+	}
+
+	&__box-3 {
+		padding: rem-calc(100);
+		background: #f6fbff;
+
+		@include breakpoint(medium down) {
+			order: 3;
+		}
+
+		@include breakpoint(medium only) {
+			padding: rem-calc(60) rem-calc(40);
+		}
+
+		@include breakpoint(small only) {
+			padding: rem-calc(40);
+		}
+
+		@media (min-width: rem-calc(1024)) and (max-width: rem-calc(1199)) {
+			padding: rem-calc(60) rem-calc(40);
+		}
+	}
+
+	&__box-3-title {
+		@include heading-small;
+
+		margin-bottom: rem-calc(30);
+
+		@include breakpoint(large) {
+			width: rem-calc(460);
+			margin-left: auto;
+		}
+
+		@include breakpoint(small only) {
+			margin-bottom: rem-calc(20);
+		}
+	}
+
+	&__box-3-list {
+		margin: 0;
+		list-style-type: none;
+
+		@include breakpoint(large) {
+			max-width: rem-calc(460);
+			margin-left: auto;
+		}
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: rem-calc(15);
+			font-weight: 700;
+
+			&:not(:last-child) {
+				margin-bottom: rem-calc(10);
+			}
+		}
+	}
+
+	&__box-4 {
+		padding: rem-calc(100);
+		background: #9bd6d7;
+
+		@include breakpoint(medium down) {
+			order: 4;
+		}
+
+		@include breakpoint(medium only) {
+			padding: rem-calc(60) rem-calc(40);
+		}
+
+		@include breakpoint(small only) {
+			padding: rem-calc(40);
+		}
+
+		@media (min-width: rem-calc(1024)) and (max-width: rem-calc(1199)) {
+			padding: rem-calc(60) rem-calc(40);
+		}
+	}
+
+	&__box-4-title {
+		@include heading-small;
+
+		margin-bottom: rem-calc(30);
+
+		@include breakpoint(small only) {
+			margin-bottom: rem-calc(20);
+		}
+	}
+
+	&__box-4-list {
+		margin: 0;
+		list-style-type: none;
+
+		@include breakpoint(large) {
+			max-width: rem-calc(460);
+		}
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: rem-calc(15);
+			font-weight: 700;
+
+			&:not(:last-child) {
+				margin-bottom: rem-calc(10);
+			}
+
+			span {
+				&:first-child {
+					font-family: 'Asap Condensed', sans-serif;
+					font-weight: 700;
+					font-size: rem-calc(24);
+					color: $orange;
+				}
+			}
+		}
+	}
+
+	&__latest-recipes {
+		background: #f2f2f2;
+	}
+
+	&__latest-recipes-top-part {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem-calc(25);
+		margin-bottom: rem-calc(10);
+
+		.title {
+			@include heading-small;
+
+			margin-bottom: 0;
+		}
+
+		.link {
+			font-family: 'Asap Condensed', sans-serif;
+			font-weight: 700;
+			font-size: rem-calc(24);
+			text-decoration: underline;
+			color: $primary;
+
+			&:hover,
+			&:active {
+				color: $red;
+			}
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(22);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(20);
+			}
+		}
+	}
+
+	&__latest-recipes-main-part {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem-calc(50) rem-calc(25);
+
+		@include breakpoint(medium only) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(small only) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: rem-calc(30) rem-calc(25);
+		}
+
+		.recipes__recipe {
+			padding-top: rem-calc(0);
+		}
+	}
+}

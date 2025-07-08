@@ -1,4 +1,6 @@
 <?php
+// phpcs:ignoreFile
+
 /**
  * The main template file
  *
@@ -13,37 +15,43 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+get_header();
 
-<div class="main-container">
-	<div class="main-grid">
-		<main class="main-content main-content--with-sidebar">
-			<?php
-			if ( have_posts() ) :
-				/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
-					get_template_part( 'template-parts/content', get_post_format() );
-				endwhile;
-			else :
-				get_template_part( 'template-parts/content', 'none' );
-			endif; // End have_posts() check.
+$bg_image        = get_field( 'bg_image', 363 ) ?: false;
+$cta_bg_image    = get_field( 'cta_bg_image', 363 ) ?: false;
+$cta_subtitle    = get_field( 'cta_subtitle', 363 ) ?: false;
+$cta_title       = get_field( 'cta_title', 363 ) ?: false;
+$cta_button      = get_field( 'cta_button', 363 ) ?: false;
+$cta_button_text = get_field( 'cta_button_text', 363 ) ?: false;
+?>
 
-			/* Display navigation to next/previous pages when applicable */
-			if ( function_exists( 'foundationpress_pagination' ) ) :
-				foundationpress_pagination();
-			elseif ( is_paged() ) :
-				?>
-				<nav id="post-nav">
-					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-				</nav>
-			<?php endif; ?>
-		</main>
+<?php echo wp_get_attachment_image( $bg_image, 'full', false ); ?>
 
-		<?php get_sidebar(); ?>
+<section class="section section--full blog">
+	<div class="section__inner grid-x grid-padding-x grid-padding-y">
+		<div class="cell">
+         <div class="blog__posts">
+            <?php echo do_shortcode("[ajax_load_more post_type='post' posts_per_page='6']"); ?>
+         </div>
+		</div>
 	</div>
-</div>
+</section>
+
+<section class="section section--full b-cta" style="background-image: url('<?php echo esc_url( $cta_bg_image['url'] ); ?>');">
+   <div class="section__inner grid-x grid-padding-x grid-padding-y"> 
+	   <div class="cell">
+         <div class="text-center">
+            <h3 class="b-cta__subtitle"><?php echo esc_html( $cta_subtitle ); ?></h3>
+				<h2 class="b-cta__title"><?php echo esc_html( $cta_title ); ?></h2>
+			   <div class="b-cta__button-wrapper">
+               <a href="<?php echo esc_url( $cta_button ); ?>" class="button">
+                  <?php echo esc_html( $cta_button_text ); ?>
+               </a>
+            </div>
+			</div>
+	   </div>
+	</div>
+</section>
 
 <?php
 get_footer();

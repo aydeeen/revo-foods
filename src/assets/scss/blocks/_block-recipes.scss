@@ -1,0 +1,104 @@
+.b-recipes {
+	background: no-repeat center center / cover;
+
+	&__title-wrapper {
+		margin-bottom: rem-calc(10);
+
+		h2 {
+			@include heading-hero;
+
+			color: $primary;
+
+			@include breakpoint(large) {
+				margin-bottom: rem-calc(-25);
+			}
+		}
+
+		svg {
+			@include breakpoint(medium down) {
+				display: none;
+			}
+		}
+	}
+
+	&__description {
+		font-family: 'Asap Condensed', sans-serif;
+		margin-bottom: rem-calc(20);
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		margin-left: 0;
+	}
+
+	&__2-recipes {
+		@include breakpoint(medium down) {
+			margin-top: rem-calc(20);
+		}
+
+		a {
+			width: 100%;
+			height: 100%;
+			box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 25%);
+			display: inline-block;
+			padding: rem-calc(20);
+
+			&:first-child {
+				margin-bottom: rem-calc(30);
+			}
+
+			img {
+				border-radius: rem-calc(20);
+				aspect-ratio: 1/1;
+				object-fit: cover;
+			}
+
+			h3 {
+				font-size: rem-calc(24);
+				color: $primary;
+				font-weight: 700;
+				margin-top: rem-calc(20);
+				margin-bottom: 0;
+				transition: all 0.3s;
+			}
+
+			&:hover {
+				h3 {
+					color: $red;
+				}
+			}
+		}
+	}
+
+	&__1-recipe {
+		a {
+			width: 100%;
+			height: 100%;
+			box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 25%);
+			display: inline-block;
+			padding: rem-calc(20);
+
+			img {
+				border-radius: rem-calc(20);
+				aspect-ratio: 1/1;
+				object-fit: cover;
+			}
+
+			h3 {
+				font-size: rem-calc(24);
+				color: $primary;
+				font-weight: 700;
+				margin-top: rem-calc(20);
+				margin-bottom: 0;
+				transition: all 0.3s;
+			}
+
+			&:hover {
+				h3 {
+					color: $red;
+				}
+			}
+		}
+	}
+}

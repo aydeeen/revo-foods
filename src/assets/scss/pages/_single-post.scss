@@ -1,0 +1,100 @@
+.single-post {
+	@include breakpoint(large) {
+		section.section.section--full {
+			padding-top: rem-calc(100);
+		}
+	}
+
+	&__breadcrumbs {
+		color: $primary;
+		font-size: rem-calc(14);
+		opacity: 0.4;
+
+		* {
+			color: inherit;
+			font-size: inherit;
+		}
+
+		a:hover,
+		a:active {
+			color: $red;
+		}
+	}
+
+	&__title {
+		@include heading;
+	}
+
+	&__meta {
+		margin-bottom: 0;
+	}
+
+	&__featured-image {
+		border-radius: rem-calc(20);
+		margin-bottom: rem-calc(20);
+	}
+
+	&__content {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			@include heading-small;
+		}
+	}
+
+	&__sidebar-title {
+		font-size: rem-calc(24);
+		font-weight: 700;
+		margin-bottom: rem-calc(20);
+		text-align: center;
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(22);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(20);
+		}
+	}
+
+	&__sidebar-posts {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: rem-calc(20);
+
+		@include breakpoint(medium down) {
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		}
+	}
+
+	&__sidebar-post {
+		a {
+			color: $primary;
+			font-size: rem-calc(18);
+			font-weight: 700;
+			line-height: 1.2;
+
+			&:hover,
+			&:active {
+				color: $red;
+			}
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(17);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(16);
+			}
+		}
+
+		img {
+			aspect-ratio: 16/9;
+			object-fit: cover;
+			margin-bottom: rem-calc(10);
+		}
+	}
+}

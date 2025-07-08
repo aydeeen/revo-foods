@@ -1,0 +1,17 @@
+.b-plants {
+	&__image {
+		object-fit: contain;
+		height: rem-calc(170);
+	}
+
+	&__title {
+		@include heading-small;
+
+		margin-top: rem-calc(30);
+		margin-bottom: rem-calc(20);
+
+		@include breakpoint(small only) {
+			margin-top: rem-calc(20);
+		}
+	}
+}

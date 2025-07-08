@@ -17,6 +17,11 @@ import './helper/exit-intent-reveal';
 
 // components
 import './components/iconlist';
+import './components/number-counter';
+import './components/back-to-top';
+import './components/home-slider';
+import './components/home-header-bg-color';
+import './components/close-topbar';
 
 // import FA last, to kick off the process of finding <i> tags and
 // replacing with <svg> tags, after importing all components.

@@ -1,0 +1,103 @@
+.b-home-slider {
+	background: no-repeat center bottom / cover;
+	position: relative;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(100);
+		padding-bottom: rem-calc(100);
+	}
+
+	@include breakpoint(medium only) {
+		padding-top: rem-calc(75);
+		padding-bottom: rem-calc(75);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: rem-calc(40);
+
+		@include breakpoint(medium only) {
+			gap: rem-calc(30);
+		}
+
+		@include breakpoint(small only) {
+			margin-bottom: rem-calc(20);
+			gap: rem-calc(20);
+		}
+	}
+
+	&__subtitle {
+		@include pharagraph;
+
+		margin-bottom: 0;
+	}
+
+	&__title {
+		@include heading;
+
+		line-height: 1;
+		margin-bottom: 0;
+
+		span {
+			@include heading-hero;
+
+			display: block;
+		}
+	}
+
+	&__link {
+		color: $primary;
+		font-family: 'Asap Condensed', sans-serif;
+		font-weight: 700;
+		font-size: rem-calc(24);
+		text-decoration: underline;
+		width: max-content;
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(22);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(20);
+		}
+	}
+
+	&__images-wrapper {
+		position: relative;
+
+		img {
+			border-radius: rem-calc(20);
+
+			&:last-child {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 90%;
+			}
+		}
+	}
+
+	&__slider {
+		.flickity-page-dots {
+			bottom: rem-calc(-60);
+
+			@include breakpoint(medium only) {
+				bottom: rem-calc(-50);
+			}
+
+			@include breakpoint(small only) {
+				bottom: rem-calc(-30);
+			}
+		}
+
+		.flickity-page-dot {
+			background: $primary;
+
+			&.is-selected {
+				background: $red;
+			}
+		}
+	}
+}

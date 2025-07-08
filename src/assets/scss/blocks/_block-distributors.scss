@@ -1,0 +1,227 @@
+.b-distributors {
+	&__title {
+		@include heading-small;
+
+		margin-top: rem-calc(10);
+	}
+
+	&__accordion {
+		overflow: hidden;
+		margin-bottom: 0;
+
+		@include breakpoint(medium only) {
+			max-width: rem-calc(650);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.accordion-title.accordion-title.accordion-title {
+			display: flex;
+			align-items: center;
+			gap: rem-calc(15);
+			border: 1px solid #daf0f5;
+			border-radius: rem-calc(20);
+			font-size: rem-calc(22);
+			font-weight: 500;
+			font-family: 'Asap Condensed', sans-serif;
+			color: $primary;
+			padding-left: rem-calc(30);
+			padding-right: rem-calc(30);
+
+			&::before {
+				content: '';
+				border-radius: 105%;
+				width: rem-calc(24);
+				height: rem-calc(14);
+				background: url('../images/accordion-arrow-down.png') no-repeat;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: $jade;
+			}
+
+			img {
+				object-fit: contain;
+				width: rem-calc(50);
+				height: rem-calc(50);
+				flex-shrink: 0;
+			}
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(21);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(20);
+			}
+		}
+
+		.accordion-item {
+			&:not(:last-child) {
+				padding-bottom: rem-calc(20);
+			}
+
+			&.is-active {
+				.accordion-title.accordion-title.accordion-title {
+					border-bottom: none;
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+					background-color: $jade;
+
+					&::before {
+						content: '';
+						background: url('../images/accordion-arrow-up.png') no-repeat;
+					}
+				}
+			}
+		}
+
+		.accordion-content.accordion-content.accordion-content {
+			border: 1px solid rgb(218, 240, 245);
+			border-top: none;
+			border-radius: rem-calc(20);
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			padding: rem-calc(30);
+		}
+	}
+
+	&__distributor {
+		display: flex;
+		flex-direction: column;
+		gap: rem-calc(15);
+
+		&:not(:last-child) {
+			margin-bottom: rem-calc(30);
+		}
+	}
+
+	&__distributor-logo-name {
+		display: flex;
+		align-items: center;
+		gap: rem-calc(15);
+
+		.logo-wrapper {
+			flex-shrink: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			max-width: rem-calc(100);
+			max-height: rem-calc(100);
+			padding: rem-calc(5);
+			border: 1px solid $black;
+
+			img {
+				object-fit: contain;
+			}
+		}
+
+		h6 {
+			font-size: rem-calc(20);
+			font-weight: 700;
+			margin-bottom: 0;
+		}
+	}
+
+	&__distributor-link {
+		display: flex;
+		align-items: center;
+		gap: rem-calc(10);
+		font-size: rem-calc(18);
+		color: $primary;
+
+		svg {
+			flex-shrink: 0;
+		}
+
+		&:hover,
+		&:active {
+			color: $red;
+		}
+	}
+}
+
+#b-distributors__the-filet {
+	.b-distributors__main-image {
+		display: none;
+	}
+
+	.b-distributors__description {
+		font-size: rem-calc(24);
+		max-width: rem-calc(754);
+		margin-left: auto;
+		margin-right: auto;
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(22);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(20);
+		}
+	}
+
+	.b-distributors__accordion {
+		.accordion-title {
+			&:hover,
+			&:focus {
+				background-color: $orange;
+				border-color: $orange;
+			}
+
+			&::before {
+				background: url('../images/arrow-down.svg') no-repeat;
+			}
+		}
+
+		.accordion-item {
+			&.is-active {
+				.accordion-title {
+					background-color: $orange;
+					border-color: $orange;
+
+					&::before {
+						content: '';
+						background: url('../images/arrow-up.svg') no-repeat;
+					}
+				}
+			}
+		}
+
+		.accordion-content {
+			padding: rem-calc(20);
+		}
+	}
+
+	.b-distributors__content {
+		*:last-child {
+			margin-bottom: 0;
+		}
+
+		p {
+			font-size: 1rem;
+			color: #363131;
+		}
+
+		.link-more {
+			font-size: rem-calc(18);
+			font-weight: 700;
+			color: $jade;
+			font-family: 'Asap Condensed', sans-serif;
+			display: inline-flex;
+			align-items: center;
+			gap: 7px;
+
+			&:hover,
+			&:active {
+				color: $orange;
+
+				img {
+					filter: brightness(0) saturate(100%) invert(65%) sepia(64%)
+						saturate(540%) hue-rotate(331deg) brightness(106%) contrast(95%);
+				}
+			}
+		}
+	}
+}

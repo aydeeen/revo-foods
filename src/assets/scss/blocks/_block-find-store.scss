@@ -1,0 +1,133 @@
+.b-find-store {
+	padding-bottom: 0;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(100);
+	}
+
+	&__title {
+		font-size: rem-calc(48);
+		font-weight: 700;
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(43);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(38);
+		}
+	}
+
+	&__top-part {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem-calc(30);
+		border-bottom: 2px solid $orange;
+		margin-bottom: rem-calc(70);
+		padding-bottom: rem-calc(70);
+
+		@include breakpoint(medium only) {
+			margin-bottom: rem-calc(55);
+			padding-bottom: rem-calc(55);
+		}
+
+		@include breakpoint(small only) {
+			margin-bottom: rem-calc(40);
+			padding-bottom: rem-calc(40);
+			flex-direction: column;
+		}
+
+		img {
+			width: rem-calc(80);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			object-fit: contain;
+			margin-right: rem-calc(15);
+			border-radius: rem-calc(10);
+		}
+	}
+
+	&__top-part-content {
+		max-width: rem-calc(600);
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		@include breakpoint(medium) {
+			margin-right: 0;
+			flex-basis: 100%;
+		}
+
+		@include breakpoint(small only) {
+			width: rem-calc(210);
+			margin-left: 0;
+		}
+	}
+
+	&__bottom-part {
+		padding-bottom: rem-calc(30);
+		border-bottom: 2px solid $orange;
+
+		&__top-part-content {
+			max-width: rem-calc(600);
+		}
+
+		img {
+			background-color: $jade;
+			width: rem-calc(80);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			object-fit: contain;
+			margin-right: rem-calc(15);
+			border-radius: rem-calc(10);
+			padding: rem-calc(12) rem-calc(5);
+		}
+	}
+
+	.banner {
+		width: rem-calc(313);
+		height: rem-calc(313);
+		background: no-repeat center center / cover;
+		border-radius: 50%;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			&:first-of-type {
+				max-height: rem-calc(157);
+				object-fit: contain;
+			}
+
+			&:last-of-type {
+				max-height: rem-calc(37);
+				object-fit: contain;
+				margin-top: rem-calc(-15);
+			}
+		}
+
+		&__title {
+			font-size: rem-calc(24);
+			color: $white;
+			margin-top: rem-calc(20);
+		}
+
+		&__button-wrapper {
+			@include button;
+
+			width: rem-calc(158);
+			height: rem-calc(36);
+			margin-top: rem-calc(20);
+
+			a {
+				font-size: rem-calc(15);
+			}
+		}
+	}
+}

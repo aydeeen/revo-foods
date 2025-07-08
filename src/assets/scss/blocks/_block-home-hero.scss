@@ -1,0 +1,148 @@
+.b-home-hero {
+	background: no-repeat left / cover;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include breakpoint(large) {
+		height: calc(100vh - 88px);
+	}
+
+	@include breakpoint(medium only) {
+		height: 50vh;
+	}
+
+	@include breakpoint(small only) {
+		background-image: url('../images/home-hero-mobile.png') !important;
+	}
+
+	&__content {
+		max-width: 75rem;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__waves {
+		position: absolute;
+		bottom: rem-calc(-130);
+		left: 0;
+		width: 100%;
+
+		@include breakpoint(medium down) {
+			display: none;
+		}
+	}
+
+	&__image-wrapper {
+		max-width: rem-calc(360);
+		width: 100%;
+		margin-bottom: 0;
+
+		@include breakpoint(large) {
+			margin-left: rem-calc(63);
+		}
+
+		@include breakpoint(medium down) {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__title {
+		font-size: rem-calc(18);
+		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(20);
+		color: $white;
+		max-width: rem-calc(456);
+		font-family: 'Asap Condensed', sans-serif;
+
+		@include breakpoint(medium down) {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+	}
+
+	&__buttons-wrapper {
+		width: 100%;
+		display: flex;
+		gap: rem-calc(20);
+		flex-wrap: wrap;
+
+		@include breakpoint(medium down) {
+			justify-content: center;
+		}
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		flex-basis: 100%;
+		margin-left: 0;
+		margin-right: 0;
+
+		&--1 {
+			@include breakpoint(large) {
+				margin-left: rem-calc(157);
+			}
+
+			a {
+				background-color: $orange;
+
+				&:hover {
+					background-color: $jade;
+				}
+			}
+
+			&:hover {
+				background-color: $jade;
+			}
+
+			&:hover::before {
+				background-color: #70c6c8;
+			}
+
+			i {
+				display: none;
+			}
+		}
+
+		&--2 {
+			max-width: rem-calc(290);
+			background: $jade;
+			display: none;
+
+			&:hover {
+				background-color: $orange;
+			}
+
+			&:hover::before {
+				background-color: $dark-orange;
+			}
+
+			a {
+				display: inline-flex;
+				gap: rem-calc(10);
+				justify-content: center;
+				align-items: center;
+				color: $primary;
+
+				img {
+					max-width: rem-calc(135);
+				}
+
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+}

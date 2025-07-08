@@ -1,0 +1,169 @@
+{
+	"key": "group_6454fc9409a47",
+	"title": "Block: Instagram",
+	"fields": [
+		{
+			"key": "field_6454fda489bdf",
+			"label": "BG Image",
+			"name": "bg_image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": ""
+		},
+		{
+			"key": "field_6454fca3efe8d",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_6454fcaaefe8e",
+			"label": "Button 1",
+			"name": "button_1",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "url"
+		},
+		{
+			"key": "field_6454fcc0efe91",
+			"label": "Button 1 Text",
+			"name": "button_1_text",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_6454fcbbefe8f",
+			"label": "Button 2",
+			"name": "button_2",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "url"
+		},
+		{
+			"key": "field_6454fcc8efe92",
+			"label": "Button 2 Text",
+			"name": "button_2_text",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_6454fcbeefe90",
+			"label": "Button 3",
+			"name": "button_3",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "url"
+		},
+		{
+			"key": "field_6454fcd5efe93",
+			"label": "Button 3 Text",
+			"name": "button_3_text",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/instagram"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1743357534
+}

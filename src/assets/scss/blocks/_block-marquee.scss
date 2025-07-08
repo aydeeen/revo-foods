@@ -1,0 +1,52 @@
+.b-marquee {
+	overflow: hidden;
+	background: #1c4a5c;
+	padding-left: 0;
+	padding-right: 0;
+
+	&__title {
+		font-size: 18px;
+		color: $white;
+		text-align: center;
+		margin-bottom: 2.5rem;
+		padding-right: 0.625rem;
+		padding-left: 0.625rem;
+
+		@include breakpoint(medium) {
+			padding-right: 0.9375rem;
+			padding-left: 0.9375rem;
+		}
+	}
+
+	&__marquee-wrapper {
+		overflow: hidden;
+		white-space: nowrap;
+		width: 100%;
+	}
+
+	&__marquee-content {
+		display: inline-flex;
+		gap: 160px;
+		padding-left: 100%;
+		animation: marquee 20s linear infinite;
+	}
+
+	&__marquee-item {
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+		font-size: 22px;
+		color: $white;
+		line-height: 120%;
+	}
+}
+
+/* Animation */
+@keyframes marquee {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}

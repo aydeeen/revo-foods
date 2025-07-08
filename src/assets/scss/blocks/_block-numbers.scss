@@ -1,0 +1,55 @@
+.b-numbers {
+	background: no-repeat center center / cover;
+
+	&__title {
+		@include heading;
+
+		color: $white;
+		text-align: center;
+	}
+
+	&__items-wrapper {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: rem-calc(30);
+		justify-items: center;
+		align-items: center;
+
+		@include breakpoint(medium only) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(small only) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__item-image-wrapper {
+		img {
+			width: rem-calc(100);
+			height: rem-calc(100);
+			object-fit: contain;
+		}
+	}
+
+	&__item-title {
+		font-size: rem-calc(24);
+		font-weight: 700;
+		color: $white;
+		margin-top: rem-calc(15);
+		margin-bottom: rem-calc(5);
+	}
+
+	&__item-number {
+		font-size: rem-calc(50);
+		font-weight: 700;
+		color: $jade;
+		margin-bottom: 0;
+	}
+}

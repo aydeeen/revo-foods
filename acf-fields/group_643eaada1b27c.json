@@ -1,0 +1,139 @@
+{
+	"key": "group_643eaada1b27c",
+	"title": "Block: Sponsors",
+	"fields": [
+		{
+			"key": "field_643eaada2b9d6",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_643eaaead129d",
+			"label": "Sponsors",
+			"name": "sponsors",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "",
+			"sub_fields": [
+				{
+					"key": "field_643eaaf9d129e",
+					"label": "Link",
+					"name": "link",
+					"type": "link",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"return_format": "url"
+				},
+				{
+					"key": "field_643eab0ad129f",
+					"label": "Image",
+					"name": "image",
+					"type": "image",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"return_format": "id",
+					"preview_size": "medium",
+					"library": "all",
+					"min_width": "",
+					"min_height": "",
+					"min_size": "",
+					"max_width": "",
+					"max_height": "",
+					"max_size": "",
+					"mime_types": ""
+				}
+			]
+		},
+		{
+			"key": "field_66cf2d0edfedd",
+			"label": "Button",
+			"name": "button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "url",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_66cf2d17dfede",
+			"label": "Button Text",
+			"name": "button_text",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/sponsors"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1743357591
+}

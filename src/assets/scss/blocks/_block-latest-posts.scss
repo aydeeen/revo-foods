@@ -1,0 +1,78 @@
+.b-latest-posts {
+	&__title {
+		@include heading-small;
+
+		text-align: center;
+	}
+
+	&__posts {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem-calc(30);
+		margin-bottom: rem-calc(10);
+
+		@include breakpoint(medium only) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(small only) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: rem-calc(20);
+		}
+	}
+
+	&__post {
+		@include breakpoint(small only) {
+			display: flex;
+			gap: rem-calc(20);
+		}
+	}
+
+	&__post-image-link {
+		@include breakpoint(small only) {
+			flex-basis: 23%;
+			flex-shrink: 0;
+		}
+
+		img {
+			border-radius: rem-calc(20);
+			aspect-ratio: 3/2;
+			object-fit: cover;
+
+			@include breakpoint(small only) {
+				aspect-ratio: 1/1;
+			}
+		}
+	}
+
+	&__post-title {
+		font-size: rem-calc(24);
+		font-weight: 700;
+		margin-bottom: 0;
+
+		@include breakpoint(medium) {
+			margin-top: rem-calc(15);
+		}
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(22);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(20);
+		}
+
+		a {
+			color: inherit;
+
+			&:hover,
+			&:active {
+				color: $red;
+			}
+		}
+	}
+
+	&__button-wrapper {
+		@include button;
+	}
+}

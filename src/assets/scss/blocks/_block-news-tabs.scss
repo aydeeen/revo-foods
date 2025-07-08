@@ -1,0 +1,154 @@
+.b-news-tabs {
+	&__title {
+		@include heading-small;
+
+		margin-bottom: rem-calc(20);
+	}
+
+	&__tabs {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		overflow-x: auto;
+		border: none;
+		background: transparent;
+		margin-bottom: rem-calc(40);
+
+		&::after,
+		&::before {
+			content: none;
+		}
+
+		li {
+			border-bottom: 3px solid #e4f4f8;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+
+			a {
+				opacity: 0.5;
+				font-family: 'Asap Condensed', sans-serif;
+				font-weight: 400;
+				font-size: rem-calc(24);
+				color: $primary;
+				transition: all 0.2s;
+			}
+
+			&:hover,
+			&:focus {
+				a {
+					font-weight: 700;
+					color: $orange;
+					background: transparent;
+				}
+			}
+
+			&.is-active {
+				border-bottom-color: $orange;
+
+				a {
+					opacity: 1;
+					font-weight: 700;
+					background: transparent;
+					color: $orange;
+				}
+			}
+
+			&:hover {
+				border-bottom-color: $orange;
+			}
+		}
+	}
+
+	&__tabs-content {
+		border: none;
+		background: transparent;
+	}
+
+	&__tab-items {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem-calc(40);
+
+		@include breakpoint(small only) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__tab-item {
+		display: flex;
+		gap: rem-calc(20);
+		align-items: center;
+
+		@include breakpoint(medium only) {
+			flex-direction: column;
+		}
+	}
+
+	&__tab-item-image-wrapper {
+		box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.1);
+		border-radius: rem-calc(20);
+		padding: rem-calc(10);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		width: rem-calc(180);
+		height: rem-calc(140);
+
+		@include breakpoint(medium only) {
+			width: rem-calc(150);
+		}
+
+		@include breakpoint(small only) {
+			width: rem-calc(120);
+		}
+
+		img {
+			object-fit: contain;
+			max-height: rem-calc(120);
+		}
+	}
+
+	&__tab-item-content {
+		text-align: left;
+		max-width: rem-calc(350);
+
+		@include breakpoint(medium only) {
+			text-align: center;
+		}
+
+		h5 {
+			font-size: rem-calc(24);
+			font-weight: 700;
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(22);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(20);
+			}
+		}
+
+		a {
+			font-size: rem-calc(18);
+			font-weight: 700;
+			color: $jade;
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(17);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(16);
+			}
+
+			&:hover,
+			&:active {
+				color: $red;
+			}
+		}
+	}
+}

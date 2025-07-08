@@ -70,22 +70,29 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-	primary: #1779ba,
+	primary: #f0555e,
 	secondary: #767676,
 	success: #3adb76,
 	warning: #ffae00,
 	alert: #cc4b37,
 );
+$primary: #1e5064;
+$jade: #9bd6d7;
+$red: #f0555e;
+$dark-red: #d1121e;
+$orange: #f9a259;
+$dark-orange: #de975c;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+$sinister: #363131;
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-	'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-	sans-serif;
+$body-font-color: $primary;
+$body-font-family: 'Arima', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+	'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+	'Helvetica Neue', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -134,13 +141,15 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Asap Condensed', -apple-system, BlinkMacSystemFont,
+	'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+	'Droid Sans', 'Helvetica Neue', sans-serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: 'Consolas', 'Liberation Mono', 'Courier', monospace;
 $header-color: inherit;
-$header-lineheight: 1.4;
-$header-margin-bottom: 0.5rem;
+$header-lineheight: 1.2;
+$header-margin-bottom: 0.625rem;
 $header-styles: (
 	small: (
 		'h1': (
@@ -186,7 +195,7 @@ $header-styles: (
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
+$paragraph-lineheight: 1.5;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
@@ -688,7 +697,7 @@ $prototype-sizes: (
 // 42. Prototype Spacing
 // ---------------------
 
-$prototype-spacing-breakpoints: $global-prototype-breakpoints;
+$prototype-spacing-breakpoints: true;
 $prototype-spacers-count: 3;
 
 // 43. Prototype Text-Decoration

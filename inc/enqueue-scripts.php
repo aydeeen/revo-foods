@@ -79,3 +79,18 @@ function fopr_admin_enqueue_scripts() {
 	}
 }
 add_action( 'admin_enqueue_scripts', 'fopr_admin_enqueue_scripts' );
+
+/*
+ add_action(
+	'init',
+	function() {
+		pll_register_string( 'products', 'PRODUCTS' );
+		pll_register_string( 'cook-time', 'Cook Time' );
+		pll_register_string( 'the-recipe-features', 'the recipe features' );
+		pll_register_string( 'view-product', 'View Product' );
+		pll_register_string( 'ingredients', 'Ingredients' );
+		pll_register_string( 'preparation', 'Preparation' );
+		pll_register_string( 'latest-recipes', 'Latest Recipes' );
+		pll_register_string( 'view-all', 'View All' );
+	}
+); */

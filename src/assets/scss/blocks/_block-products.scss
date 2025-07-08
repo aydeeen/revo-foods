@@ -1,0 +1,87 @@
+.b-products {
+	&__title {
+		@include heading-small;
+
+		margin-bottom: rem-calc(40);
+		text-align: center;
+
+		span {
+			color: $jade;
+		}
+	}
+
+	&__products {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem-calc(40);
+
+		@include breakpoint(medium down) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: rem-calc(40) rem-calc(30);
+		}
+
+		@include breakpoint(small only) {
+			gap: rem-calc(40) rem-calc(20);
+		}
+	}
+
+	&__product {
+		.image-wrapper {
+			box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 5%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: rem-calc(20);
+			aspect-ratio: 1/1;
+
+			img {
+				aspect-ratio: 1/1;
+				object-fit: contain;
+			}
+		}
+
+		.subtitle {
+			font-size: rem-calc(16);
+			font-weight: 700;
+			margin-top: rem-calc(20);
+			margin-bottom: 0;
+			color: $primary;
+		}
+
+		.title {
+			font-size: rem-calc(28);
+			font-weight: 700;
+			color: $primary;
+		}
+
+		.circle {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: rem-calc(40);
+			height: rem-calc(40);
+			background: $white;
+			border-radius: 50%;
+			transition: all 0.3s;
+			box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 10%);
+
+			svg {
+				path {
+					transition: all 0.3s;
+				}
+			}
+		}
+
+		&:hover {
+			.circle {
+				background: $orange;
+
+				svg {
+					path {
+						fill: $primary;
+					}
+				}
+			}
+		}
+	}
+}

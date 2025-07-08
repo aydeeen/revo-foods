@@ -1,0 +1,70 @@
+.job-post {
+	@include breakpoint(large) {
+		padding-top: rem-calc(80);
+	}
+
+	border-bottom: 3px solid #e4f4f8;
+
+	&__breadcrumbs {
+		color: $primary;
+		font-size: rem-calc(14);
+		opacity: 0.4;
+
+		* {
+			color: inherit;
+			font-size: inherit;
+		}
+
+		a:hover,
+		a:active {
+			color: $red;
+		}
+	}
+
+	&__title {
+		@include heading;
+	}
+
+	&__content {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			@include heading-small;
+		}
+	}
+
+	&__sidebar {
+		background: no-repeat center center / cover;
+		padding: rem-calc(20);
+		text-align: center;
+
+		img {
+			max-width: rem-calc(150);
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: rem-calc(20);
+		}
+
+		.title {
+			font-size: rem-calc(24);
+			font-weight: 700;
+			margin-bottom: rem-calc(20);
+			text-align: center;
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(22);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(20);
+			}
+		}
+
+		.button-wrapper {
+			@include button;
+		}
+	}
+}

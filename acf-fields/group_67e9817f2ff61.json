@@ -1,0 +1,76 @@
+{
+	"key": "group_67e9817f2ff61",
+	"title": "Block: Home Hero 4",
+	"fields": [
+		{
+			"key": "field_67e9817f4096f",
+			"label": "Description",
+			"name": "description",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_67e9817f44611",
+			"label": "Button_1",
+			"name": "button_1",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_67e9870ab3ad3",
+			"label": "Button_2",
+			"name": "button_2",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"translations": "copy_once"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/home-hero-4"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1743357792
+}

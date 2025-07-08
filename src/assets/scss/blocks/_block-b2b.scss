@@ -1,0 +1,92 @@
+.b-b2b {
+	background: no-repeat center center / cover;
+
+	@include breakpoint(small only) {
+		background-image: url('../images/b2b-bg-mobile.jpg') !important;
+	}
+
+	&__content-wrapper {
+		@include breakpoint(small only) {
+			padding-top: rem-calc(580);
+		}
+	}
+
+	&__title {
+		@include heading;
+
+		line-height: 1;
+		margin-bottom: rem-calc(20);
+
+		@include breakpoint(medium down) {
+			text-align: center;
+		}
+	}
+
+	&__subtitle {
+		font-size: rem-calc(24);
+		font-weight: 700;
+
+		@include breakpoint(medium down) {
+			text-align: center;
+			font-size: rem-calc(22);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(20);
+		}
+	}
+
+	&__buttons-wrapper {
+		display: flex;
+		gap: rem-calc(20);
+		flex-wrap: wrap;
+
+		@include breakpoint(medium down) {
+			justify-content: center;
+		}
+	}
+
+	&__button-wrapper {
+		&--1 {
+			@include button;
+
+			background: $orange;
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+
+			&:hover {
+				background-color: $red;
+			}
+
+			&:hover::before {
+				background-color: $dark-red;
+			}
+		}
+
+		&--2 {
+			a {
+				@include button-outlined;
+
+				color: $primary;
+				border-color: $primary;
+				padding: rem-calc(13) rem-calc(18);
+
+				&:hover {
+					background-color: $primary;
+					color: $white;
+				}
+			}
+		}
+	}
+
+	&__image-wrapper {
+		@include breakpoint(medium down) {
+			margin-top: rem-calc(20);
+		}
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+}

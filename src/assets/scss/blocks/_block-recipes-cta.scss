@@ -1,0 +1,24 @@
+.b-recipes-cta {
+	background: no-repeat center center / cover;
+
+	&__title {
+		@include heading-small;
+
+		margin-bottom: rem-calc(20);
+
+		@include breakpoint(large) {
+			max-width: rem-calc(230);
+		}
+
+		span {
+			color: $red;
+		}
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		background: $primary;
+		margin-left: 0;
+	}
+}

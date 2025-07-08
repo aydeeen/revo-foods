@@ -1,0 +1,123 @@
+{
+	"key": "group_67fa923543f70",
+	"title": "Block: Products 3",
+	"fields": [
+		{
+			"key": "field_67fa9235552ac",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_67fa92355c825",
+			"label": "Products",
+			"name": "products",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "",
+			"sub_fields": [
+				{
+					"key": "field_67fa923567e55",
+					"label": "Image",
+					"name": "image",
+					"type": "image",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"return_format": "id",
+					"preview_size": "medium",
+					"library": "all",
+					"min_width": "",
+					"min_height": "",
+					"min_size": "",
+					"max_width": "",
+					"max_height": "",
+					"max_size": "",
+					"mime_types": ""
+				},
+				{
+					"key": "field_67fa92356bb55",
+					"label": "Title",
+					"name": "title",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				},
+				{
+					"key": "field_67fa923564277",
+					"label": "Link",
+					"name": "link",
+					"type": "link",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"return_format": "array",
+					"translations": "copy_once"
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/products-3"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1744474710
+}

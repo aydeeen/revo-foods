@@ -1,0 +1,148 @@
+{
+	"key": "group_6453f4fc0b234",
+	"title": "Block: Stores",
+	"fields": [
+		{
+			"key": "field_6453f544f3ca7",
+			"label": "Items",
+			"name": "items",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "",
+			"sub_fields": [
+				{
+					"key": "field_6453f56ff3ca8",
+					"label": "Flag",
+					"name": "flag",
+					"type": "image",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "10",
+						"class": "",
+						"id": ""
+					},
+					"return_format": "id",
+					"preview_size": "medium",
+					"library": "all",
+					"min_width": "",
+					"min_height": "",
+					"min_size": "",
+					"max_width": "",
+					"max_height": "",
+					"max_size": "",
+					"mime_types": ""
+				},
+				{
+					"key": "field_6453f58cf3ca9",
+					"label": "Country",
+					"name": "country",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "13",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				},
+				{
+					"key": "field_6453f593f3caa",
+					"label": "Stores",
+					"name": "stores",
+					"type": "repeater",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "80",
+						"class": "",
+						"id": ""
+					},
+					"collapsed": "",
+					"min": 0,
+					"max": 0,
+					"layout": "table",
+					"button_label": "",
+					"sub_fields": [
+						{
+							"key": "field_6453f59cf3cab",
+							"label": "Link",
+							"name": "link",
+							"type": "link",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"return_format": "url"
+						},
+						{
+							"key": "field_6453f5acf3cac",
+							"label": "Logo",
+							"name": "logo",
+							"type": "image",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"return_format": "id",
+							"preview_size": "medium",
+							"library": "all",
+							"min_width": "",
+							"min_height": "",
+							"min_size": "",
+							"max_width": "",
+							"max_height": "",
+							"max_size": "",
+							"mime_types": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/stores"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1743357593
+}

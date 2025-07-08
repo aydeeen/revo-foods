@@ -1,0 +1,255 @@
+.b-grid-cards {
+	&__layout {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr) 1.3fr;
+		grid-template-rows: 2fr 1fr 1.5fr;
+		gap: 1rem;
+		max-height: 1033px;
+
+		@include breakpoint(small only) {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			max-height: none;
+			gap: 1.5rem;
+		}
+
+		@include breakpoint(medium only) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: auto;
+		}
+	}
+
+	&__card {
+		overflow: hidden;
+		position: relative;
+
+		img {
+			border-radius: 1.5rem;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+			&:first-of-type {
+				@include breakpoint(small only) {
+					display: none;
+				}
+			}
+
+			&:last-of-type {
+				display: none;
+				height: auto;
+
+				@include breakpoint(small only) {
+					display: block;
+				}
+			}
+		}
+
+		h3 {
+			@include heading;
+
+			line-height: 1;
+			margin-bottom: 0;
+
+			@include breakpoint(large) {
+				width: max-content;
+			}
+
+			@media (min-width: 1024px) and (max-width: 1149px) {
+				font-size: 50px;
+			}
+
+			@include breakpoint(medium down) {
+				font-size: 2.5rem;
+			}
+		}
+
+		h4 {
+			font-size: 24px;
+			font-weight: 700;
+			margin-bottom: 0;
+
+			@include breakpoint(medium only) {
+				font-size: 22px;
+			}
+
+			@include breakpoint(small only) {
+				font-size: 20px;
+			}
+		}
+
+		a {
+			@include button-normal;
+
+			position: absolute;
+			bottom: -100px;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-bottom: 0;
+			transition: all 0.4s;
+
+			@include breakpoint(medium down) {
+				bottom: 32px;
+				left: 32px;
+				transform: translateX(0);
+			}
+		}
+
+		&:hover {
+			a,
+			div:last-of-type {
+				bottom: 32px;
+			}
+		}
+	}
+
+	&__card--1 {
+		grid-area: 1 / 1 / 3 / 3;
+
+		@include breakpoint(medium down) {
+			grid-area: auto;
+		}
+
+		@include breakpoint(small only) {
+			order: 1;
+		}
+
+		h3 {
+			color: $white;
+			position: absolute;
+			top: 32px;
+			left: 50%;
+			transform: translateX(-50%);
+
+			@include breakpoint(medium down) {
+				left: 32px;
+				transform: translateX(0);
+				text-align: left;
+			}
+		}
+	}
+
+	&__card--2 {
+		grid-area: 1 / 3 / 2 / 4;
+
+		@include breakpoint(medium down) {
+			grid-area: auto;
+		}
+
+		@include breakpoint(small only) {
+			order: 3;
+		}
+
+		div {
+			position: absolute;
+			top: 32px;
+			left: 32px;
+		}
+
+		h3 {
+			color: $white;
+			margin-bottom: 0.5rem;
+		}
+
+		h4 {
+			color: $white;
+		}
+
+		a {
+			background-color: $jade;
+			color: $primary;
+			left: 32px;
+			transform: translateX(0);
+		}
+	}
+
+	&__card--3 {
+		grid-area: 3 / 1 / 4 / 3;
+
+		@include breakpoint(medium down) {
+			grid-area: auto;
+		}
+
+		@include breakpoint(small only) {
+			order: 2;
+		}
+
+		h4 {
+			margin-bottom: 0.5rem;
+		}
+
+		div {
+			&:first-of-type {
+				position: absolute;
+				top: 32px;
+				left: 32px;
+			}
+
+			&:last-of-type {
+				position: absolute;
+				bottom: -100px;
+				left: 32px;
+				transition: all 0.4s;
+				display: flex;
+				gap: 20px;
+
+				@include breakpoint(medium down) {
+					bottom: 32px;
+					left: 32px;
+					transform: translateX(0);
+					flex-direction: column;
+				}
+			}
+		}
+
+		a {
+			position: static;
+			transform: translate(0);
+
+			@include breakpoint(large) {
+				width: 170px;
+			}
+
+			&:last-child {
+				background-color: transparent;
+				border: 1px solid $primary;
+				color: $primary;
+
+				&:hover {
+					background-color: $primary;
+					color: $white;
+				}
+			}
+		}
+	}
+
+	&__card--4 {
+		grid-area: 2 / 3 / 4 / 4;
+
+		@include breakpoint(medium down) {
+			grid-area: auto;
+		}
+
+		@include breakpoint(small only) {
+			order: 4;
+		}
+
+		h3 {
+			color: $white;
+			position: absolute;
+			top: 32px;
+			left: 50%;
+			transform: translateX(-50%);
+
+			@include breakpoint(medium down) {
+				left: 32px;
+				transform: translateX(0);
+				text-align: left;
+			}
+		}
+
+		a {
+			background-color: $primary;
+		}
+	}
+}

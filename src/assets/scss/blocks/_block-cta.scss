@@ -1,0 +1,140 @@
+.b-cta {
+	background: no-repeat center center / cover;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(100);
+		padding-bottom: rem-calc(100);
+	}
+
+	@include breakpoint(medium only) {
+		padding-top: rem-calc(70);
+		padding-bottom: rem-calc(70);
+	}
+
+	&__content {
+		text-align: center;
+	}
+
+	&__subtitle {
+		font-size: rem-calc(18);
+		font-weight: 700;
+		font-family: Arima, sans-serif;
+		margin-bottom: 0;
+	}
+
+	&__title {
+		@include heading;
+
+		margin-bottom: rem-calc(20);
+	}
+
+	&__description {
+		@include pharagraph;
+
+		margin-bottom: rem-calc(20);
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		&:hover {
+			background-color: $orange;
+		}
+
+		&:hover::before {
+			background-color: $dark-orange;
+		}
+	}
+}
+
+.b-cta__homepage {
+	@include breakpoint(small only) {
+		background-image: url('../images/feeling-fancy-mobile.jpg') !important;
+		min-height: 600px;
+	}
+
+	.b-cta__content {
+		@include breakpoint(large) {
+			text-align: left;
+		}
+	}
+
+	.b-cta__title {
+		color: $white;
+	}
+
+	.b-cta__description {
+		color: $white;
+	}
+
+	.b-cta__button-wrapper {
+		background-color: $orange;
+
+		@include breakpoint(large) {
+			margin-left: 0;
+		}
+
+		&:hover {
+			background-color: $jade;
+		}
+
+		&::before {
+			background-color: #70c6c8;
+		}
+	}
+}
+
+.b-cta__the-filet {
+	.b-cta__content {
+		text-align: left;
+	}
+
+	.b-cta__description {
+		max-width: rem-calc(560);
+	}
+
+	.b-cta__title {
+		color: $white;
+	}
+
+	.b-cta__description {
+		color: $white;
+	}
+
+	.b-cta__button-wrapper {
+		background-color: $orange;
+		margin-left: 0;
+
+		&:hover {
+			background-color: $jade;
+		}
+
+		&::before {
+			background-color: #70c6c8;
+		}
+	}
+
+	&--1 {
+		@include breakpoint(small only) {
+			background-image: url('../images/marinated-lemonpepper-mob.jpg') !important;
+
+			.b-cta__content {
+				margin-bottom: rem-calc(320);
+			}
+		}
+
+		.b-cta__description {
+			max-width: rem-calc(354);
+		}
+	}
+
+	&--2 {
+		@include breakpoint(small only) {
+			background-image: url('../images/treat-her-right-mob.jpg') !important;
+
+			.b-cta__content {
+				margin-bottom: rem-calc(300);
+			}
+		}
+	}
+}

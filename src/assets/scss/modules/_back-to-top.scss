@@ -1,0 +1,47 @@
+#back-to-top {
+	position: fixed;
+	bottom: rem-calc(30);
+	right: rem-calc(30);
+	transition: all 0.3s;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 99999999;
+	cursor: pointer;
+	border-radius: 50%;
+	background: #272727;
+	padding: 2px;
+	border: 1px solid #272727;
+
+	&.show {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.icon-wrapper {
+		width: rem-calc(57);
+		height: rem-calc(57);
+		border: 1px solid $primary;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		transition: all 0.3s;
+
+		img {
+			transition: all 0.3s;
+		}
+	}
+
+	&:hover {
+		background: $orange;
+		border: 1px solid $white;
+
+		.icon-wrapper {
+			border: 1px solid $orange;
+
+			img {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+}

@@ -1,0 +1,125 @@
+.b-team {
+	&__title {
+		@include heading;
+	}
+
+	&__description {
+		max-width: rem-calc(770);
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	&__team-wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+		gap: rem-calc(50) rem-calc(25);
+		justify-items: center;
+		align-items: center;
+		text-align: center;
+		margin-top: rem-calc(40);
+
+		.name {
+			font-size: rem-calc(24);
+			font-weight: 700;
+			margin-top: rem-calc(10);
+			margin-bottom: rem-calc(5);
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(22);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(20);
+			}
+		}
+
+		.position {
+			font-size: rem-calc(16);
+			margin-bottom: 0;
+		}
+	}
+
+	&__person {
+		.images-wrapper {
+			position: relative;
+			text-align: center;
+
+			img {
+				&:nth-child(1) {
+					position: absolute;
+					left: 50%;
+					top: rem-calc(-10);
+					transform: translate(-50%, 0);
+				}
+
+				&:nth-child(2) {
+					position: absolute;
+					left: 50%;
+					top: rem-calc(-10);
+					transform: translate(-50%, 0);
+				}
+
+				&:nth-child(3) {
+					height: rem-calc(280);
+					width: rem-calc(280);
+					object-fit: cover;
+					position: relative;
+					border-radius: 50%;
+				}
+			}
+		}
+
+		&:nth-child(odd) {
+			.images-wrapper {
+				img {
+					&:nth-child(2) {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&:nth-child(even) {
+			.images-wrapper {
+				img {
+					&:nth-child(1) {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&:last-child {
+			.images-wrapper {
+				img {
+					&:nth-child(1) {
+						display: none;
+					}
+
+					&:nth-child(2) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Advisory Board section on team page
+#team-block_64468fe237de7 {
+	.b-team__team-wrapper {
+		margin-top: 0;
+	}
+
+	.images-wrapper {
+		img {
+			&:nth-child(1) {
+				display: none;
+			}
+
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+}

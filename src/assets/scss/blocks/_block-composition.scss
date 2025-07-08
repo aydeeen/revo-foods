@@ -1,0 +1,32 @@
+.b-composition {
+	background: #1c4a5c;
+
+	.section__inner {
+		max-width: 80rem;
+	}
+
+	&__title {
+		font-size: 18px;
+		color: $white;
+		margin-bottom: 20px;
+
+		@include breakpoint(large) {
+			text-align: center;
+		}
+	}
+
+	&__items-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px 80px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font-size: 22px;
+		color: $white;
+		line-height: 120%;
+	}
+}
