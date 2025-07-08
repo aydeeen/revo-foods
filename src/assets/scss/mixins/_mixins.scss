@@ -1,0 +1,180 @@
+@import 'family';
+
+@mixin full-width {
+	position: relative;
+	left: 50%;
+	width: 100vw;
+	margin-left: -50vw;
+}
+
+@mixin ie-only {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+@keyframes wave {
+	0% {
+		-webkit-transform: translateX(-50%) rotate(0);
+		transform: translateX(-50%) rotate(0);
+	}
+
+	to {
+		-webkit-transform: translateX(-50%) rotate(1turn);
+		transform: translateX(-50%) rotate(1turn);
+	}
+}
+
+@mixin button {
+	border-radius: rem-calc(32);
+	background-color: $red;
+	max-width: rem-calc(200);
+	height: rem-calc(56);
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		background-color: $jade;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 0;
+		bottom: rem-calc(-230);
+		left: 50%;
+		width: rem-calc(250);
+		height: rem-calc(200);
+		animation: wave 10s linear infinite;
+		animation-play-state: paused;
+		background-color: #70c6c8;
+		border-radius: 40%;
+		transform: translateX(-50%);
+		transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+
+	&:hover::before {
+		animation-play-state: running;
+		bottom: rem-calc(-180);
+	}
+
+	a,
+	button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		font-family: 'Asap Condensed', sans-serif;
+		font-size: rem-calc(18);
+		font-weight: 700;
+		background-color: transparent;
+		justify-content: center;
+		margin-bottom: 0;
+
+		&:hover {
+			background-color: transparent;
+		}
+
+		i {
+			display: none;
+		}
+	}
+}
+
+@mixin button-normal {
+	font-size: rem-calc(18);
+	font-family: 'Asap Condensed', sans-serif;
+	background-color: $orange;
+	width: 210px;
+	height: 56px;
+	border-radius: rem-calc(32);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		background-color: $red;
+	}
+
+	i {
+		display: none;
+	}
+}
+
+@mixin button-outlined {
+	font-size: rem-calc(18);
+	font-family: 'Asap Condensed', sans-serif;
+	border: 2px solid $orange;
+	border-radius: rem-calc(40);
+	background-color: transparent;
+	margin-bottom: 0;
+	letter-spacing: 1px;
+	padding: rem-calc(13.5) rem-calc(40);
+
+	&:hover {
+		background-color: $orange;
+	}
+
+	i {
+		display: none;
+	}
+}
+
+@mixin heading {
+	font-size: rem-calc(64);
+	font-weight: 700;
+
+	@include breakpoint(medium only) {
+		font-size: rem-calc(52);
+	}
+
+	@include breakpoint(small only) {
+		font-size: rem-calc(40);
+	}
+}
+
+@mixin heading-small {
+	font-size: rem-calc(40);
+	font-weight: 700;
+
+	@include breakpoint(medium only) {
+		font-size: rem-calc(35);
+	}
+
+	@include breakpoint(small only) {
+		font-size: rem-calc(30);
+	}
+}
+
+@mixin heading-hero {
+	font-size: rem-calc(100);
+	font-weight: 700;
+	color: $white;
+	margin-bottom: 0;
+
+	@include breakpoint(medium only) {
+		font-size: rem-calc(75);
+	}
+
+	@include breakpoint(small only) {
+		font-size: rem-calc(50);
+	}
+}
+
+@mixin pharagraph {
+	font-size: rem-calc(18);
+	font-weight: 500;
+
+	@include breakpoint(medium only) {
+		font-size: rem-calc(17);
+	}
+
+	@include breakpoint(small only) {
+		font-size: rem-calc(16);
+	}
+}

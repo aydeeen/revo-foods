@@ -1,0 +1,78 @@
+.b-numbers-2 {
+	&__title {
+		@include heading-small;
+
+		font-weight: 600;
+		text-align: center;
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: rem-calc(30);
+		justify-items: center;
+
+		@include breakpoint(medium only) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(small only) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.number {
+			@include heading-hero;
+
+			color: $jade;
+			text-align: center;
+		}
+
+		.title {
+			font-size: rem-calc(30);
+			text-align: center;
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(27);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(24);
+			}
+		}
+
+		.description {
+			font-size: rem-calc(22);
+			margin-bottom: 0;
+			text-align: center;
+
+			@include breakpoint(medium only) {
+				font-size: rem-calc(21);
+			}
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(20);
+			}
+		}
+	}
+
+	&__item-title {
+		font-size: rem-calc(24);
+		font-weight: 700;
+		color: $white;
+		margin-top: rem-calc(15);
+		margin-bottom: rem-calc(5);
+	}
+
+	&__item-number {
+		font-size: rem-calc(50);
+		font-weight: 700;
+		color: $jade;
+		margin-bottom: 0;
+	}
+}

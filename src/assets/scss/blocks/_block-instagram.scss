@@ -1,0 +1,73 @@
+.b-instagram {
+	background: no-repeat center center / cover;
+
+	&__title {
+		@include heading-hero;
+
+		color: $primary;
+		margin-bottom: rem-calc(20);
+
+		@include breakpoint(medium) {
+			line-height: 1;
+			margin-bottom: rem-calc(30);
+		}
+
+		@include breakpoint(small only) {
+			text-align: center;
+		}
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		i {
+			display: none;
+		}
+
+		@include breakpoint(medium) {
+			margin-left: 0;
+		}
+
+		&--2 {
+			background-color: $orange;
+		}
+
+		&--3 {
+			background-color: $primary;
+		}
+
+		&--1,
+		&--2 {
+			margin-bottom: rem-calc(20);
+		}
+	}
+
+	#sb_instagram {
+		position: relative;
+
+		@include breakpoint(small only) {
+			margin-top: rem-calc(10);
+		}
+
+		.sb_instagram_header {
+			display: none;
+		}
+
+		#sbi_load {
+			@include button;
+
+			margin-top: rem-calc(15);
+			transform: translateX(-50%);
+			left: 50%;
+
+			.sbi_follow_btn {
+				display: none;
+			}
+
+			a.sbi_load_btn:hover,
+			a.sbi_load_btn:active {
+				box-shadow: none;
+			}
+		}
+	}
+}

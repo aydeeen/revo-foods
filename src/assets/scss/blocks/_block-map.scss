@@ -1,0 +1,50 @@
+.b-map {
+	background: no-repeat right / contain;
+	background-color: $primary;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(200);
+		padding-bottom: rem-calc(200);
+	}
+
+	@include breakpoint(medium only) {
+		padding-top: rem-calc(60);
+		padding-bottom: rem-calc(60);
+	}
+
+	@include breakpoint(small only) {
+		background-image: none !important;
+	}
+
+	&__content-wrapper {
+		@include breakpoint(medium) {
+			max-width: rem-calc(450);
+		}
+	}
+
+	&__title {
+		@include heading;
+
+		color: $white;
+		margin-bottom: rem-calc(25);
+
+		span {
+			color: #9bd6d7;
+		}
+
+		@include breakpoint(medium) {
+			max-width: rem-calc(300);
+			line-height: 1;
+		}
+	}
+
+	&__description {
+		color: $white;
+		margin-top: rem-calc(20);
+		margin-bottom: 0;
+
+		@include breakpoint(medium) {
+			max-width: rem-calc(450);
+		}
+	}
+}

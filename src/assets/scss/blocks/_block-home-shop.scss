@@ -1,0 +1,115 @@
+.b-home-shop {
+	background: no-repeat center center / cover;
+
+	&__title {
+		@include heading;
+
+		margin-bottom: rem-calc(20);
+
+		@include breakpoint(small only) {
+			text-align: center;
+		}
+	}
+
+	&__images-wrapper {
+		position: relative;
+
+		img {
+			border-radius: rem-calc(20);
+
+			&:last-child {
+				@include breakpoint(medium) {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 90%;
+					height: 90%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+
+	&__products {
+		@include breakpoint(small only) {
+			margin-top: rem-calc(20);
+		}
+	}
+
+	&__product {
+		display: flex;
+		align-items: center;
+		gap: rem-calc(20);
+		margin-bottom: rem-calc(20);
+		padding-bottom: rem-calc(20);
+		border-bottom: 1px solid #d8d8d8;
+
+		@include breakpoint(medium) {
+			max-width: 87%;
+			margin-left: auto;
+		}
+
+		@media (min-width: rem-calc(640)) and (max-width: rem-calc(799)) {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		@media (min-width: rem-calc(320)) and (max-width: rem-calc(360)) {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.image-wrapper {
+			max-width: rem-calc(160);
+			width: 100%;
+
+			img {
+				object-fit: cover;
+			}
+		}
+
+		.title {
+			font-size: rem-calc(20);
+			font-weight: 700;
+		}
+
+		.price {
+			color: $white;
+			margin-bottom: rem-calc(15);
+			font-weight: 700;
+			font-family: 'Asap Condensed', sans-serif;
+		}
+
+		.link {
+			background: $primary;
+			font-family: 'Asap Condensed', sans-serif;
+			font-weight: 700;
+			color: #fff;
+			border-radius: rem-calc(20);
+			padding: rem-calc(10) rem-calc(20);
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			gap: rem-calc(10);
+			transition: all 0.3s;
+
+			svg {
+				path {
+					transition: all 0.3s;
+				}
+			}
+
+			&:hover,
+			&:active {
+				background: $red;
+
+				svg {
+					path {
+						fill: $white;
+					}
+				}
+			}
+		}
+	}
+}

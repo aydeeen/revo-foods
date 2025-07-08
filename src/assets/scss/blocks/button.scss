@@ -1,0 +1,11 @@
+@import 'imports';
+
+.b-button {
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignright {
+		text-align: right;
+	}
+}

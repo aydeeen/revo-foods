@@ -1,0 +1,121 @@
+{
+	"name": "@mediadudes/foundationpress",
+	"title": "FoundationPress",
+	"version": "3.4.6",
+	"description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb (forked from https://github.com/olefredrik/FoundationPress)",
+	"homepage": "https://github.com/MEDIADUDES/FoundationPress",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MEDIADUDES/FoundationPress.git"
+	},
+	"bugs": {
+		"url": "https://github.com/MEDIADUDES/FoundationPress/issues"
+	},
+	"scripts": {
+		"start": "cross-env NODE_OPTIONS=--openssl-legacy-provider npx grunt watch",
+		"build": "cross-env NODE_ENV=production grunt build",
+		"autofix": "grunt autofix",
+		"dev": "cross-env NODE_ENV=development grunt",
+		"update": "grunt devUpdate:update",
+		"make-pot": "wp i18n make-pot . languages/FoundationPress.pot --domain=foundationpress",
+		"release": "release-it"
+	},
+	"dependencies": {
+		"@babel/polyfill": "7.12.1",
+		"@fortawesome/fontawesome-svg-core": "1.2.35",
+		"@fortawesome/free-solid-svg-icons": "5.15.3",
+		"flickity": "^3.0.0",
+		"foundation-sites": "6.6.3",
+		"motion-ui": "2.0.3",
+		"prop-types": "15.7.2",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"what-input": "5.2.10"
+	},
+	"devDependencies": {
+		"@babel/cli": "7.13.16",
+		"@babel/core": "7.14.0",
+		"@babel/plugin-proposal-object-rest-spread": "7.13.8",
+		"@babel/preset-env": "7.14.1",
+		"@babel/preset-react": "7.13.13",
+		"@release-it/bumper": "2.0.0",
+		"auto-changelog": "2.2.1",
+		"autoprefixer": "10.2.5",
+		"babel-eslint": "10.1.0",
+		"babel-loader": "8.2.2",
+		"babel-plugin-transform-class-properties": "6.24.1",
+		"copy-webpack-plugin": "8.1.1",
+		"cross-env": "^7.0.3",
+		"css-loader": "5.2.4",
+		"eslint": "7.25.0",
+		"eslint-config-airbnb": "18.2.1",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-import": "2.22.1",
+		"eslint-plugin-jsx-a11y": "6.4.1",
+		"eslint-plugin-prettier": "3.4.0",
+		"eslint-plugin-react": "7.23.2",
+		"extract-loader": "5.1.0",
+		"file-loader": "6.2.0",
+		"glob": "7.1.7",
+		"grunt": "1.4.0",
+		"grunt-contrib-nodeunit": "3.0.0",
+		"grunt-contrib-watch": "1.1.0",
+		"grunt-dev-update": "2.3.0",
+		"grunt-eslint": "23.0.0",
+		"grunt-phpcbf": "0.1.1",
+		"grunt-phpcs": "0.4.0",
+		"grunt-phplint": "0.1.0",
+		"grunt-prettier": "2.1.0",
+		"grunt-shrinkwrap": "1.1.1",
+		"grunt-stylelint": "0.16.0",
+		"grunt-webpack": "4.0.3",
+		"load-grunt-tasks": "5.1.0",
+		"mini-css-extract-plugin": "1.6.0",
+		"pixrem": "5.0.0",
+		"postcss": "8.2.14",
+		"postcss-loader": "5.2.0",
+		"postcss-scss": "3.0.5",
+		"prettier": "2.2.1",
+		"release-it": "14.11.6",
+		"sass": "1.32.12",
+		"sass-loader": "11.0.1",
+		"style-loader": "2.0.0",
+		"stylelint": "13.13.1",
+		"stylelint-config-prettier": "8.0.2",
+		"stylelint-config-wordpress": "17.0.0",
+		"stylelint-formatter-pretty": "2.1.1",
+		"stylelint-scss": "3.19.0",
+		"webpack": "5.36.2"
+	},
+	"babel": {
+		"presets": ["@babel/env"]
+	},
+	"browserslist": ["defaults", "not IE 11", "not op_mini all"],
+	"release-it": {
+		"git": {
+			"changelog": "auto-changelog --stdout --commit-limit false --sort-commits date-desc --unreleased --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs",
+			"requireBranch": "master"
+		},
+		"hooks": {
+			"after:bump": [
+				"npm run autofix",
+				"npm run build",
+				"auto-changelog -p --commit-limit false --hide-credit --sort-commits date-desc --starting-version v2.12.0"
+			],
+			"after:git:release": "echo After git push, before github release",
+			"after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+		},
+		"github": {
+			"release": true
+		},
+		"npm": {
+			"publish": false
+		},
+		"plugins": {
+			"@release-it/bumper": {
+				"out": ["style.css"]
+			}
+		}
+	}
+}

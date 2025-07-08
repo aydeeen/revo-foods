@@ -1,0 +1,25 @@
+.page-template-default {
+	h1 {
+		@include heading;
+
+		margin-bottom: rem-calc(40);
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@include heading-small;
+	}
+}
+
+@include breakpoint(large) {
+	.page-template-default {
+		.main-container {
+			.section {
+				padding-top: rem-calc(100);
+			}
+		}
+	}
+}

@@ -1,0 +1,146 @@
+.accordion {
+	/* text only accordion. e.g. used for the read more text. */
+	&--text {
+		background: none;
+
+		&,
+		.accordion-item {
+			display: inline;
+		}
+
+		.accordion-content {
+			padding: 0;
+			border: none;
+			color: inherit;
+			font-size: inherit;
+			background: none;
+		}
+
+		.accordion-title.accordion-title {
+			position: relative;
+			display: inline-block;
+			border: 0;
+			padding: 0;
+			margin: 0;
+			background: none;
+			font-size: inherit;
+			font-weight: 600;
+			color: inherit;
+			text-decoration: underline;
+
+			.accordion-title__expanded {
+				display: none;
+			}
+
+			&[aria-expanded='true'] {
+				.accordion-title__expanded {
+					display: inline;
+				}
+
+				.accordion-title__closed {
+					display: none;
+				}
+			}
+
+			// hide icon.
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
+
+#b-accordion__homepage {
+	background-color: #353131;
+	max-width: 100%;
+
+	@include breakpoint(medium) {
+		background: url('../images/filet-bg.jpg') no-repeat left top / cover;
+	}
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(135);
+		padding-bottom: rem-calc(135);
+	}
+
+	.b-accordion__inner {
+		@media (min-width: rem-calc(801)) {
+			max-width: 95%;
+		}
+	}
+
+	.accordion {
+		background: transparent;
+		margin-bottom: 0;
+		max-width: 93%;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include breakpoint(medium) {
+			max-width: rem-calc(385);
+			margin-right: 0;
+		}
+
+		@media (min-width: rem-calc(640)) and (max-width: rem-calc(800)) {
+			margin-top: rem-calc(175);
+			margin-right: auto;
+		}
+	}
+
+	.accordion-item {
+		border-radius: rem-calc(20);
+		padding: rem-calc(20);
+		box-shadow: 0 0px 38px 0 rgba(10, 10, 10, 0.1);
+
+		@include breakpoint(medium) {
+			background: #343131;
+		}
+
+		.accordion-title {
+			color: $white;
+			font-size: rem-calc(16);
+			font-family: 'Asap Condensed', sans-serif;
+			font-weight: 700;
+			border: none;
+			background: #353131;
+			padding: 0;
+
+			&::before {
+				content: '';
+				width: 18px;
+				height: 12px;
+				background: url('../images/arrow-down-orange.svg') no-repeat;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem-calc(20);
+		}
+
+		&.is-active {
+			border: 1px solid $orange;
+			border-radius: 20px;
+
+			.accordion-title {
+				color: $orange;
+
+				&::before {
+					background: url('../images/arrow-up-orange.svg') no-repeat;
+				}
+			}
+		}
+
+		.accordion-content {
+			border: none;
+			background-color: transparent;
+			padding: 15px 0 0 0;
+
+			p {
+				font-size: 1rem;
+				font-weight: 400;
+				color: $white;
+				margin-bottom: 0;
+			}
+		}
+	}
+}

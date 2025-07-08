@@ -1,0 +1,103 @@
+.b-home-hero-4 {
+	background: url('../images/kraken-bg.jpg') no-repeat center / cover;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 81px);
+
+	@include breakpoint(medium only) {
+		height: 50vh;
+	}
+
+	@include breakpoint(small only) {
+		background-image: url('../images/kraken-bg-mobile.jpg');
+		align-items: flex-start;
+	}
+
+	&__grid {
+		width: 100%;
+	}
+
+	&__content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@include breakpoint(medium) {
+			max-width: 380px;
+		}
+	}
+
+	&__title-wrapper {
+		margin-bottom: 0;
+	}
+
+	&__description {
+		font-size: rem-calc(16);
+		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(20);
+		color: $white;
+	}
+
+	&__buttons-wrapper {
+		display: flex;
+		gap: 12px;
+		width: 100%;
+
+		@include breakpoint(small only) {
+			flex-direction: column;
+		}
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		width: 160px;
+		height: 50px;
+		background-color: $jade;
+
+		@include breakpoint(small only) {
+			max-width: 100%;
+			width: 100%;
+		}
+
+		a {
+			color: $primary;
+
+			@include breakpoint(small only) {
+				position: relative;
+			}
+		}
+
+		&:hover {
+			background-color: $orange;
+
+			&::before {
+				background-color: $dark-orange;
+			}
+
+			a {
+				color: $white;
+			}
+		}
+
+		&:last-of-type {
+			background-color: transparent;
+			border: 2px solid $white;
+
+			a {
+				color: $white;
+			}
+
+			&:hover {
+				background-color: $orange;
+
+				&::before {
+					content: none;
+				}
+			}
+		}
+	}
+}

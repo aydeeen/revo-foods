@@ -1,0 +1,21 @@
+.b-hero-3 {
+	background: no-repeat center center / cover;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(200);
+		padding-bottom: rem-calc(200);
+	}
+
+	&__image-wrapper {
+		text-align: center;
+
+		img {
+			width: 100%;
+			max-width: rem-calc(500);
+
+			@include breakpoint(medium down) {
+				max-width: rem-calc(300);
+			}
+		}
+	}
+}

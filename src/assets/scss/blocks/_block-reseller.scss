@@ -1,0 +1,128 @@
+.b-reseller {
+	background: no-repeat center center / cover;
+	position: relative;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(80);
+		padding-bottom: rem-calc(80);
+	}
+
+	@include breakpoint(medium only) {
+		padding-top: rem-calc(60);
+		padding-bottom: rem-calc(60);
+	}
+
+	&__title {
+		font-size: rem-calc(55);
+		margin-bottom: rem-calc(20);
+
+		@include breakpoint(medium only) {
+			font-size: rem-calc(45);
+		}
+
+		@include breakpoint(small only) {
+			font-size: rem-calc(35);
+		}
+
+		@include breakpoint(medium down) {
+			text-align: center;
+		}
+	}
+
+	&__description {
+		margin-bottom: rem-calc(20);
+	}
+
+	&__link-wrapper {
+		@include breakpoint(medium down) {
+			text-align: center;
+		}
+
+		a {
+			display: inline-flex;
+			gap: rem-calc(10);
+			transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			font-size: rem-calc(20);
+			color: $white;
+			font-family: 'Asap Condensed', sans-serif;
+			font-weight: 700;
+		}
+
+		svg {
+			path {
+				transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				fill: $white;
+			}
+		}
+
+		i {
+			display: none;
+		}
+
+		&:hover {
+			a {
+				color: $orange;
+			}
+
+			svg {
+				path {
+					fill: $orange;
+				}
+			}
+		}
+
+		&:first-of-type {
+			margin-bottom: rem-calc(10);
+		}
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		max-width: rem-calc(300);
+		height: rem-calc(64);
+		background-color: $white;
+		margin-top: rem-calc(20);
+
+		@include breakpoint(large) {
+			margin-left: 0;
+		}
+
+		a {
+			color: $primary;
+			gap: rem-calc(20);
+			align-items: center;
+			font-size: rem-calc(20);
+
+			svg {
+				path {
+					transition: all 0.3s;
+				}
+			}
+		}
+
+		&:hover {
+			background-color: $orange;
+
+			a {
+				color: $white;
+
+				svg {
+					path {
+						fill: $white;
+					}
+				}
+			}
+		}
+
+		&:hover::before {
+			background-color: $dark-orange;
+		}
+	}
+
+	&__image-wrapper {
+		@include breakpoint(medium down) {
+			margin-top: rem-calc(20);
+		}
+	}
+}

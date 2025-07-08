@@ -1,0 +1,17 @@
+.b-main-ingredient {
+	padding-bottom: 0;
+
+	h2 {
+		@include heading;
+
+		margin-bottom: 0;
+
+		&:last-of-type {
+			font-weight: 400;
+		}
+	}
+
+	h4 {
+		font-size: rem-calc(24);
+	}
+}

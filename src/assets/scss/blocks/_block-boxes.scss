@@ -1,0 +1,47 @@
+.b-boxes {
+	&__boxes {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem-calc(20) rem-calc(30);
+
+		@include breakpoint(medium only) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(small only) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__box {
+		background: no-repeat center center / cover;
+		border-radius: rem-calc(20);
+		padding: rem-calc(40);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: rem-calc(30);
+
+		.title {
+			@include heading-small;
+
+			margin-bottom: 0;
+		}
+
+		.content {
+			text-align: center;
+			margin-bottom: 0;
+			font-weight: 700;
+		}
+
+		&:first-child {
+			.title {
+				color: $white;
+			}
+
+			.content {
+				color: $white;
+			}
+		}
+	}
+}

@@ -1,0 +1,602 @@
+{
+	"key": "group_644dcc7b4cfe7",
+	"title": "Block: Distributors",
+	"fields": [
+		{
+			"key": "field_644dcc7b5cd4c",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_644dcc7b607de",
+			"label": "Description",
+			"name": "description",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_644dcc7b642dd",
+			"label": "Distributors 1",
+			"name": "distributors_1",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "Add Row",
+			"sub_fields": [
+				{
+					"key": "field_644dcc7b8eac7",
+					"label": "Country",
+					"name": "country",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"aria-label": "",
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": "",
+					"parent_repeater": "field_62d00bb82a271"
+				},
+				{
+					"key": "field_644dcc7b9257a",
+					"label": "Flag",
+					"name": "flag",
+					"type": "image",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"aria-label": "",
+					"return_format": "id",
+					"preview_size": "medium",
+					"library": "all",
+					"min_width": "",
+					"min_height": "",
+					"min_size": "",
+					"max_width": "",
+					"max_height": "",
+					"max_size": "",
+					"mime_types": "",
+					"parent_repeater": "field_62d00bb82a271"
+				},
+				{
+					"key": "field_644dcc7b9603a",
+					"label": "Distributors Info",
+					"name": "distributors_info",
+					"type": "repeater",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "100",
+						"class": "",
+						"id": ""
+					},
+					"collapsed": "",
+					"min": 0,
+					"max": 0,
+					"layout": "row",
+					"button_label": "Add Row",
+					"sub_fields": [
+						{
+							"key": "field_644dcc7bb1615",
+							"label": "Name",
+							"name": "name",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": "",
+							"parent_repeater": "field_62d00bfa2a273"
+						},
+						{
+							"key": "field_644dcc7bb50b8",
+							"label": "Logo",
+							"name": "logo",
+							"type": "image",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"return_format": "id",
+							"preview_size": "medium",
+							"library": "all",
+							"min_width": "",
+							"min_height": "",
+							"min_size": "",
+							"max_width": "",
+							"max_height": "",
+							"max_size": "",
+							"mime_types": "",
+							"parent_repeater": "field_62d00bfa2a273"
+						},
+						{
+							"key": "field_644dcc7bb8b73",
+							"label": "Website",
+							"name": "website",
+							"type": "link",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"return_format": "url",
+							"parent_repeater": "field_62d00bfa2a273"
+						},
+						{
+							"key": "field_644dcc7bbc600",
+							"label": "Website Text",
+							"name": "website_text",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": "",
+							"parent_repeater": "field_62d00bfa2a273"
+						},
+						{
+							"key": "field_644dcc7bc75e2",
+							"label": "Phone",
+							"name": "phone",
+							"type": "link",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"return_format": "url",
+							"parent_repeater": "field_62d00bfa2a273"
+						},
+						{
+							"key": "field_644dcc7bcb087",
+							"label": "Phone Text",
+							"name": "phone_text",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": "",
+							"parent_repeater": "field_62d00bfa2a273"
+						},
+						{
+							"key": "field_644dcc7bc00c2",
+							"label": "Email",
+							"name": "email",
+							"type": "link",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"return_format": "url",
+							"parent_repeater": "field_62d00bfa2a273"
+						},
+						{
+							"key": "field_644dcc7bc3b56",
+							"label": "Email Text",
+							"name": "email_text",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": "",
+							"parent_repeater": "field_62d00bfa2a273"
+						},
+						{
+							"key": "field_66bf77c8f30d8",
+							"label": "Content",
+							"name": "content",
+							"type": "wysiwyg",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"tabs": "all",
+							"toolbar": "full",
+							"media_upload": 1,
+							"delay": 0,
+							"translations": "translate"
+						}
+					]
+				}
+			]
+		},
+		{
+			"key": "field_644dcc7c23bc9",
+			"label": "Distributors 2",
+			"name": "distributors_2",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "Add Row",
+			"sub_fields": [
+				{
+					"key": "field_644dcc7c2f624",
+					"label": "Country",
+					"name": "country",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"aria-label": "",
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": "",
+					"parent_repeater": "field_62d01a285f468"
+				},
+				{
+					"key": "field_644dcc7c33025",
+					"label": "Flag",
+					"name": "flag",
+					"type": "image",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"aria-label": "",
+					"return_format": "id",
+					"preview_size": "medium",
+					"library": "all",
+					"min_width": "",
+					"min_height": "",
+					"min_size": "",
+					"max_width": "",
+					"max_height": "",
+					"max_size": "",
+					"mime_types": "",
+					"parent_repeater": "field_62d01a285f468"
+				},
+				{
+					"key": "field_644dcc7c36ae1",
+					"label": "Distributors Info",
+					"name": "distributors_info",
+					"type": "repeater",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "100",
+						"class": "",
+						"id": ""
+					},
+					"collapsed": "",
+					"min": 0,
+					"max": 0,
+					"layout": "row",
+					"button_label": "Add Row",
+					"sub_fields": [
+						{
+							"key": "field_644dcc7c520c1",
+							"label": "Name",
+							"name": "name",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": "",
+							"parent_repeater": "field_62d01a285f46a"
+						},
+						{
+							"key": "field_644dcc7c55b98",
+							"label": "Logo",
+							"name": "logo",
+							"type": "image",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"return_format": "id",
+							"preview_size": "medium",
+							"library": "all",
+							"min_width": "",
+							"min_height": "",
+							"min_size": "",
+							"max_width": "",
+							"max_height": "",
+							"max_size": "",
+							"mime_types": "",
+							"parent_repeater": "field_62d01a285f46a"
+						},
+						{
+							"key": "field_644dcc7c5961a",
+							"label": "Website",
+							"name": "website",
+							"type": "link",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"return_format": "url",
+							"parent_repeater": "field_62d01a285f46a"
+						},
+						{
+							"key": "field_644dcc7c5d0aa",
+							"label": "Website Text",
+							"name": "website_text",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": "",
+							"parent_repeater": "field_62d01a285f46a"
+						},
+						{
+							"key": "field_644dcc7c68097",
+							"label": "Phone",
+							"name": "phone",
+							"type": "link",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"return_format": "url",
+							"parent_repeater": "field_62d01a285f46a"
+						},
+						{
+							"key": "field_644dcc7c6bb6a",
+							"label": "Phone Text",
+							"name": "phone_text",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": "",
+							"parent_repeater": "field_62d01a285f46a"
+						},
+						{
+							"key": "field_644dcc7c60b65",
+							"label": "Email",
+							"name": "email",
+							"type": "link",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"return_format": "url",
+							"parent_repeater": "field_62d01a285f46a"
+						},
+						{
+							"key": "field_644dcc7c6461f",
+							"label": "Email Text",
+							"name": "email_text",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"aria-label": "",
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": "",
+							"parent_repeater": "field_62d01a285f46a"
+						},
+						{
+							"key": "field_66bf7869959c8",
+							"label": "Content",
+							"name": "content",
+							"type": "wysiwyg",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"tabs": "all",
+							"toolbar": "full",
+							"media_upload": 1,
+							"delay": 0,
+							"translations": "translate"
+						}
+					]
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/distributors"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "acf_after_title",
+	"style": "seamless",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1743357382
+}

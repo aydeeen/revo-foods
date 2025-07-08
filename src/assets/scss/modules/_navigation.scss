@@ -1,0 +1,277 @@
+// Navigation breakpoints
+.mobile-menu,
+.site-title-bar {
+	@include hide-for(medium);
+}
+
+.desktop-menu,
+.site-navigation .top-bar-left {
+	@include show-for(medium);
+}
+
+// Site title
+.site-desktop-title a {
+	font-weight: 700;
+}
+
+// WP post navigation
+.post-navigation {
+	@include clearfix;
+}
+
+.nav-previous {
+	float: left;
+}
+
+.nav-next {
+	float: right;
+}
+
+.site-header-wrapper {
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	background: $white;
+
+	.topbar {
+		background: $primary;
+		justify-content: center;
+		align-items: center;
+		gap: rem-calc(10);
+		position: relative;
+		padding: rem-calc(8);
+
+		&.remove {
+			transform: translateY(-300px);
+			transition: all 0.6s ease-out;
+		}
+
+		p {
+			font-size: rem-calc(14);
+			color: $white;
+			margin-bottom: 0;
+
+			@include breakpoint(small only) {
+				display: none;
+			}
+		}
+
+		img {
+			max-height: rem-calc(21);
+		}
+
+		a {
+			font-weight: 400;
+			color: $orange;
+			text-decoration: underline;
+			font-size: rem-calc(14);
+			position: relative;
+			padding-left: rem-calc(20);
+
+			&:hover {
+				color: $red;
+			}
+
+			&::before {
+				content: '';
+				border-left: 1px solid $white;
+				height: rem-calc(22);
+				position: absolute;
+				left: rem-calc(5);
+			}
+		}
+
+		svg {
+			position: absolute;
+			right: rem-calc(20);
+			cursor: pointer;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+.site-header {
+	max-width: 75rem;
+	margin-left: auto;
+	margin-right: auto;
+	transition: all 0.6s ease-out;
+
+	.current-menu-item {
+		a {
+			color: $orange;
+		}
+	}
+
+	.dropdown.menu {
+		> li {
+			&.is-active > a {
+				color: $orange;
+			}
+
+			&.is-dropdown-submenu-parent > a::after {
+				border-color: $orange transparent transparent;
+			}
+
+			&.is-dropdown-submenu-parent.is-active > a::after {
+				border-color: $orange transparent transparent;
+			}
+
+			&.opens-left > .is-dropdown-submenu {
+				background: $white;
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+				border: 1px solid rgba(0, 0, 0, 0.15);
+
+				&::after {
+					content: '';
+					width: 0;
+					height: 0;
+					border-top: 10px solid transparent;
+					border-bottom: 10px solid transparent;
+					border-left: 10px solid $primary;
+					position: absolute;
+					right: rem-calc(28);
+					top: rem-calc(-16);
+					transform: rotate(-90deg);
+				}
+			}
+		}
+	}
+
+	.is-dropdown-submenu {
+		min-width: rem-calc(150);
+	}
+
+	a {
+		font-size: rem-calc(18);
+		color: $primary;
+		font-weight: 500;
+
+		&:hover {
+			color: $orange;
+		}
+	}
+
+	&__logo {
+		display: flex;
+		gap: rem-calc(10);
+		width: max-content;
+
+		@include breakpoint(small only) {
+			order: 1;
+		}
+	}
+
+	.menu-icon {
+		width: rem-calc(33);
+		height: rem-calc(33);
+
+		&::after {
+			content: none;
+		}
+
+		@include breakpoint(small only) {
+			order: 2;
+		}
+	}
+
+	.title-bar {
+		background: transparent;
+
+		.title-bar-left {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	.top-bar {
+		background-color: transparent;
+
+		ul {
+			background-color: transparent;
+		}
+
+		.top-bar-left,
+		.top-bar-right {
+			@include breakpoint(medium) {
+				flex: 0 1 auto;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__socials-wrapper {
+		display: flex;
+		align-items: center;
+		gap: rem-calc(15);
+
+		@include breakpoint(medium only) {
+			display: none;
+		}
+
+		@include breakpoint(small only) {
+			margin-top: rem-calc(20);
+		}
+
+		.button-wrapper {
+			@include button;
+
+			width: rem-calc(138);
+			height: rem-calc(48);
+			background-color: $jade;
+			display: none;
+
+			&:hover {
+				background-color: $orange;
+
+				a {
+					color: $white;
+				}
+			}
+
+			&:hover::before {
+				background-color: $dark-orange;
+			}
+
+			a {
+				text-transform: uppercase;
+				transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			}
+		}
+
+		.social {
+			position: relative;
+
+			img:first-child {
+				transition: all 0.3s;
+			}
+
+			img:last-child {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s;
+				display: none;
+			}
+
+			&:hover {
+				img:first-child {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+	@include breakpoint(small only) {
+		.submenu-toggle {
+			background: $primary;
+			top: 8px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

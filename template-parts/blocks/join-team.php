@@ -1,0 +1,75 @@
+<?php
+// phpcs:ignoreFile
+
+/**
+ * Join Team Block Template.
+ *
+ * @param   array $block The block settings and attributes.
+ * @param   string $content The block inner HTML (empty).
+ * @param   bool $is_preview True during AJAX preview.
+ * @param   int|string $post_id The post ID this block is saved to.
+ * @package FoundationPress
+ */
+
+// we can disable some phpcs rules because we are not in the global scope.
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+// phpcs:disable WordPress.WP.GlobalVariablesOverride.Prohibited
+
+use FoundationPress\Blocks\Block_Join_Team;
+
+$settings = $block;
+$block    = new Block_Join_Team( $settings );
+
+$id          = $block->get_anchor();
+$class_names = $block->get_class_names();
+
+$title       = get_field( 'title' ) ?: false;
+$description = get_field( 'description' ) ?: false;
+$button      = get_field( 'button' ) ?: false;
+$button_text = get_field( 'button_text' ) ?: false;
+?>
+
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-join-team <?php echo esc_attr( $class_names ); ?>">
+   <div class="section__inner grid-x grid-padding-x grid-padding-y align-bottom">
+
+	   <div class="cell large-9">
+	      <div>
+            <h2 class="b-join-team__title">
+               <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.7156 7.99882C2.99661 8.011 2.41059 7.92878 1.95753 7.75214C1.50446 7.57551 1.12527 7.29228 0.819945 6.90247C0.465374 6.44565 0.243767 5.97666 0.155125 5.49548C0.066482 5.0143 0.0172361 4.53617 0.00738689 4.06108C-0.0024623 4.00626 -0.0024623 3.87683 0.00738689 3.67279C0.0172361 3.46874 0.0393967 3.23729 0.0738689 2.97843C0.108341 2.71957 0.152662 2.45614 0.206833 2.18814C0.261003 1.92014 0.33241 1.69783 0.421053 1.52119C0.647584 1.02783 1.0908 0.644108 1.75069 0.37002C2.41059 0.095931 3.23299 -0.0258862 4.21791 0.00456814C4.51339 -0.00761357 4.81133 0.0167499 5.11173 0.0776585C5.41213 0.138567 5.69775 0.231453 5.96861 0.356315C6.23946 0.481178 6.48323 0.633449 6.69991 0.81313C6.91659 0.99281 7.09388 1.19229 7.23176 1.41156C7.50754 1.85619 7.70452 2.30539 7.82271 2.75916C7.94091 3.21293 8 3.66517 8 4.1159C8 4.56662 7.94583 5.01125 7.83749 5.4498C7.72915 5.88834 7.58141 6.30861 7.39428 6.7106C7.30563 6.93597 7.1185 7.12935 6.83287 7.29076C6.54725 7.45217 6.22222 7.58464 5.8578 7.68819C5.49338 7.79173 5.11665 7.86787 4.72761 7.91659C4.33857 7.96532 4.00123 7.99273 3.7156 7.99882ZM5.55844 1.30536C5.95325 1.50842 6.28225 1.80057 6.54545 2.18182C6.5039 1.75084 6.30303 1.42139 5.94286 1.19347C5.58268 0.965553 5.05628 0.810153 4.36364 0.727273C4.76537 0.909609 5.16364 1.10231 5.55844 1.30536ZM2.90909 7.27273C2.60934 7.21414 2.34706 7.08523 2.12224 6.88602C1.89743 6.68681 1.72882 6.44951 1.61641 6.17413C1.504 5.89875 1.45014 5.60139 1.45483 5.28207C1.45951 4.96274 1.54147 4.6566 1.70072 4.36364C1.79439 4.62144 1.84357 4.88071 1.84825 5.14144C1.85293 5.40218 1.87401 5.65705 1.91148 5.90607C1.94895 6.15509 2.0356 6.39531 2.17142 6.62675C2.30725 6.85819 2.55314 7.07351 2.90909 7.27273ZM3.70138 3.61518C3.62914 3.84113 3.6171 4.09061 3.66526 4.36364C3.87397 4.20359 4.03452 4.06708 4.1469 3.9541C4.25928 3.84113 4.32751 3.73286 4.3516 3.6293C4.37568 3.52574 4.36364 3.41983 4.31547 3.31156C4.26731 3.2033 4.18704 3.06914 4.07465 2.90909C3.89805 3.15387 3.77363 3.38923 3.70138 3.61518ZM2.83153 5.81818C2.47245 5.69944 2.26598 5.58442 2.21212 5.4731C2.15825 5.36178 2.17621 5.23438 2.26598 5.09091C2.51733 5.20965 2.70136 5.32468 2.81806 5.43599C2.93477 5.54731 2.93925 5.67471 2.83153 5.81818ZM5.27273 6.10526C4.87879 6.21159 4.57576 6.35832 4.36364 6.54545C4.87879 6.54545 5.27273 6.52419 5.54545 6.48166C5.81818 6.43913 6.01515 6.38171 6.13636 6.30941C6.25758 6.23711 6.34091 6.1563 6.38636 6.06699C6.43182 5.97767 6.48485 5.89474 6.54545 5.81818C6.09091 5.90324 5.66667 5.99894 5.27273 6.10526Z" fill="#F9A259"/>
+               </svg>
+               <?php echo esc_html( $title ); ?>
+		      </h2>
+            <p class="b-join-team__description"><?php echo esc_html( $description ); ?></p>
+		   </div>
+	   </div>
+
+      <div class="cell large-3">
+         <div class="b-join-team__button-wrapper">
+            <a href="<?php echo esc_url( $button ); ?>" class="button">
+               <?php echo esc_html( $button_text ); ?>
+            </a>
+		   </div>
+	   </div>
+
+      <?php if ( have_rows( 'images' ) ): ?>
+         <div class="cell">
+            <p class="b-join-team__description b-join-team__description--2"><?php echo esc_html_e( 'If you’re asking yourself why you should join our team?', 'foundationpress' ); ?></p>
+            <div class="b-join-team__images-wrapper">
+               <?php while ( have_rows( 'images' ) ): the_row();
+                  $image = get_sub_field( 'image' ) ?: false;
+                  ?>
+                     <?php echo wp_get_attachment_image( $image, 'full', false ); ?>
+               <?php endwhile; ?>
+            </div>
+         </div>
+      <?php endif; ?>
+
+	</div>
+</section>
+
+<?php
+// important: reset $block variable to initial value.
+$block = $settings;
+
+

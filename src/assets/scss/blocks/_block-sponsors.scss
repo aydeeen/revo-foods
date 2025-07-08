@@ -1,0 +1,48 @@
+.b-sponsors {
+	&__title {
+		@include heading;
+	}
+
+	&__images-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 rem-calc(40);
+		justify-content: center;
+		align-items: center;
+
+		@include breakpoint(medium only) {
+			gap: rem-calc(10) rem-calc(30);
+		}
+
+		@include breakpoint(small only) {
+			gap: rem-calc(20);
+		}
+
+		a {
+			flex-basis: 22%;
+
+			@include breakpoint(medium only) {
+				flex-basis: 30%;
+			}
+
+			@include breakpoint(small only) {
+				flex-basis: 44%;
+			}
+		}
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		margin-top: rem-calc(40);
+	}
+}
+
+.b-sponsors__investing-first {
+	.b-sponsors__images-wrapper {
+		img {
+			height: auto;
+			object-fit: fill;
+		}
+	}
+}
