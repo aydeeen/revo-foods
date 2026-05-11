@@ -30,8 +30,12 @@
 	&__buttons-wrapper {
 		display: flex;
 		gap: rem-calc(20);
-		flex-wrap: wrap;
 		justify-content: center;
+
+		@media (max-width: 659px) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	&__button-wrapper {
@@ -42,6 +46,11 @@
 		margin-right: 0;
 		background-color: $primary;
 		height: rem-calc(52);
+		max-width: 100%;
+
+		@media (min-width: 660px) {
+			max-width: rem-calc(300);
+		}
 
 		&:hover {
 			background-color: $orange;
@@ -49,14 +58,6 @@
 
 		&:hover::before {
 			background-color: $dark-orange;
-		}
-
-		&--1 {
-			max-width: rem-calc(132);
-		}
-
-		&--2 {
-			max-width: rem-calc(420);
 		}
 
 		a {

@@ -16,6 +16,7 @@
 	}
 
 	&__accordion {
+		display: none;
 		margin-bottom: 0;
 
 		.accordion-title.accordion-title.accordion-title {
@@ -122,4 +123,9 @@
 			}
 		}
 	}
+}
+
+#available-positions-block_c769e0ba2c0d604232a253f255a874c2,
+#available-positions-block_cbd981a62c43e6a146653a575a9219cd {
+	display: none;
 }

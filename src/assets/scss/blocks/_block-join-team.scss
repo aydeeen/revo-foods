@@ -48,7 +48,7 @@
 	&__images-wrapper {
 		display: grid;
 		gap: rem-calc(30);
-		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		justify-items: center;
 		align-items: flex-end;
 	}

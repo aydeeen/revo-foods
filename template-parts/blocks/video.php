@@ -25,12 +25,12 @@ $video = get_field( 'video' ) ?: false;
 ?>
 
 <section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-video <?php echo esc_attr( $class_names ); ?>">
-   <div class="section__inner grid-x grid-padding-x grid-padding-y">
-	   <div class="cell">
-		   <?php if ( $video ) : ?>
-			   <iframe src="<?php echo esc_url( $video ); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		   <?php endif; ?>
-	   </div>
+	<div class="section__inner grid-x grid-padding-x grid-padding-y">
+		<div class="cell">
+			<?php if ( $video ) : ?>
+				<iframe src="<?php echo esc_url( $video ); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<?php endif; ?>
+		</div>
 	</div>
 </section>
 

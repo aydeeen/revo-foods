@@ -154,6 +154,8 @@
 		}
 
 		img {
+			max-height: 118px;
+			margin-right: 20px;
 			margin-top: rem-calc(-40);
 
 			@include breakpoint(small only) {

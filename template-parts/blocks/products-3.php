@@ -40,13 +40,15 @@ $title = get_field( 'title' ) ?: false;
             $link  = get_sub_field( 'link' ) ?: false;
             ?>
             <div class="cell medium-6 large-4">
-               <div class="b-products-3__product">
-                  <?php echo wp_get_attachment_image( $image, 'full', false ); ?>
-                  <h3><?php echo wp_kses_post( $title ); ?></h3>
-                  <a href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ? $link['target'] : '_self' ); ?>">
-                     <?php echo esc_html( $link['title'] ); ?>
-                  </a>  
-               </div>
+               <a href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ? $link['target'] : '_self' ); ?>" class="b-products-3__product-link">
+                 <div class="b-products-3__product">
+                    <?php echo wp_get_attachment_image( $image, 'full', false ); ?>
+                    <h3><?php echo wp_kses_post( $title ); ?></h3>
+                    <span class="b-products-3__product-link-text">
+                      <?php echo esc_html( $link['title'] ); ?>
+                    </span>
+                 </div>
+               </a>
             </div>
             <?php
          endwhile;

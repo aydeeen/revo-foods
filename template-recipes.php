@@ -44,6 +44,7 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                         <li class="tabs-title is-active"><a href="#all" aria-selected="true"><?php echo esc_html_e( 'All', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#salmon"><?php echo esc_html_e( 'Salmon', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#salmon-spread"><?php echo esc_html_e( 'Salmon Spread', 'foundationpress' ); ?></a></li>
+                        <li class="tabs-title"><a href="#kraken"><?php echo esc_html_e( 'Kraken', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#tuna"><?php echo esc_html_e( 'Tuna', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#gravlax"><?php echo esc_html_e( 'Gravlax', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#the-filet"><?php echo esc_html_e( 'The Filet', 'foundationpress' ); ?></a></li>
@@ -79,6 +80,16 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                                         get_template_part( 'template-parts/recipe-short' );
                                     }
                                 endwhile; ?>  
+                            </div>                  
+                        </div>
+                        <div class="tabs-panel padding-0" id="kraken">
+                            <div class="recipes__recipes-container">
+                                <?php while ( have_posts() ):
+                                    the_post();
+                                    if ( in_category( 'kraken' ) ) {
+                                        get_template_part( 'template-parts/recipe-short' );
+                                    }
+                                endwhile; ?>
                             </div>                  
                         </div>
                         <div class="tabs-panel padding-0" id="tuna">

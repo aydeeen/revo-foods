@@ -29,15 +29,23 @@ function fopr_assets_uri( $echo = true ) {
 function fopr_acf_bg_img( $field, $post_id = false ) {
 	$bg = $field;
 	if ( is_string( $bg ) ) {
+		if ( ! function_exists( 'get_field' ) ) {
+			return;
+		}
+
 		$bg = get_field( $bg, $post_id );
 	}
 
 	if ( $bg ) {
 		if ( is_array( $bg ) ) {
+			if ( empty( $bg['url'] ) ) {
+				return;
+			}
+
 			$bg = $bg['url'];
 		}
 
-		echo esc_attr( "background-image: url('{$bg}');" );
+		echo esc_attr( sprintf( "background-image: url('%s');", esc_url_raw( $bg ) ) );
 	}
 }
 
@@ -55,8 +63,8 @@ function fopr_get_pages_by_template( $template = '', $args = [] ) {
 	if ( strpos( $template, '.php' ) !== ( strlen( $template ) - 4 ) ) {
 		$template .= '.php';
 	}
-	$args['meta_key']   = '_wp_page_template';
-	$args['meta_value'] = $template;
+	$args['meta_key']   = '_wp_page_template'; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+	$args['meta_value'] = $template; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 	return get_pages( $args );
 }
 
@@ -84,12 +92,25 @@ function fopr_get_first_block_name() {
 	if ( ! empty( $post ) && has_blocks( $post->post_content ) ) {
 		$blocks = parse_blocks( $post->post_content );
 
-		if ( 'core/block' === $blocks[0]['blockName'] ) {
-			$block_content = parse_blocks( get_post( $blocks[0]['attrs']['ref'] )->post_content );
-			return $block_content[0]['blockName'];
-		} else {
-			return $blocks[0]['blockName'];
+		if ( empty( $blocks[0]['blockName'] ) ) {
+			return false;
 		}
+
+		if ( 'core/block' === $blocks[0]['blockName'] ) {
+			if ( empty( $blocks[0]['attrs']['ref'] ) ) {
+				return false;
+			}
+
+			$reusable_block = get_post( $blocks[0]['attrs']['ref'] );
+			if ( empty( $reusable_block ) ) {
+				return false;
+			}
+
+			$block_content = parse_blocks( $reusable_block->post_content );
+			return $block_content[0]['blockName'] ?? false;
+		}
+
+		return $blocks[0]['blockName'];
 	}
 
 	return false;

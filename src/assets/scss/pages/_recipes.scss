@@ -72,10 +72,18 @@
 
 	&__tabs {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		overflow-x: auto;
 		border: none;
 		background: transparent;
+
+		@include breakpoint(small only) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(medium only) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 
 		li {
 			border-bottom: 3px solid #e4f4f8;

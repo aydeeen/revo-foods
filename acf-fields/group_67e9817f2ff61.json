@@ -6,6 +6,7 @@
 			"key": "field_67e9817f4096f",
 			"label": "Description",
 			"name": "description",
+			"aria-label": "",
 			"type": "text",
 			"instructions": "",
 			"required": 0,
@@ -26,6 +27,7 @@
 			"key": "field_67e9817f44611",
 			"label": "Button_1",
 			"name": "button_1",
+			"aria-label": "",
 			"type": "link",
 			"instructions": "",
 			"required": 0,
@@ -42,6 +44,7 @@
 			"key": "field_67e9870ab3ad3",
 			"label": "Button_2",
 			"name": "button_2",
+			"aria-label": "",
 			"type": "link",
 			"instructions": "",
 			"required": 0,
@@ -53,6 +56,33 @@
 			},
 			"return_format": "array",
 			"translations": "copy_once"
+		},
+		{
+			"key": "field_6880b811dd2ab",
+			"label": "Image Title",
+			"name": "image_title",
+			"aria-label": "",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"library": "all",
+			"translations": "copy_once",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"allow_in_bindings": 0,
+			"preview_size": "medium"
 		}
 	],
 	"location": [
@@ -70,7 +100,8 @@
 	"label_placement": "top",
 	"instruction_placement": "label",
 	"hide_on_screen": "",
-	"active": 1,
+	"active": true,
 	"description": "",
-	"modified": 1743357792
+	"show_in_rest": 0,
+	"modified": 1753266212
 }

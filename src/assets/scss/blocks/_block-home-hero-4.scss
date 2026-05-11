@@ -1,5 +1,6 @@
 .b-home-hero-4 {
-	background: url('../images/kraken-bg.jpg') no-repeat center / cover;
+	background: url('/wp-content/uploads/2025/09/Website-hero-Background-Pilz-pasta.jpg')
+		no-repeat center / cover;
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -11,7 +12,7 @@
 	}
 
 	@include breakpoint(small only) {
-		background-image: url('../images/kraken-bg-mobile.jpg');
+		background-image: url('/wp-content/uploads/2025/09/Mobile-version-website-hero-Pilz-pasta.jpg');
 		align-items: flex-start;
 	}
 
@@ -32,6 +33,13 @@
 
 	&__title-wrapper {
 		margin-bottom: 0;
+
+		img {
+			@include breakpoint(small only) {
+				max-height: rem-calc(100);
+				width: auto;
+			}
+		}
 	}
 
 	&__description {
@@ -54,9 +62,11 @@
 	&__button-wrapper {
 		@include button;
 
-		width: 160px;
 		height: 50px;
 		background-color: $jade;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
 
 		@include breakpoint(small only) {
 			max-width: 100%;

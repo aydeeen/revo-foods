@@ -1,4 +1,4 @@
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { dom } from '@fortawesome/fontawesome-svg-core';
 
 const blockName = 'accordion';
 

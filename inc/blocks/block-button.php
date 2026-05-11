@@ -20,7 +20,6 @@ class Block_Button extends Block {
 					'title'           => __( 'FP Button', 'foundationpress' ),
 					'render_template' => 'template-parts/blocks/' . self::get_name() . '.php',
 					'enqueue_style'   => get_template_directory_uri() . '/dist/assets/css/blocks/' . self::get_name() . '.css',
-					// 'enqueue_script'  => get_template_directory_uri() . '/dist/assets/js/blocks/' . self::get_name() . '.js',
 					'category'        => 'foundationpress',
 					'icon'            => 'shield-alt',
 					'keywords'        => [ self::get_name() ],

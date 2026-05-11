@@ -35,16 +35,25 @@ $fopr_topbar_link_text   = get_field( 'topbar_link_text', 'option' ) ?: false;
 	<?php endif; ?>
 
 <div class="site-header-wrapper">
-    <div class="topbar">
-        <p><?php echo wp_kses_post( $fopr_topbar_text ); ?></p>
-        <img src="<?php fopr_assets_uri(); ?>/images/fn-logo-for-topbar.png" alt="Funder Nation Logo">
-        <a href="<?php echo esc_url( $fopr_topbar_link ); ?>" target="_blank">
-            <?php echo esc_html( $fopr_topbar_link_text ); ?>
-        </a>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 19L18 7M6 7L18 19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </div>
+	<?php if ( $fopr_topbar_text || ( $fopr_topbar_link && $fopr_topbar_link_text ) ) : ?>
+		<div class="topbar">
+			<?php if ( $fopr_topbar_text ) : ?>
+				<p><?php echo wp_kses_post( $fopr_topbar_text ); ?></p>
+			<?php endif; ?>
+
+			<?php if ( $fopr_topbar_link && $fopr_topbar_link_text ) : ?>
+				<a href="<?php echo esc_url( $fopr_topbar_link ); ?>">
+					<?php echo wp_kses_post( $fopr_topbar_link_text ); ?>
+				</a>
+			<?php endif; ?>
+
+			<svg class="topbar__close" width="18" height="18" viewBox="0 0 18 18" fill="none" role="button" tabindex="0" aria-label="<?php esc_attr_e( 'Close announcement bar', 'foundationpress' ); ?>" xmlns="http://www.w3.org/2000/svg">
+				<path d="M4.5 4.5L13.5 13.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+				<path d="M13.5 4.5L4.5 13.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+			</svg>
+		</div>
+	<?php endif; ?>
+
 	<header class="site-header" role="banner">
 		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
 			<div class="title-bar-left">

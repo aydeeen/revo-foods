@@ -85,8 +85,13 @@ abstract class Block {
 			foreach ( $blocks as $block ) {
 				if ( isset( $block['attrs']['id'] ) && $block['attrs']['id'] === $this->settings['id'] ) {
 						return true;
-				} elseif ( 'core/block' === $block['blockName'] ) {
-					$block_content = parse_blocks( get_post( $block['attrs']['ref'] )->post_content );
+				} elseif ( isset( $block['blockName'] ) && 'core/block' === $block['blockName'] && ! empty( $block['attrs']['ref'] ) ) {
+					$reusable_block = get_post( $block['attrs']['ref'] );
+					if ( empty( $reusable_block ) ) {
+						continue;
+					}
+
+					$block_content = parse_blocks( $reusable_block->post_content );
 					if ( isset( $block_content[0]['attrs']['id'] )
 					&& $block_content[0]['attrs']['id'] === $this->settings['id'] ) {
 						return true;

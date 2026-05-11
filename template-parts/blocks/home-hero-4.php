@@ -26,6 +26,7 @@ $class_names = $block->get_class_names();
 $description = get_field( 'description' ) ?: false;
 $button_1    = get_field( 'button_1' ) ?: false;
 $button_2    = get_field( 'button_2' ) ?: false;
+$image_title = get_field( 'image_title' ) ?: false;
 ?>
 
 <section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-home-hero-4 <?php echo esc_attr( $class_names ); ?>">
@@ -33,7 +34,7 @@ $button_2    = get_field( 'button_2' ) ?: false;
         <div class="cell">
             <div class="b-home-hero-4__content"> 
                 <h1 class="b-home-hero-4__title-wrapper">
-                    <img src="<?php fopr_assets_uri(); ?>/images/prime-cut-title.png">
+                    <?php echo wp_get_attachment_image( $image_title, 'full', false ); ?>
                 </h1>
                 <p class="b-home-hero-4__description"><?php echo wp_kses_post( $description ); ?></p>
                 <div class="b-home-hero-4__buttons-wrapper">
@@ -42,11 +43,13 @@ $button_2    = get_field( 'button_2' ) ?: false;
                             <?php echo esc_html( $button_1['title'] ); ?>
                         </a>
                     </div>
-                    <div class="b-home-hero-4__button-wrapper">
-                        <a href="<?php echo esc_url( $button_2['url'] ); ?>" target="<?php echo esc_attr( $button_2['target'] ? $button_2['target'] : '_self' ); ?>" class="button">
-                            <?php echo esc_html( $button_2['title'] ); ?>
-                        </a>
-                    </div>
+                    <?php if ( $button_2 ): ?>
+                        <div class="b-home-hero-4__button-wrapper">
+                            <a href="<?php echo esc_url( $button_2['url'] ); ?>" target="<?php echo esc_attr( $button_2['target'] ? $button_2['target'] : '_self' ); ?>" class="button">
+                                <?php echo esc_html( $button_2['title'] ); ?>
+                            </a>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

@@ -61,3 +61,11 @@
 		}
 	}
 }
+
+#home-campaign__hero {
+	background-image: url('https://revo-foods.com/wp-content/uploads/2024/08/THE-FILET-HERO.jpg');
+
+	@include breakpoint(small only) {
+		background-image: url('https://revo-foods.com/wp-content/uploads/2024/08/filet-bg-mob.jpg');
+	}
+}

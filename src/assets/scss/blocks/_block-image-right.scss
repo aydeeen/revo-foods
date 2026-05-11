@@ -232,3 +232,21 @@
 		font-size: rem-calc(32) !important;
 	}
 }
+
+#home-campaign__image-right {
+	padding-top: 0;
+
+	.b-image-right__grid > .cell.large-6:first-child {
+		width: 100%;
+	}
+
+	.b-image-right__grid > .cell.large-6:last-child {
+		display: none;
+	}
+
+	.b-image-right__button-wrapper {
+		margin-left: auto;
+		margin-top: rem-calc(-40);
+		margin-bottom: rem-calc(40);
+	}
+}

@@ -9,6 +9,23 @@
  * @since FoundationPress 1.0.0
  */
 
+/**
+ * Get a cache-busting version for a built theme asset.
+ *
+ * @param string $relative_path Asset path relative to the theme directory.
+ * @return int|string|null File timestamp, theme version, or null.
+ */
+function foundationpress_asset_version( $relative_path ) {
+	$path = get_template_directory() . '/' . ltrim( $relative_path, '/' );
+
+	if ( file_exists( $path ) ) {
+		return filemtime( $path );
+	}
+
+	$theme = wp_get_theme();
+	return $theme->exists() ? $theme->get( 'Version' ) : null;
+}
+
 if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 	function foundationpress_enqueue_scripts() {
 
@@ -17,7 +34,7 @@ if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 			'foundationpress-styles',
 			get_template_directory_uri() . '/dist/assets/css/main.css',
 			false,
-			filemtime( get_template_directory() . '/dist/assets/css/main.css' )
+			foundationpress_asset_version( 'dist/assets/css/main.css' )
 		);
 
 		// Enqueue the scripts.
@@ -25,15 +42,15 @@ if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 			'foundationpress-scripts-runtime',
 			get_template_directory_uri() . '/dist/assets/js/runtime.js',
 			['jquery'],
-			filemtime( get_template_directory() . '/dist/assets/js/runtime.js' ),
+			foundationpress_asset_version( 'dist/assets/js/runtime.js' ),
 			true
 		);
 
 		wp_enqueue_script(
 			'foundationpress-scripts',
 			get_template_directory_uri() . '/dist/assets/js/app.js',
-			['jquery'],
-			filemtime( get_template_directory() . '/dist/assets/js/app.js' ),
+			['jquery', 'foundationpress-scripts-runtime'],
+			foundationpress_asset_version( 'dist/assets/js/app.js' ),
 			true
 		);
 
@@ -56,8 +73,8 @@ function fopr_admin_enqueue_scripts() {
 		wp_enqueue_style(
 			'foundationpress-admin-styles',
 			get_template_directory_uri() . '/dist/assets/css/admin.css',
-			['jquery'],
-			filemtime( get_template_directory() . '/dist/assets/css/admin.css' )
+			[],
+			foundationpress_asset_version( 'dist/assets/css/admin.css' )
 		);
 
 		// Enqueue the scripts.
@@ -65,25 +82,28 @@ function fopr_admin_enqueue_scripts() {
 			'foundationpress-scripts-runtime',
 			get_template_directory_uri() . '/dist/assets/js/runtime.js',
 			['jquery'],
-			filemtime( get_template_directory() . '/dist/assets/js/runtime.js' ),
+			foundationpress_asset_version( 'dist/assets/js/runtime.js' ),
 			true
 		);
 
 		wp_enqueue_script(
 			'foundationpress-scripts',
 			get_template_directory_uri() . '/dist/assets/js/app.js',
-			false,
-			filemtime( get_template_directory() . '/dist/assets/js/app.js' ),
+			['jquery', 'foundationpress-scripts-runtime'],
+			foundationpress_asset_version( 'dist/assets/js/app.js' ),
 			true
 		);
 	}
 }
 add_action( 'admin_enqueue_scripts', 'fopr_admin_enqueue_scripts' );
 
-/*
- add_action(
+add_action(
 	'init',
 	function() {
+		if ( ! function_exists( 'pll_register_string' ) ) {
+			return;
+		}
+
 		pll_register_string( 'products', 'PRODUCTS' );
 		pll_register_string( 'cook-time', 'Cook Time' );
 		pll_register_string( 'the-recipe-features', 'the recipe features' );
@@ -93,4 +113,4 @@ add_action( 'admin_enqueue_scripts', 'fopr_admin_enqueue_scripts' );
 		pll_register_string( 'latest-recipes', 'Latest Recipes' );
 		pll_register_string( 'view-all', 'View All' );
 	}
-); */
+);

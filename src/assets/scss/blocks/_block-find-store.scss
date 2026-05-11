@@ -131,3 +131,17 @@
 		}
 	}
 }
+
+#asl-storelocator.asl-cont {
+	font-family: Arima, sans-serif !important;
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(100);
+	}
+}
+
+.sl-hours,
+.sl-days,
+.sl-categories {
+	display: none !important;
+}

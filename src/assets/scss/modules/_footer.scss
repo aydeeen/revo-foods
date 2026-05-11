@@ -11,6 +11,10 @@
 			width: rem-calc(137);
 			background-color: $jade;
 
+			@include breakpoint(medium down) {
+				margin-left: auto;
+			}
+
 			&:hover {
 				background-color: $orange;
 

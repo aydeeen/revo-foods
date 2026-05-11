@@ -1,5 +1,4 @@
 .accordion {
-	/* text only accordion. e.g. used for the read more text. */
 	&--text {
 		background: none;
 
@@ -90,7 +89,7 @@
 	.accordion-item {
 		border-radius: rem-calc(20);
 		padding: rem-calc(20);
-		box-shadow: 0 0px 38px 0 rgba(10, 10, 10, 0.1);
+		box-shadow: 0 0 38px 0 rgba(10, 10, 10, 0.1);
 
 		@include breakpoint(medium) {
 			background: #343131;

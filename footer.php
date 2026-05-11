@@ -18,7 +18,11 @@ $footer_button          = get_field( 'footer_button', 'option' ) ?: false;
 $footer_button_text     = get_field( 'footer_button_text', 'option' ) ?: false;
 ?>
 
-<footer class="section section--full footer">
+<div style="padding: 20px; text-align: center; display: none;">
+  <img src="/wp-content/uploads/2025/07/thumbnail_Outlook-pghc0xjf.png" alt="Banner">
+</div>
+
+<footer class="section section--full footer">	
 	<div class="section__inner grid-x grid-padding-x grid-padding-y">
 
 	   <div class="cell medium-6 large-4">

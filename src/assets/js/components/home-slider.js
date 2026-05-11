@@ -13,5 +13,7 @@ $(() => {
 			prevNextButtons: false,
 			draggable: true,
 		});
+
+		slider.data('flickityInstance', sliderFlickity);
 	}
 });
