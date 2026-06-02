@@ -1,6 +1,7 @@
 .b-faq {
 	@include breakpoint(large) {
-		padding-top: rem-calc(100);
+		padding-top: rem-calc(60);
+		padding-bottom: rem-calc(60);
 	}
 
 	&__title {
