@@ -49,7 +49,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 14.x
+          node-version: 16.x
+          cache: npm
 
       - name: Add FontAwesome Pro NPM registry
         if: env.FONTAWESOME_NPM_AUTH_TOKEN != null
@@ -78,34 +79,8 @@ jobs:
         run: |
           composer install --no-interaction # dev dependencies for code checking
 
-      # Cache npm cache files
-      - uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      # https://stackoverflow.com/questions/52499617/what-is-the-difference-between-npm-install-and-npm-ci
-      - name: Install NPM Production dependencies
-        if: github.event_name == 'push' && github.ref == env.PROD_BRANCH
-        run: npm ci
-
-      # Note: It is not recommended to cache node_modules, as it can break across Node versions
-      # and won't work with npm ci. Thus we only use it for not production builds..
-      - name: Cache node_modules
-        id: node-modules-cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-
-      # if not a production build we only install npm modules if node_modules is not cached.
       - name: Install NPM dependencies
-        if: |
-          ! ( github.event_name == 'push' &&  github.ref == env.PROD_BRANCH ) &&
-          steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
