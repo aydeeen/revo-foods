@@ -1,0 +1,99 @@
+name: Live SFTP Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Preview files without uploading'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+concurrency:
+  group: live-sftp-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy theme to live WordPress.com site
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.LIVE_SFTP_ENABLED == 'true' }}
+
+    env:
+      SFTP_HOST: ${{ secrets.LIVE_SFTP_HOST }}
+      SFTP_PORT: ${{ secrets.LIVE_SFTP_PORT }}
+      SFTP_USERNAME: ${{ secrets.LIVE_SFTP_USERNAME }}
+      SFTP_PASSWORD: ${{ secrets.LIVE_SFTP_PASSWORD }}
+      SFTP_TARGET: ${{ secrets.LIVE_SFTP_TARGET }}
+
+    steps:
+      - name: Check required secrets
+        run: |
+          test -n "$SFTP_HOST"
+          test -n "$SFTP_PORT"
+          test -n "$SFTP_USERNAME"
+          test -n "$SFTP_PASSWORD"
+          test -n "$SFTP_TARGET"
+
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+          cache: npm
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction
+
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - name: Build theme assets
+        run: npm run build
+
+      - name: Install Composer production dependencies
+        run: composer install --no-dev --no-scripts --no-interaction --optimize-autoloader
+
+      - name: Install lftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Deploy over SFTP
+        run: |
+          DRY_RUN_FLAG=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_FLAG="--dry-run"
+          fi
+
+          lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" -p "$SFTP_PORT" "sftp://$SFTP_HOST" <<EOF
+          set sftp:auto-confirm yes
+          set net:max-retries 2
+          set net:timeout 30
+          mirror -R --delete --verbose $DRY_RUN_FLAG \
+            --exclude-glob .git/ \
+            --exclude-glob .git/** \
+            --exclude-glob .github/ \
+            --exclude-glob .github/** \
+            --exclude-glob node_modules/ \
+            --exclude-glob node_modules/** \
+            --exclude-glob src/ \
+            --exclude-glob src/** \
+            --exclude-glob tasks/ \
+            --exclude-glob tasks/** \
+            --exclude-glob package.json \
+            --exclude-glob package-lock.json \
+            --exclude-glob composer.json \
+            --exclude-glob composer.lock \
+            --exclude-glob Gruntfile.js \
+            ./ "$SFTP_TARGET"
+          bye
+          EOF
