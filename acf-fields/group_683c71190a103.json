@@ -1,0 +1,311 @@
+{
+	"key": "group_683c71190a103",
+	"title": "Block: Custom Food Process",
+	"fields": [
+		{
+			"key": "field_683c71191a101",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "From Idea to Edible Experience",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c71191a102",
+			"label": "Description",
+			"name": "description",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "br",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c71191a103",
+			"label": "Steps",
+			"name": "steps",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "",
+			"sub_fields": [
+				{
+					"key": "field_683c71191a104",
+					"label": "Label",
+					"name": "label",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "20",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": "",
+					"translations": "translate"
+				},
+				{
+					"key": "field_683c71191a105",
+					"label": "Title",
+					"name": "title",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "30",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": "",
+					"translations": "translate"
+				},
+				{
+					"key": "field_683c71191a106",
+					"label": "Text",
+					"name": "text",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "50",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": "",
+					"translations": "translate"
+				}
+			]
+		},
+		{
+			"key": "field_683c71191a107",
+			"label": "Benefits Title",
+			"name": "benefits_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "Why Brands Work With Us",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c71191a114",
+			"label": "Benefits Video",
+			"name": "benefits_video",
+			"type": "file",
+			"instructions": "Optional uploaded video shown above the benefits.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"library": "all",
+			"min_size": "",
+			"max_size": "",
+			"mime_types": "mp4,webm,ogg",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_683c71191a108",
+			"label": "Benefits",
+			"name": "benefits",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "",
+			"sub_fields": [
+				{
+					"key": "field_683c71191a109",
+					"label": "Icon",
+					"name": "icon",
+					"type": "image",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "20",
+						"class": "",
+						"id": ""
+					},
+					"return_format": "id",
+					"preview_size": "thumbnail",
+					"library": "all",
+					"min_width": "",
+					"min_height": "",
+					"min_size": "",
+					"max_width": "",
+					"max_height": "",
+					"max_size": "",
+					"mime_types": "",
+					"translations": "copy_once"
+				},
+				{
+					"key": "field_683c71191a110",
+					"label": "Title",
+					"name": "title",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "30",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": "",
+					"translations": "translate"
+				},
+				{
+					"key": "field_683c71191a111",
+					"label": "Text",
+					"name": "text",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "50",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": "",
+					"translations": "translate"
+				}
+			]
+		},
+		{
+			"key": "field_683c71191a112",
+			"label": "Closing Title",
+			"name": "closing_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "Almost Anything Can Become Edible",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c71191a113",
+			"label": "Closing Text",
+			"name": "closing_text",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "Our process allows us to develop highly customized edible concepts that go far beyond traditional catering. From typography and symbolic objects to playful cultural references and artistic installations, we work with brands and agencies to create food experiences that people instantly photograph, share and remember.\r\n\r\nWhether you need 500 recurring customized pieces or a one-of-a-kind edible statement piece, we combine creativity, food technology and visual storytelling to bring ideas to life.",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "wpautop",
+			"translations": "translate"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/custom-food-process"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1780198800
+}

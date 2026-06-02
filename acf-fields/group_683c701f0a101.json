@@ -1,0 +1,159 @@
+{
+	"key": "group_683c701f0a101",
+	"title": "Block: Custom Food Hero",
+	"fields": [
+		{
+			"key": "field_683c701f1a101",
+			"label": "Eyebrow",
+			"name": "eyebrow",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "Customizable Food Experience",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c701f1a102",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "If You Can Imagine It, We Can Make It Edible",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c701f1a103",
+			"label": "Description",
+			"name": "description",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "Turn your ideas into edible experiences through our customized creations for events, hospitality and brands: from personalized shapes and printed designs to large-scale interactive food experiences.",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "br",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c701f1a107",
+			"label": "Trust Text",
+			"name": "trust_text",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "Already chosen by trusted brands, such as A1.",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c701f1a104",
+			"label": "Primary Button",
+			"name": "primary_button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array"
+		},
+		{
+			"key": "field_683c701f1a105",
+			"label": "Secondary Button",
+			"name": "secondary_button",
+			"type": "link",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array"
+		},
+		{
+			"key": "field_683c701f1a106",
+			"label": "Image",
+			"name": "image",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/custom-food-hero"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1780198800
+}

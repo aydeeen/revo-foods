@@ -28,6 +28,26 @@
 			"translations": "copy_once"
 		},
 		{
+			"key": "field_683c73051a102",
+			"label": "Video",
+			"name": "video",
+			"type": "file",
+			"instructions": "Optional uploaded video. If set, it displays instead of the image.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"library": "all",
+			"min_size": "",
+			"max_size": "",
+			"mime_types": "mp4,webm,ogg",
+			"translations": "copy_once"
+		},
+		{
 			"key": "field_65a16633c9f1d",
 			"label": "Title",
 			"name": "title",

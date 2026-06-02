@@ -27,6 +27,8 @@ $title       = get_field( 'title' ) ?: false;
 $subtitle    = get_field( 'subtitle' ) ?: false;
 $description = get_field( 'description' ) ?: false;
 $image       = get_field( 'image' ) ?: false;
+$video       = get_field( 'video' ) ?: false;
+$video_url   = is_array( $video ) && ! empty( $video['url'] ) ? $video['url'] : $video;
 $button      = get_field( 'button' ) ?: false;
 $button_text = get_field( 'button_text' ) ?: false;
 ?>
@@ -35,7 +37,11 @@ $button_text = get_field( 'button_text' ) ?: false;
 	<div class="section__inner grid-x grid-padding-x grid-padding-y align-middle">
         <div class="cell large-6">
             <div class="b-image-left__image-wrapper">
-                <?php echo wp_get_attachment_image( $image, 'full', false ); ?>
+                <?php if ( $video_url ): ?>
+                    <video class="b-image-left__video" src="<?php echo esc_url( $video_url ); ?>" controls playsinline preload="metadata"></video>
+                <?php else: ?>
+                    <?php echo wp_get_attachment_image( $image, 'full', false ); ?>
+                <?php endif; ?>
             </div>
         </div>
         <div class="cell large-6">

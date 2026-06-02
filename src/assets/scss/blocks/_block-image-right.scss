@@ -82,6 +82,14 @@
 			border-radius: rem-calc(18);
 		}
 	}
+
+	&__video {
+		aspect-ratio: 16 / 9;
+		border-radius: rem-calc(18);
+		display: block;
+		object-fit: cover;
+		width: 100%;
+	}
 }
 
 .b-image-right__investing-first {
