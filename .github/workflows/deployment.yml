@@ -68,6 +68,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
+      - name: Fix Composer vendor binary permissions
+        run: |
+          if [ -d vendor/bin ]; then
+            chmod +x vendor/bin/*
+          fi
+
       - name: Install Composer dependencies
         run: |
           composer install --no-interaction # dev dependencies for code checking
