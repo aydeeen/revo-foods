@@ -1,16 +1,8 @@
 .b-map {
+	@include section-padding-feature;
+
 	background: no-repeat right / contain;
 	background-color: $primary;
-
-	@include breakpoint(large) {
-		padding-top: rem-calc(200);
-		padding-bottom: rem-calc(200);
-	}
-
-	@include breakpoint(medium only) {
-		padding-top: rem-calc(60);
-		padding-bottom: rem-calc(60);
-	}
 
 	@include breakpoint(small only) {
 		background-image: none !important;

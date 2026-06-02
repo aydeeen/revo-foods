@@ -13,6 +13,33 @@
 	}
 }
 
+@mixin section-padding(
+	$small: $section-padding-small,
+	$medium: $section-padding-medium,
+	$large: $section-padding-large
+) {
+	padding-top: $small;
+	padding-bottom: $small;
+
+	@include breakpoint(medium) {
+		padding-top: $medium;
+		padding-bottom: $medium;
+	}
+
+	@include breakpoint(large) {
+		padding-top: $large;
+		padding-bottom: $large;
+	}
+}
+
+@mixin section-padding-feature {
+	@include section-padding(
+		$section-feature-padding-small,
+		$section-feature-padding-medium,
+		$section-feature-padding-large
+	);
+}
+
 @keyframes wave {
 	0% {
 		-webkit-transform: translateX(-50%) rotate(0);

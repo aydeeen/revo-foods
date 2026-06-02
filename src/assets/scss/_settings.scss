@@ -108,7 +108,13 @@ $global-prototype-breakpoints: false;
 $global-button-cursor: auto;
 $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
-$section-top-bottom-padding: rem-calc(40);
+$section-padding-small: rem-calc(40);
+$section-padding-medium: rem-calc(56);
+$section-padding-large: rem-calc(72);
+$section-feature-padding-small: rem-calc(48);
+$section-feature-padding-medium: rem-calc(64);
+$section-feature-padding-large: rem-calc(80);
+$section-top-bottom-padding: $section-padding-small;
 
 @include add-foundation-colors;
 

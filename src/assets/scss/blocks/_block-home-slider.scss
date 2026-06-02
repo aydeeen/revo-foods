@@ -1,16 +1,8 @@
 .b-home-slider {
+	@include section-padding-feature;
+
 	background: no-repeat center bottom / cover;
 	position: relative;
-
-	@include breakpoint(large) {
-		padding-top: rem-calc(100);
-		padding-bottom: rem-calc(100);
-	}
-
-	@include breakpoint(medium only) {
-		padding-top: rem-calc(75);
-		padding-bottom: rem-calc(75);
-	}
 
 	&__content {
 		display: flex;

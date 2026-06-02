@@ -1,9 +1,8 @@
 .section {
 	@include xy-grid-container($global-width);
+	@include section-padding;
 
 	position: relative;
-	padding-top: $section-top-bottom-padding;
-	padding-bottom: $section-top-bottom-padding;
 
 	&--full {
 		@include xy-grid-container();
@@ -41,8 +40,11 @@
 			}
 
 			&__inner {
+				@include section-padding;
+
 				max-width: $global-width / 2;
-				padding: $section-top-bottom-padding $global-padding;
+				padding-left: $global-padding;
+				padding-right: $global-padding;
 			}
 
 			&:first-child .cell__inner {

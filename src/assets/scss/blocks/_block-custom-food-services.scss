@@ -1,17 +1,5 @@
 .b-custom-food-services {
 	background-color: $white;
-	padding-top: rem-calc(48);
-	padding-bottom: rem-calc(48);
-
-	@include breakpoint(medium) {
-		padding-top: rem-calc(56);
-		padding-bottom: rem-calc(56);
-	}
-
-	@include breakpoint(large) {
-		padding-top: rem-calc(60);
-		padding-bottom: rem-calc(60);
-	}
 
 	&__header {
 		text-align: center;

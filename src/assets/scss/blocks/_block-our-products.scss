@@ -1,11 +1,8 @@
 .b-our-products {
+	@include section-padding-feature;
+
 	background: no-repeat center center / cover;
 	position: relative;
-
-	@include breakpoint(large) {
-		padding-top: rem-calc(80);
-		padding-bottom: rem-calc(80);
-	}
 
 	.section__inner {
 		@include breakpoint(large) {

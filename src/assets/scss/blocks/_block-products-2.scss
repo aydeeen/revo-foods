@@ -1,8 +1,4 @@
 .b-products-2 {
-	@include breakpoint(large) {
-		padding-top: rem-calc(100);
-	}
-
 	&__title {
 		@include heading-hero;
 

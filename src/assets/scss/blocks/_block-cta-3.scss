@@ -1,10 +1,7 @@
 .b-cta-3 {
-	background: no-repeat center center / cover;
+	@include section-padding-feature;
 
-	@include breakpoint(medium) {
-		padding-top: rem-calc(60);
-		padding-bottom: rem-calc(60);
-	}
+	background: no-repeat center center / cover;
 
 	&__title {
 		font-size: rem-calc(56);

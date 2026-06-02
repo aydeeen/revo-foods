@@ -1,9 +1,7 @@
 .b-contact {
-	background: no-repeat center center / cover;
+	@include section-padding-feature;
 
-	@include breakpoint(large) {
-		padding-top: rem-calc(100);
-	}
+	background: no-repeat center center / cover;
 
 	&__title {
 		@include heading;
