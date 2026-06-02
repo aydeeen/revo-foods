@@ -3,21 +3,29 @@
 	background-position: center;
 	background-size: cover;
 	color: $white;
+	display: flex;
+	align-items: center;
 	min-height: rem-calc(580);
-	padding-top: rem-calc(130);
-	padding-bottom: rem-calc(85);
+	padding-top: rem-calc(48);
+	padding-bottom: rem-calc(48);
 	position: relative;
+
+	@include breakpoint(medium) {
+		padding-top: rem-calc(56);
+		padding-bottom: rem-calc(56);
+	}
+
+	@include breakpoint(large) {
+		padding-top: rem-calc(60);
+		padding-bottom: rem-calc(60);
+	}
 
 	@include breakpoint(medium only) {
 		min-height: rem-calc(520);
-		padding-top: rem-calc(110);
-		padding-bottom: rem-calc(75);
 	}
 
 	@include breakpoint(small only) {
-		min-height: rem-calc(500);
-		padding-top: rem-calc(95);
-		padding-bottom: rem-calc(60);
+		min-height: rem-calc(480);
 	}
 
 	&::before {
@@ -37,6 +45,7 @@
 	.section__inner {
 		position: relative;
 		z-index: 1;
+		width: 100%;
 	}
 
 	&__content {
