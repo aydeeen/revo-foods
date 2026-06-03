@@ -38,7 +38,7 @@ $button_text = get_field( 'button_text' ) ?: false;
         <div class="cell large-6">
             <div class="b-image-left__image-wrapper">
                 <?php if ( $video_url ): ?>
-                    <video class="b-image-left__video" src="<?php echo esc_url( $video_url ); ?>" controls playsinline preload="metadata"></video>
+                    <video class="b-image-left__video" src="<?php echo esc_url( $video_url ); ?>" controls autoplay muted playsinline preload="auto"></video>
                 <?php else: ?>
                     <?php echo wp_get_attachment_image( $image, 'full', false ); ?>
                 <?php endif; ?>
