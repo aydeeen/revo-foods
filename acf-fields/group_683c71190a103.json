@@ -148,7 +148,7 @@
 			"label": "Benefits Image",
 			"name": "benefits_image",
 			"type": "image",
-			"instructions": "Optional image shown below the benefits title.",
+			"instructions": "Optional image shown below the full benefits section.",
 			"required": 0,
 			"conditional_logic": 0,
 			"wrapper": {
@@ -332,5 +332,5 @@
 	"hide_on_screen": "",
 	"active": 1,
 	"description": "",
-	"modified": 1780500600
+	"modified": 1780501200
 }
