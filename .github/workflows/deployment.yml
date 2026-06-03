@@ -11,7 +11,7 @@ env:
   STAGING_SSH_DEST_PATH: ${{secrets.STAGING_SSH_DEST_PATH}}
   STAGING_SSH_WP_ROOT: ${{secrets.STAGING_SSH_WP_ROOT}}
 
-  PROD_BRANCH: 'refs/heads/production'
+  PROD_BRANCH: 'refs/heads/main'
   PROD_DEPLOY_KEY: ${{secrets.PROD_DEPLOY_KEY}}
   PROD_SSH_USER_HOST: ${{secrets.PROD_SSH_USER_HOST}}
   PROD_SSH_DEST_PATH: ${{secrets.PROD_SSH_DEST_PATH}}
@@ -210,7 +210,7 @@ jobs:
 
   productionServerSetup:
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/production'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Set environment variables
