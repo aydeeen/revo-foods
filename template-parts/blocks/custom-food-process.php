@@ -23,13 +23,15 @@ $block    = new Block_Custom_Food_Process( $settings );
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
 
-$title          = get_field( 'title' ) ?: 'From Idea to Edible Experience';
-$description    = get_field( 'description' ) ?: '';
-$benefits_title = get_field( 'benefits_title' ) ?: 'Why Brands Work With Us';
-$benefits_video = get_field( 'benefits_video' ) ?: false;
-$video_url      = is_array( $benefits_video ) && ! empty( $benefits_video['url'] ) ? $benefits_video['url'] : $benefits_video;
-$closing_title  = get_field( 'closing_title' ) ?: 'Almost Anything Can Become Edible';
-$closing_text   = get_field( 'closing_text' ) ?: 'Our process allows us to develop highly customized edible concepts that go far beyond traditional catering. From typography and symbolic objects to playful cultural references and artistic installations, we work with brands and agencies to create food experiences that people instantly photograph, share and remember.<br><br>Whether you need 500 recurring customized pieces or a one-of-a-kind edible statement piece, we combine creativity, food technology and visual storytelling to bring ideas to life.';
+$title             = get_field( 'title' ) ?: 'From Idea to Edible Experience';
+$description       = get_field( 'description' ) ?: '';
+$benefits_title    = get_field( 'benefits_title' ) ?: 'Why Brands Work With Us';
+$benefits_image    = get_field( 'benefits_image' ) ?: false;
+$benefits_image_id = is_array( $benefits_image ) && ! empty( $benefits_image['ID'] ) ? $benefits_image['ID'] : $benefits_image;
+$benefits_video    = get_field( 'benefits_video' ) ?: false;
+$video_url         = is_array( $benefits_video ) && ! empty( $benefits_video['url'] ) ? $benefits_video['url'] : $benefits_video;
+$closing_title     = get_field( 'closing_title' ) ?: 'Almost Anything Can Become Edible';
+$closing_text      = get_field( 'closing_text' ) ?: 'Our process allows us to develop highly customized edible concepts that go far beyond traditional catering. From typography and symbolic objects to playful cultural references and artistic installations, we work with brands and agencies to create food experiences that people instantly photograph, share and remember.<br><br>Whether you need 500 recurring customized pieces or a one-of-a-kind edible statement piece, we combine creativity, food technology and visual storytelling to bring ideas to life.';
 
 $default_steps = [
 	[
@@ -128,7 +130,7 @@ $default_benefits = [
 
 				<?php if ( $video_url ): ?>
 					<div class="b-custom-food-process__video-wrapper">
-						<video src="<?php echo esc_url( $video_url ); ?>" controls playsinline preload="metadata"></video>
+						<video src="<?php echo esc_url( $video_url ); ?>" controls autoplay muted playsinline preload="auto"></video>
 					</div>
 				<?php endif; ?>
 
@@ -166,6 +168,12 @@ $default_benefits = [
 					<?php endif; ?>
 				</div>
 			</div>
+
+			<?php if ( $benefits_image_id ): ?>
+				<div class="b-custom-food-process__image-wrapper">
+					<?php echo wp_get_attachment_image( $benefits_image_id, 'large', false, [ 'loading' => 'lazy' ] ); ?>
+				</div>
+			<?php endif; ?>
 		</div>
 
 		<?php if ( $closing_title || $closing_text ): ?>
