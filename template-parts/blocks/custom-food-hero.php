@@ -27,16 +27,10 @@ $eyebrow          = get_field( 'eyebrow' ) ?: 'Customizable Food Experience';
 $title            = get_field( 'title' ) ?: 'If You Can Imagine It, We Can Make It Edible';
 $description      = get_field( 'description' ) ?: 'Turn your ideas into edible experiences through our customized creations for events, hospitality and brands: from personalized shapes and printed designs to large-scale interactive food experiences.';
 $trust_text       = get_field( 'trust_text' ) ?: 'Already chosen by trusted brands, such as A1.';
-$primary_button   = get_field( 'primary_button' ) ?: [
-	'url'    => '#contact',
-	'title'  => 'Request a Project',
-	'target' => '',
-];
-$secondary_button = get_field( 'secondary_button' ) ?: [
-	'url'    => '#contact',
-	'title'  => 'Book a Live Printing Show',
-	'target' => '',
-];
+$primary_button       = get_field( 'primary_button' ) ?: false;
+$secondary_button     = get_field( 'secondary_button' ) ?: false;
+$has_primary_button   = is_array( $primary_button ) && ! empty( $primary_button['url'] );
+$has_secondary_button = is_array( $secondary_button ) && ! empty( $secondary_button['url'] );
 $image            = get_field( 'image' ) ?: false;
 $image_url        = $image ? wp_get_attachment_image_url( $image, 'full' ) : false;
 $style            = $image_url ? ' style="background-image: url(' . esc_url( $image_url ) . ');"' : '';
@@ -62,17 +56,17 @@ $style            = $image_url ? ' style="background-image: url(' . esc_url( $im
 					<p class="b-custom-food-hero__trust"><?php echo wp_kses_post( $trust_text ); ?></p>
 				<?php endif; ?>
 
-				<?php if ( $primary_button || $secondary_button ): ?>
+				<?php if ( $has_primary_button || $has_secondary_button ): ?>
 					<div class="b-custom-food-hero__buttons">
-						<?php if ( $primary_button ): ?>
-							<a href="<?php echo esc_url( $primary_button['url'] ); ?>" target="<?php echo esc_attr( $primary_button['target'] ? $primary_button['target'] : '_self' ); ?>" class="button b-custom-food-hero__button">
-								<?php echo esc_html( $primary_button['title'] ); ?>
+						<?php if ( $has_primary_button ): ?>
+							<a href="<?php echo esc_url( $primary_button['url'] ); ?>" target="<?php echo esc_attr( ( $primary_button['target'] ?? '' ) ?: '_self' ); ?>" class="button b-custom-food-hero__button">
+								<?php echo esc_html( ( $primary_button['title'] ?? '' ) ?: 'Learn More' ); ?>
 							</a>
 						<?php endif; ?>
 
-						<?php if ( $secondary_button ): ?>
-							<a href="<?php echo esc_url( $secondary_button['url'] ); ?>" target="<?php echo esc_attr( $secondary_button['target'] ? $secondary_button['target'] : '_self' ); ?>" class="button b-custom-food-hero__button b-custom-food-hero__button--secondary">
-								<?php echo esc_html( $secondary_button['title'] ); ?>
+						<?php if ( $has_secondary_button ): ?>
+							<a href="<?php echo esc_url( $secondary_button['url'] ); ?>" target="<?php echo esc_attr( ( $secondary_button['target'] ?? '' ) ?: '_self' ); ?>" class="button b-custom-food-hero__button b-custom-food-hero__button--secondary">
+								<?php echo esc_html( ( $secondary_button['title'] ?? '' ) ?: 'Learn More' ); ?>
 							</a>
 						<?php endif; ?>
 					</div>
