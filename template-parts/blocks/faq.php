@@ -31,8 +31,13 @@ $description = get_field( 'description' ) ?: false;
    <div class="section__inner grid-x grid-padding-x grid-padding-y">
 
 	   <div class="cell">
-         <h1 class="b-faq__title"><?php echo esc_html( $title ); ?></h1>
-         <p class="b-faq__description"><?php echo wp_kses_post( $description ); ?></p>
+         <?php if ( $title ): ?>
+            <h1 class="b-faq__title"><?php echo esc_html( $title ); ?></h1>
+         <?php endif; ?>
+
+         <?php if ( $description ): ?>
+            <p class="b-faq__description"><?php echo wp_kses_post( $description ); ?></p>
+         <?php endif; ?>
 	   </div>
 
 	   <div class="cell">
@@ -41,7 +46,9 @@ $description = get_field( 'description' ) ?: false;
                $title = get_sub_field( 'title' ) ?: false;
 					?>
                   <div class="b-faq__section">
-                     <h3 class="b-faq__section-title"><?php echo esc_html( $title ); ?></h3>
+                     <?php if ( $title ): ?>
+                        <h3 class="b-faq__section-title"><?php echo esc_html( $title ); ?></h3>
+                     <?php endif; ?>
                      <ul class="accordion b-faq__accordion" data-accordion data-allow-all-closed="true">
                         <?php if ( have_rows( 'items' ) ): ?>
                            <?php while ( have_rows( 'items' ) ): the_row();

@@ -76,7 +76,7 @@ $default_benefits = [
 ];
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-custom-food-process <?php echo esc_attr( $class_names ); ?>">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-custom-food-process <?php echo esc_attr( $class_names ); ?><?php echo $benefits_image_id ? ' b-custom-food-process--has-image' : ''; ?>">
 	<div class="section__inner grid-x grid-padding-x grid-padding-y">
 		<div class="cell large-8 large-offset-2">
 			<div class="b-custom-food-process__header">
@@ -171,7 +171,7 @@ $default_benefits = [
 
 			<?php if ( $benefits_image_id ): ?>
 				<div class="b-custom-food-process__image-wrapper">
-					<?php echo wp_get_attachment_image( $benefits_image_id, 'large', false, [ 'loading' => 'lazy' ] ); ?>
+					<?php echo wp_get_attachment_image( $benefits_image_id, 'full', false, [ 'loading' => 'lazy' ] ); ?>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -184,7 +184,7 @@ $default_benefits = [
 					<?php endif; ?>
 
 					<?php if ( $closing_text ): ?>
-						<p><?php echo wp_kses_post( $closing_text ); ?></p>
+						<div class="b-custom-food-process__closing-text"><?php echo wp_kses_post( $closing_text ); ?></div>
 					<?php endif; ?>
 				</div>
 			</div>

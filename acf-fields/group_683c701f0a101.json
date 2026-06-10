@@ -35,7 +35,7 @@
 				"class": "",
 				"id": ""
 			},
-			"default_value": "If You Can Imagine It, We Can Make It Edible",
+			"default_value": "A Food Experience you will not forget",
 			"placeholder": "",
 			"prepend": "",
 			"append": "",
@@ -136,6 +136,71 @@
 			"max_size": "",
 			"mime_types": "",
 			"translations": "copy_once"
+		},
+		{
+			"key": "field_683c701f1a108",
+			"label": "Intro Title",
+			"name": "intro_title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "More Than Catering - A Branded Food Experience",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c701f1a109",
+			"label": "Intro Text",
+			"name": "intro_text",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "We create customized food concepts designed to surprise guests and make brands memorable. Whether you need recurring production of creative shapes, edible logo printing or a live interactive food activation, we help turn food into an experience people talk about.\r\n\r\nOur products are fully plant-based, visually striking and developed for premium events, hospitality and modern brand activations across Europe.\r\n\r\nEvery project is developed with creativity, sustainability, and guest engagement at its core.",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "wpautop",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c701f1a110",
+			"label": "Intro Image",
+			"name": "intro_image",
+			"type": "image",
+			"instructions": "Optional image shown below the intro text.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
 		}
 	],
 	"location": [
@@ -155,5 +220,5 @@
 	"hide_on_screen": "",
 	"active": 1,
 	"description": "",
-	"modified": 1780198800
+	"modified": 1781020800
 }

@@ -1,21 +1,23 @@
 .b-custom-food-hero {
-	@include section-padding-feature;
-
 	background-color: $primary;
 	background-position: center;
 	background-size: cover;
 	color: $white;
 	display: flex;
 	align-items: center;
-	min-height: rem-calc(580);
+	min-height: rem-calc(684);
+	padding-top: rem-calc(80);
+	padding-bottom: rem-calc(80);
 	position: relative;
 
 	@include breakpoint(medium only) {
-		min-height: rem-calc(520);
+		min-height: rem-calc(600);
 	}
 
 	@include breakpoint(small only) {
-		min-height: rem-calc(480);
+		min-height: rem-calc(520);
+		padding-top: rem-calc(56);
+		padding-bottom: rem-calc(56);
 	}
 
 	&::before {
@@ -27,7 +29,7 @@
 
 	&:not(.b-custom-food-hero--has-image)::before {
 		background:
-			linear-gradient(90deg, rgba($primary, 1) 0%, rgba($primary, 0.92) 100%),
+			linear-gradient(90deg, rgba($primary, 1) 0%, rgba($primary, 0.88) 56%, rgba($primary, 0.72) 100%),
 			linear-gradient(135deg, rgba($jade, 0.18) 0, rgba($jade, 0.18) 25%, transparent 25%, transparent 50%, rgba($orange, 0.2) 50%, rgba($orange, 0.2) 75%, transparent 75%);
 		background-size: auto, rem-calc(72) rem-calc(72);
 	}
@@ -61,7 +63,7 @@
 
 		line-height: 0.95;
 		margin-bottom: rem-calc(24);
-		max-width: rem-calc(840);
+		max-width: rem-calc(820);
 
 		@include breakpoint(small only) {
 			line-height: 1;
@@ -73,6 +75,7 @@
 
 		color: $white;
 		font-size: rem-calc(21);
+		font-weight: 400;
 		max-width: rem-calc(700);
 		margin-bottom: 0;
 
@@ -114,6 +117,64 @@
 				background-color: $jade;
 				color: $primary;
 			}
+		}
+	}
+}
+
+.b-custom-food-intro {
+	background-color: $white;
+	color: $primary;
+	padding-top: rem-calc(72);
+	padding-bottom: rem-calc(72);
+
+	@include breakpoint(small only) {
+		padding-top: rem-calc(48);
+		padding-bottom: rem-calc(48);
+	}
+
+	&__title {
+		@include heading;
+
+		line-height: 1.14;
+		margin-bottom: 0;
+		max-width: rem-calc(570);
+
+		@include breakpoint(medium down) {
+			margin-bottom: rem-calc(26);
+		}
+	}
+
+	&__text {
+		max-width: rem-calc(550);
+
+		p {
+			@include pharagraph;
+
+			color: $primary;
+			font-weight: 400;
+			margin-bottom: rem-calc(27);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__media {
+		border-radius: rem-calc(8);
+		margin-top: rem-calc(64);
+		overflow: hidden;
+
+		@include breakpoint(small only) {
+			margin-top: rem-calc(40);
+		}
+
+		img {
+			aspect-ratio: 1170 / 658;
+			display: block;
+			height: auto;
+			object-fit: cover;
+			width: 100%;
 		}
 	}
 }
