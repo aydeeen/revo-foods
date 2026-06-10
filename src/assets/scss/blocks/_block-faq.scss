@@ -57,18 +57,17 @@
 			font-weight: 500;
 			gap: rem-calc(10);
 			min-height: rem-calc(64);
-			padding: rem-calc(20) rem-calc(50) rem-calc(20) rem-calc(16);
+			padding: rem-calc(20) rem-calc(20) rem-calc(20) rem-calc(16);
 			position: relative;
 
 			&::before {
 				content: '';
 				background: url('../images/accordion-arrow-down.png') center / contain no-repeat;
 				border-radius: 0;
+				flex: 0 0 rem-calc(24);
 				height: rem-calc(14);
-				position: absolute;
-				right: rem-calc(20);
-				top: 50%;
-				transform: translateY(-50%);
+				margin-left: auto;
+				order: 2;
 				width: rem-calc(24);
 			}
 
