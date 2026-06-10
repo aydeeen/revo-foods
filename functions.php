@@ -12,8 +12,16 @@
  */
 
 // composer autoload.
-$foundationpress_autoload = __DIR__ . '/vendor/autoload.php';
-if ( file_exists( $foundationpress_autoload ) ) {
+$foundationpress_autoload        = __DIR__ . '/vendor/autoload.php';
+$foundationpress_autoload_real   = __DIR__ . '/vendor/composer/autoload_real.php';
+$foundationpress_autoload_static = __DIR__ . '/vendor/composer/autoload_static.php';
+$foundationpress_class_loader    = __DIR__ . '/vendor/composer/ClassLoader.php';
+if (
+	file_exists( $foundationpress_autoload )
+	&& file_exists( $foundationpress_autoload_real )
+	&& file_exists( $foundationpress_autoload_static )
+	&& file_exists( $foundationpress_class_loader )
+) {
 	require_once $foundationpress_autoload;
 }
 
