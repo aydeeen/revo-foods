@@ -34,11 +34,6 @@ $has_secondary_button = is_array( $secondary_button ) && ! empty( $secondary_but
 $image            = get_field( 'image' ) ?: false;
 $image_url        = $image ? wp_get_attachment_image_url( $image, 'full' ) : false;
 $style            = $image_url ? ' style="background-image: url(' . esc_url( $image_url ) . ');"' : '';
-$intro_title      = get_field( 'intro_title' ) ?: 'More Than Catering - A Branded Food Experience';
-$intro_text       = get_field( 'intro_text' ) ?: '<p>We create customized food concepts designed to surprise guests and make brands memorable. Whether you need recurring production of creative shapes, edible logo printing or a live interactive food activation, we help turn food into an experience people talk about.</p><p>Our products are fully plant-based, visually striking and developed for premium events, hospitality and modern brand activations across Europe.</p><p>Every project is developed with creativity, sustainability, and guest engagement at its core.</p>';
-$intro_image      = get_field( 'intro_image' ) ?: false;
-$intro_image_id   = is_array( $intro_image ) && ! empty( $intro_image['ID'] ) ? $intro_image['ID'] : $intro_image;
-$has_intro        = ! empty( $intro_title ) || ! empty( $intro_text ) || ! empty( $intro_image_id );
 ?>
 
 <section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-custom-food-hero <?php echo esc_attr( $class_names ); ?><?php echo $image_url ? ' b-custom-food-hero--has-image' : ''; ?>"<?php echo $style; ?>>
@@ -80,32 +75,6 @@ $has_intro        = ! empty( $intro_title ) || ! empty( $intro_text ) || ! empty
 		</div>
 	</div>
 </section>
-
-<?php if ( $has_intro ): ?>
-	<section class="section section--full b-custom-food-intro">
-		<div class="section__inner grid-x grid-padding-x grid-padding-y">
-			<div class="cell large-6">
-				<?php if ( $intro_title ): ?>
-					<h2 class="b-custom-food-intro__title"><?php echo esc_html( $intro_title ); ?></h2>
-				<?php endif; ?>
-			</div>
-
-			<div class="cell large-6">
-				<?php if ( $intro_text ): ?>
-					<div class="b-custom-food-intro__text"><?php echo wp_kses_post( $intro_text ); ?></div>
-				<?php endif; ?>
-			</div>
-
-			<?php if ( $intro_image_id ): ?>
-				<div class="cell">
-					<div class="b-custom-food-intro__media">
-						<?php echo wp_get_attachment_image( $intro_image_id, 'full', false, [ 'loading' => 'lazy' ] ); ?>
-					</div>
-				</div>
-			<?php endif; ?>
-		</div>
-	</section>
-<?php endif; ?>
 
 <?php
 // important: reset $block variable to initial value.

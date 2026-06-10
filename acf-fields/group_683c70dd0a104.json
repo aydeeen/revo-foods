@@ -1,0 +1,109 @@
+{
+	"key": "group_683c70dd0a104",
+	"title": "Block: Custom Food Intro",
+	"fields": [
+		{
+			"key": "field_683c70dd1a101",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "More Than Catering - A Branded Food Experience",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": "",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c70dd1a102",
+			"label": "Text",
+			"name": "text",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "We create customized food concepts designed to surprise guests and make brands memorable. Whether you need recurring production of creative shapes, edible logo printing or a live interactive food activation, we help turn food into an experience people talk about.\r\n\r\nOur products are fully plant-based, visually striking and developed for premium events, hospitality and modern brand activations across Europe.\r\n\r\nEvery project is developed with creativity, sustainability, and guest engagement at its core.",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "wpautop",
+			"translations": "translate"
+		},
+		{
+			"key": "field_683c70dd1a103",
+			"label": "Image",
+			"name": "image",
+			"type": "image",
+			"instructions": "Optional image shown below the intro text.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": "",
+			"translations": "copy_once"
+		},
+		{
+			"key": "field_683c70dd1a104",
+			"label": "Video",
+			"name": "video",
+			"type": "file",
+			"instructions": "Optional uploaded video. If set, it displays instead of the image.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"library": "all",
+			"min_size": "",
+			"max_size": "",
+			"mime_types": "mp4,webm,ogg",
+			"translations": "copy_once"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/custom-food-intro"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1781107200
+}
