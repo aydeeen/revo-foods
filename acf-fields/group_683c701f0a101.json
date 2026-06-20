@@ -43,46 +43,6 @@
 			"translations": "translate"
 		},
 		{
-			"key": "field_683c701f1a103",
-			"label": "Description",
-			"name": "description",
-			"type": "textarea",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "",
-				"class": "",
-				"id": ""
-			},
-			"default_value": "Turn your ideas into edible experiences through our customized creations for events, hospitality and brands: from personalized shapes and printed designs to large-scale interactive food experiences.",
-			"placeholder": "",
-			"maxlength": "",
-			"rows": "",
-			"new_lines": "br",
-			"translations": "translate"
-		},
-		{
-			"key": "field_683c701f1a107",
-			"label": "Trust Text",
-			"name": "trust_text",
-			"type": "text",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "",
-				"class": "",
-				"id": ""
-			},
-			"default_value": "Already chosen by trusted brands, such as A1.",
-			"placeholder": "",
-			"prepend": "",
-			"append": "",
-			"maxlength": "",
-			"translations": "translate"
-		},
-		{
 			"key": "field_683c701f1a104",
 			"label": "Primary Button",
 			"name": "primary_button",
@@ -155,5 +115,5 @@
 	"hide_on_screen": "",
 	"active": 1,
 	"description": "",
-	"modified": 1781107200
+	"modified": 1781913600
 }

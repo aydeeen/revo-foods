@@ -1,119 +1,143 @@
 .b-custom-food-hero {
-	background-color: $primary;
-	background-position: center;
+	background-color: $black;
+	background-position: center 15%;
 	background-size: cover;
 	color: $white;
-	display: flex;
-	align-items: center;
-	min-height: rem-calc(684);
-	padding-top: rem-calc(80);
-	padding-bottom: rem-calc(80);
+	min-height: clamp(#{rem-calc(700)}, 52.35vw, #{rem-calc(1005)});
+	overflow: hidden;
+	padding: clamp(#{rem-calc(96)}, 7.08vw, #{rem-calc(136)}) 0 0;
 	position: relative;
+	text-align: center;
 
 	@include breakpoint(medium only) {
-		min-height: rem-calc(600);
+		background-position: center top;
+		min-height: rem-calc(720);
+		padding-top: rem-calc(104);
 	}
 
 	@include breakpoint(small only) {
-		min-height: rem-calc(520);
-		padding-top: rem-calc(56);
-		padding-bottom: rem-calc(56);
+		background-position: center top;
+		min-height: rem-calc(640);
+		padding-top: rem-calc(88);
 	}
 
 	&::before {
 		content: '';
 		position: absolute;
-		inset: 0;
-		background: linear-gradient(90deg, rgba($primary, 0.94) 0%, rgba($primary, 0.8) 48%, rgba($primary, 0.36) 100%);
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 67.1%;
+		background: linear-gradient(180deg, rgba($black, 0.98) 0%, rgba($black, 0.74) 37%, rgba($black, 0) 100%);
 	}
 
-	&:not(.b-custom-food-hero--has-image)::before {
+	&:not(.b-custom-food-hero--has-image) {
 		background:
-			linear-gradient(90deg, rgba($primary, 1) 0%, rgba($primary, 0.88) 56%, rgba($primary, 0.72) 100%),
-			linear-gradient(135deg, rgba($jade, 0.18) 0, rgba($jade, 0.18) 25%, transparent 25%, transparent 50%, rgba($orange, 0.2) 50%, rgba($orange, 0.2) 75%, transparent 75%);
-		background-size: auto, rem-calc(72) rem-calc(72);
+			radial-gradient(circle at 50% 76%, rgba($orange, 0.26) 0, rgba($orange, 0) 36%),
+			linear-gradient(180deg, $black 0%, $primary 100%);
 	}
 
-	.section__inner {
+	&__inner {
+		display: flex;
+		justify-content: center;
+		padding-right: rem-calc(20);
+		padding-left: rem-calc(20);
 		position: relative;
-		z-index: 1;
 		width: 100%;
+		z-index: 1;
 	}
 
 	&__content {
-		max-width: rem-calc(760);
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		max-width: rem-calc(892);
+		width: 100%;
 	}
 
 	&__eyebrow {
+		color: $jade;
 		font-family: 'Asap Condensed', sans-serif;
-		font-size: rem-calc(20);
+		font-size: clamp(#{rem-calc(16)}, 1.04vw, #{rem-calc(20)});
 		font-weight: 700;
 		letter-spacing: 0;
 		margin-bottom: rem-calc(18);
 		text-transform: uppercase;
-		color: $jade;
 
 		@include breakpoint(small only) {
-			font-size: rem-calc(17);
+			margin-bottom: rem-calc(12);
 		}
 	}
 
 	&__title {
-		@include heading-hero;
-
-		line-height: 0.95;
-		margin-bottom: rem-calc(24);
-		max-width: rem-calc(820);
+		color: $white;
+		font-family: 'Asap Condensed', sans-serif;
+		font-size: clamp(#{rem-calc(52)}, 5.21vw, #{rem-calc(100)});
+		font-weight: 700;
+		letter-spacing: 0;
+		line-height: 0.96;
+		margin-bottom: 0;
+		max-width: rem-calc(892);
 
 		@include breakpoint(small only) {
 			line-height: 1;
 		}
 	}
 
-	&__description {
-		@include pharagraph;
-
-		color: $white;
-		font-size: rem-calc(21);
-		font-weight: 400;
-		max-width: rem-calc(700);
-		margin-bottom: 0;
-
-		@include breakpoint(small only) {
-			font-size: rem-calc(17);
-		}
-	}
-
-	&__trust {
-		color: $jade;
-		font-size: rem-calc(18);
-		font-weight: 700;
-		margin-top: rem-calc(18);
-		margin-bottom: 0;
-	}
-
 	&__buttons {
 		display: flex;
 		flex-wrap: wrap;
 		gap: rem-calc(16);
-		margin-top: rem-calc(36);
+		justify-content: center;
+		padding-top: rem-calc(18);
+
+		@include breakpoint(small only) {
+			align-items: center;
+			flex-direction: column;
+			width: 100%;
+		}
 	}
 
 	&__button {
-		@include button-normal;
-
+		align-items: center;
+		background-color: $orange;
+		border: rem-calc(1) solid transparent;
+		border-radius: rem-calc(32);
+		color: $white;
+		display: inline-flex;
+		font-family: 'Asap Condensed', sans-serif;
+		font-size: rem-calc(18);
+		font-weight: 700;
+		height: rem-calc(56);
+		justify-content: center;
+		letter-spacing: 0;
+		line-height: 1.2;
 		margin-bottom: 0;
+		padding: rem-calc(15) rem-calc(37);
+		transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+		white-space: nowrap;
 		width: auto;
-		min-width: rem-calc(190);
-		padding-left: rem-calc(24);
-		padding-right: rem-calc(24);
+
+		&:hover,
+		&:focus {
+			background-color: $red;
+			color: $white;
+		}
+
+		@include breakpoint(small only) {
+			max-width: rem-calc(320);
+			width: 100%;
+		}
 
 		&--secondary {
 			background-color: transparent;
 			border: rem-calc(2) solid $jade;
 			color: $white;
+			padding-right: rem-calc(24);
+			padding-left: rem-calc(24);
 
-			&:hover {
+			&:hover,
+			&:focus {
 				background-color: $jade;
 				color: $primary;
 			}
