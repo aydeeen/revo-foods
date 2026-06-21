@@ -50,7 +50,7 @@ $style            = $image_url ? ' style="background-image: url(' . esc_url( $im
 			<?php endif; ?>
 
 			<?php if ( $title ): ?>
-				<h1 class="b-custom-food-hero__title"><?php echo esc_html( $title ); ?></h1>
+				<h1 class="b-custom-food-hero__title"><?php echo wp_kses_post( $title ); ?></h1>
 			<?php endif; ?>
 
 			<?php if ( $has_primary_button || $has_secondary_button ): ?>

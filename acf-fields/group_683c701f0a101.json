@@ -26,7 +26,7 @@
 			"key": "field_683c701f1a102",
 			"label": "Title",
 			"name": "title",
-			"type": "text",
+			"type": "textarea",
 			"instructions": "",
 			"required": 0,
 			"conditional_logic": 0,
@@ -37,9 +37,9 @@
 			},
 			"default_value": "A Food Experience you will not forget",
 			"placeholder": "",
-			"prepend": "",
-			"append": "",
 			"maxlength": "",
+			"rows": "",
+			"new_lines": "br",
 			"translations": "translate"
 		},
 		{
@@ -115,5 +115,5 @@
 	"hide_on_screen": "",
 	"active": 1,
 	"description": "",
-	"modified": 1781913600
+	"modified": 1782000000
 }
