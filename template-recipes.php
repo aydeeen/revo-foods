@@ -43,13 +43,9 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                     <ul class="tabs recipes__tabs" data-tabs id="recipes">
                         <li class="tabs-title is-active"><a href="#all" aria-selected="true"><?php echo esc_html_e( 'All', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#salmon"><?php echo esc_html_e( 'Salmon', 'foundationpress' ); ?></a></li>
-                        <li class="tabs-title"><a href="#salmon-spread"><?php echo esc_html_e( 'Salmon Spread', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#kraken"><?php echo esc_html_e( 'Kraken', 'foundationpress' ); ?></a></li>
-                        <li class="tabs-title"><a href="#tuna"><?php echo esc_html_e( 'Tuna', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#gravlax"><?php echo esc_html_e( 'Gravlax', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#the-filet"><?php echo esc_html_e( 'The Filet', 'foundationpress' ); ?></a></li>
-                        <li class="tabs-title"><a href="#the-filet-asian-fusion-style"><?php echo esc_html_e( 'The Filet - Asian Fusion Style', 'foundationpress' ); ?></a></li>
-                        <li class="tabs-title"><a href="#the-filet-pink-pepper-and-lemon"><?php echo esc_html_e( 'The Filet - Pink Pepper & Lemon', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#el-blanco"><?php echo esc_html_e( 'El Blanco', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#el-pollo"><?php echo esc_html_e( 'EL POLLO', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#the-prime-cut"><?php echo esc_html_e( 'The Prime Cut', 'foundationpress' ); ?></a></li>
@@ -59,7 +55,9 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                             <div class="recipes__recipes-container">
                                 <?php while ( have_posts() ):
                                     the_post();
-                                    get_template_part( 'template-parts/recipe-short' );
+                                    if ( ! in_category( [ 'salmon-spread', 'tuna' ] ) ) {
+                                        get_template_part( 'template-parts/recipe-short' );
+                                    }
                                 endwhile; ?>
                             </div>
                         </div>
@@ -73,16 +71,6 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                                 endwhile; ?>
                             </div>                  
                         </div>
-                        <div class="tabs-panel padding-0" id="salmon-spread">
-                            <div class="recipes__recipes-container">
-                                <?php while ( have_posts() ):
-                                    the_post();
-                                    if ( in_category( 'salmon-spread' ) ) {
-                                        get_template_part( 'template-parts/recipe-short' );
-                                    }
-                                endwhile; ?>  
-                            </div>                  
-                        </div>
                         <div class="tabs-panel padding-0" id="kraken">
                             <div class="recipes__recipes-container">
                                 <?php while ( have_posts() ):
@@ -92,16 +80,6 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                                     }
                                 endwhile; ?>
                             </div>                  
-                        </div>
-                        <div class="tabs-panel padding-0" id="tuna">
-                            <div class="recipes__recipes-container">
-                                <?php while ( have_posts() ):
-                                the_post();
-                                    if ( in_category( 'Tuna' ) ) {
-                                        get_template_part( 'template-parts/recipe-short' );
-                                    }
-                                endwhile; ?>  
-                            </div>                
                         </div>
                         <div class="tabs-panel padding-0" id="gravlax">
                             <div class="recipes__recipes-container">
@@ -117,27 +95,7 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                             <div class="recipes__recipes-container">
                                 <?php while ( have_posts() ):
                                     the_post();
-                                    if ( in_category( 'the-filet' ) ) {
-                                        get_template_part( 'template-parts/recipe-short' );
-                                    }
-                                endwhile; ?>   
-                            </div>               
-                        </div>
-                        <div class="tabs-panel padding-0" id="the-filet-asian-fusion-style">
-                            <div class="recipes__recipes-container">
-                                <?php while ( have_posts() ):
-                                    the_post();
-                                    if ( in_category( 'the-filet-asian-fusion-style' ) ) {
-                                        get_template_part( 'template-parts/recipe-short' );
-                                    }
-                                endwhile; ?>   
-                            </div>               
-                        </div>
-                        <div class="tabs-panel padding-0" id="the-filet-pink-pepper-and-lemon">
-                            <div class="recipes__recipes-container">
-                                <?php while ( have_posts() ):
-                                    the_post();
-                                    if ( in_category( 'the-filet-pink-pepper-and-lemon' ) ) {
+                                    if ( in_category( [ 'the-filet', 'the-filet-asian-fusion-style', 'the-filet-pink-pepper-and-lemon' ] ) ) {
                                         get_template_part( 'template-parts/recipe-short' );
                                     }
                                 endwhile; ?>   
