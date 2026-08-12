@@ -51,6 +51,7 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                         <li class="tabs-title"><a href="#the-filet-asian-fusion-style"><?php echo esc_html_e( 'The Filet - Asian Fusion Style', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#the-filet-pink-pepper-and-lemon"><?php echo esc_html_e( 'The Filet - Pink Pepper & Lemon', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#el-blanco"><?php echo esc_html_e( 'El Blanco', 'foundationpress' ); ?></a></li>
+                        <li class="tabs-title"><a href="#el-pollo"><?php echo esc_html_e( 'EL POLLO', 'foundationpress' ); ?></a></li>
                         <li class="tabs-title"><a href="#the-prime-cut"><?php echo esc_html_e( 'The Prime Cut', 'foundationpress' ); ?></a></li>
                     </ul>
                     <div class="tabs-content recipes__tabs-content" data-tabs-content="recipes">
@@ -151,6 +152,16 @@ $logo               = get_field( 'footer_logo', 'option' ) ?: false;
                                     }
                                 endwhile; ?>   
                             </div>               
+                        </div>
+                        <div class="tabs-panel padding-0" id="el-pollo">
+                            <div class="recipes__recipes-container">
+                                <?php while ( have_posts() ):
+                                    the_post();
+                                    if ( in_category( 'el-pollo' ) ) {
+                                        get_template_part( 'template-parts/recipe-short' );
+                                    }
+                                endwhile; ?>
+                            </div>
                         </div>
                         <div class="tabs-panel padding-0" id="the-prime-cut">
                             <div class="recipes__recipes-container">

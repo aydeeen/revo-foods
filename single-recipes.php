@@ -68,6 +68,11 @@ $cook_time                      = get_field( 'cook_time' ) ?: false;
                   'img' => 'el-blanco.png',
                   'alt' => 'El Blanco'
                ],
+               'el-pollo' => [
+                  'bg' => '#F6DBC4',
+                  'img' => '',
+                  'alt' => 'EL POLLO'
+               ],
                'the-filet' => [
                   'bg' => '#E8F4FC',
                   'img' => 'the-filet.png',
@@ -109,9 +114,18 @@ $cook_time                      = get_field( 'cook_time' ) ?: false;
                   break;
                }
             }
+
+            $cat_image_url = '';
+            if (!empty($cat_data['img'])) {
+               $cat_image_url = get_template_directory_uri() . '/dist/assets/images/' . $cat_data['img'];
+            } else if (!empty($cat[0]->description) && preg_match('/<img[^>]+src=["\']([^"\']+)["\']/', $cat[0]->description, $matches)) {
+               $cat_image_url = $matches[1];
+            }
          ?>
          <div class="single-recipe__box-2-bottom-part" style="background: <?php echo esc_attr($cat_data['bg']); ?>;">
-            <img src="<?php echo esc_url( get_template_directory_uri() . '/dist/assets/images/' . $cat_data['img'] ); ?>" alt="<?php echo esc_attr($cat_data['alt']); ?>" style="max-height: 118px; margin-right: 20px;">
+            <?php if ($cat_image_url) : ?>
+               <img src="<?php echo esc_url( $cat_image_url ); ?>" alt="<?php echo esc_attr($cat_data['alt']); ?>" style="max-height: 118px; margin-right: 20px;">
+            <?php endif; ?>
             <div class="content">
                <span><?php pll_e( 'the recipe features' ); ?></span>
                <span><?php echo isset($cat[0]->cat_name) ? esc_html($cat[0]->cat_name) : ''; ?></span>
