@@ -87,12 +87,26 @@
 			}
 		}
 
-		svg {
+		&__close {
 			position: absolute;
 			right: rem-calc(20);
-			cursor: pointer;
 			top: 50%;
 			transform: translateY(-50%);
+			width: rem-calc(36);
+			height: rem-calc(36);
+			padding: rem-calc(9);
+			border: 0;
+			background: transparent;
+			cursor: pointer;
+
+			svg {
+				display: block;
+			}
+
+			&:focus-visible {
+				outline: 2px solid $white;
+				outline-offset: 2px;
+			}
 		}
 	}
 }

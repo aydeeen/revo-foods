@@ -26,7 +26,7 @@ $class_names = $block->get_class_names();
 $bg_image = get_field( 'bg_image' ) ?: false;
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-home-slider <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-home-slider <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>" aria-label="<?php esc_attr_e( 'Featured content', 'foundationpress' ); ?>">
 	<div class="section__inner grid-x grid-padding-x grid-padding-y">
 		<div class="cell">
 			<div class="b-home-slider__slider">
@@ -44,14 +44,16 @@ $bg_image = get_field( 'bg_image' ) ?: false;
 										<div class="b-home-slider__content">
 											<h4 class="b-home-slider__subtitle"><?php echo esc_html( $subtitle ); ?></h4>
 											<h2 class="b-home-slider__title"><?php echo wp_kses_post( $title ); ?></h2>
-                                 <a href="<?php echo esc_url( $button ); ?>" class="b-home-slider__link">
-                                    <?php echo esc_html( $button_text ); ?>
-                                 </a>
+								 <?php if ( $button && $button_text ) : ?>
+									<a href="<?php echo esc_url( $button ); ?>" class="b-home-slider__link">
+										<?php echo esc_html( $button_text ); ?>
+									</a>
+								 <?php endif; ?>
 										</div>
 									</div>
 									<div class="cell medium-6">
 										<div class="b-home-slider__images-wrapper">
-                                 <img src="<?php fopr_assets_uri(); ?>/images/patterns-box.jpg" alt="Patterns">
+								 <img src="<?php fopr_assets_uri(); ?>/images/patterns-box.jpg" alt="" loading="lazy" decoding="async">
 											<?php echo wp_get_attachment_image( $image, 'full', false ); ?>
 										</div>
 									</div>

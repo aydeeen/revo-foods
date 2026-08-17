@@ -47,27 +47,11 @@ function foundationpress_recursive_require_dir( $path ) {
 
 foundationpress_recursive_require_dir( get_template_directory() . '/inc' );
 
-// Log unexpected flushes.
-add_action(
-	'init',
-	function() {
-		if ( did_action( 'init' ) === 1 && function_exists( 'flush_rewrite_rules' ) ) {
-			if ( isset( $GLOBALS['wp_rewrite'] ) && null === $GLOBALS['wp_rewrite']->rules ) {
-				error_log( 'Rewrites flushed on ' . current_time( 'mysql' ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
-			}
-		}
-	}
-);
-
-// Force Polylang rewrite rules every load (safe version).
-add_action(
-	'init',
-	function() {
-		if ( function_exists( 'PLL' ) ) {
-			$pll = PLL();
-			if ( isset( $pll->model ) && isset( $pll->model->rewrite ) ) {
-				$pll->model->rewrite->init();
-			}
-		}
-	}
-);
+/**
+ * Prevent Polylang's internal language taxonomy from claiming every
+ * single-segment URL (for example /recipes/ or /faq/).
+ *
+ * Polylang normally suppresses these rules itself, but the installed legacy
+ * version can miss the filter when rewrite rules are regenerated.
+ */
+add_filter( 'language_rewrite_rules', '__return_empty_array', 1 );

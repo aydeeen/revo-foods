@@ -225,16 +225,23 @@ endif;
 
 
 /**
- * Get mobile menu ID
+ * Return the mobile menu ID.
+ *
+ * @return string
+ */
+if ( ! function_exists( 'foundationpress_get_mobile_menu_id' ) ) :
+	function foundationpress_get_mobile_menu_id() {
+		return 'offcanvas' === get_theme_mod( 'foundationpress_mobile_menu_layout' ) ? 'off-canvas-menu' : 'mobile-menu';
+	}
+endif;
+
+/**
+ * Output the mobile menu ID.
  */
 
 if ( ! function_exists( 'foundationpress_mobile_menu_id' ) ) :
 	function foundationpress_mobile_menu_id() {
-		if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) {
-			echo 'off-canvas-menu';
-		} else {
-			echo 'mobile-menu';
-		}
+		echo esc_attr( foundationpress_get_mobile_menu_id() );
 	}
 endif;
 
@@ -244,7 +251,7 @@ endif;
 
 if ( ! function_exists( 'foundationpress_title_bar_responsive_toggle' ) ) :
 	function foundationpress_title_bar_responsive_toggle() {
-		if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) {
+		if ( ! get_theme_mod( 'foundationpress_mobile_menu_layout' ) || get_theme_mod( 'foundationpress_mobile_menu_layout' ) === 'topbar' ) {
 			echo 'data-responsive-toggle="mobile-menu"';
 		}
 	}

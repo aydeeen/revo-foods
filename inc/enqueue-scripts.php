@@ -41,7 +41,7 @@ if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 		wp_enqueue_script(
 			'foundationpress-scripts-runtime',
 			get_template_directory_uri() . '/dist/assets/js/runtime.js',
-			['jquery'],
+			[],
 			foundationpress_asset_version( 'dist/assets/js/runtime.js' ),
 			true
 		);
@@ -65,10 +65,10 @@ if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 endif;
 
 function fopr_admin_enqueue_scripts() {
-	global $pagenow;
+	$screen = get_current_screen();
 
-	// fix password field is removed
-	if ( 'user-new.php' !== $pagenow ) {
+	// These assets support ACF block previews and are not needed on other admin screens.
+	if ( $screen && $screen->is_block_editor() ) {
 		// Enqueue the stylesheet.
 		wp_enqueue_style(
 			'foundationpress-admin-styles',
@@ -81,7 +81,7 @@ function fopr_admin_enqueue_scripts() {
 		wp_enqueue_script(
 			'foundationpress-scripts-runtime',
 			get_template_directory_uri() . '/dist/assets/js/runtime.js',
-			['jquery'],
+			[],
 			foundationpress_asset_version( 'dist/assets/js/runtime.js' ),
 			true
 		);
@@ -111,6 +111,7 @@ add_action(
 		pll_register_string( 'ingredients', 'Ingredients' );
 		pll_register_string( 'preparation', 'Preparation' );
 		pll_register_string( 'latest-recipes', 'Latest Recipes' );
+		pll_register_string( 'related-recipes', 'Related Recipes' );
 		pll_register_string( 'view-all', 'View All' );
 	}
 );

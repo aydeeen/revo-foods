@@ -19,18 +19,17 @@ function fopr_assets_uri( $echo = true ) {
 }
 
 /**
- * Echoes the background-image css property with the URL from the specified ACF field.
+ * Get the background-image CSS property for an ACF image field.
  *
- * @param string $field name of the field.
- * @param mixed  $post_id post id to get field from.
- *
- * @see https://www.advancedcustomfields.com/resources/get_field/
+ * @param string|array $field   Name of the field or a resolved ACF image value.
+ * @param mixed        $post_id Post ID to get the field from.
+ * @return string
  */
-function fopr_acf_bg_img( $field, $post_id = false ) {
+function fopr_get_acf_bg_img_style( $field, $post_id = false ) {
 	$bg = $field;
 	if ( is_string( $bg ) ) {
 		if ( ! function_exists( 'get_field' ) ) {
-			return;
+			return '';
 		}
 
 		$bg = get_field( $bg, $post_id );
@@ -39,14 +38,40 @@ function fopr_acf_bg_img( $field, $post_id = false ) {
 	if ( $bg ) {
 		if ( is_array( $bg ) ) {
 			if ( empty( $bg['url'] ) ) {
-				return;
+				return '';
 			}
 
 			$bg = $bg['url'];
 		}
 
-		echo esc_attr( sprintf( "background-image: url('%s');", esc_url_raw( $bg ) ) );
+		return sprintf( "background-image: url('%s');", esc_url_raw( $bg ) );
 	}
+
+	return '';
+}
+
+/**
+ * Echoes the background-image CSS property with the URL from an ACF field.
+ *
+ * @param string|array $field   Name of the field or a resolved ACF image value.
+ * @param mixed        $post_id Post ID to get the field from.
+ */
+function fopr_acf_bg_img( $field, $post_id = false ) {
+	echo esc_attr( fopr_get_acf_bg_img_style( $field, $post_id ) );
+}
+
+/**
+ * Translate a string through Polylang when available, with gettext as fallback.
+ *
+ * @param string $string String to translate.
+ * @return string
+ */
+function fopr_translate_string( $string ) {
+	if ( function_exists( 'pll__' ) ) {
+		return pll__( $string );
+	}
+
+	return __( $string, 'foundationpress' ); // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
 }
 
 /**

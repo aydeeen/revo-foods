@@ -40,6 +40,19 @@ GitHub.sublime-settings
 dist/
 build/
 
+# Production block bundles are committed because WordPress serves them directly.
+!dist/
+dist/*
+!dist/assets/
+dist/assets/*
+!dist/assets/js/
+dist/assets/js/*
+!dist/assets/js/blocks/
+dist/assets/js/blocks/*
+!dist/assets/js/blocks/home-slider.js
+!dist/assets/js/blocks/home-slider.js.map
+!dist/assets/js/blocks/home-slider.js.LICENSE.txt
+
 # Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
 .tmp/
 

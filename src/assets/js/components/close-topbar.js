@@ -1,14 +1,10 @@
-$(document).ready(() => {
-	const closeTopbar = () => {
-		$('.topbar').addClass('remove');
-		$('.site-header').css('margin-top', '-40px');
-	};
+const closeTopbar = document.querySelector('.topbar__close');
 
-	$('.topbar__close').on('click', closeTopbar);
-	$('.topbar__close').on('keydown', (e) => {
-		if (e.key === 'Enter' || e.key === ' ') {
-			e.preventDefault();
-			closeTopbar();
+if (closeTopbar) {
+	closeTopbar.addEventListener('click', () => {
+		const topbar = closeTopbar.closest('.topbar');
+		if (topbar) {
+			topbar.hidden = true;
 		}
 	});
-});
+}
