@@ -36,10 +36,10 @@ foreach ( $sections as $section ) {
 
 		$faq_items[] = [
 			'@type'          => 'Question',
-			'name'           => wp_strip_all_tags( $item['title'] ),
+			'name'           => wp_specialchars_decode( wp_strip_all_tags( $item['title'] ), ENT_QUOTES ),
 			'acceptedAnswer' => [
 				'@type' => 'Answer',
-				'text'  => wp_strip_all_tags( $item['content'] ),
+				'text'  => wp_specialchars_decode( wp_strip_all_tags( $item['content'] ), ENT_QUOTES ),
 			],
 		];
 	}

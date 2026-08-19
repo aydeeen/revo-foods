@@ -15,6 +15,8 @@ $product       = fopr_get_recipe_product( $recipe_id );
 $thumbnail_id  = get_post_thumbnail_id( $recipe_id );
 $thumbnail_alt = $thumbnail_id ? get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true ) : '';
 $thumbnail_alt = $thumbnail_alt ?: $recipe_title;
+$id_suffix     = ! empty( $args['id_suffix'] ) ? '-' . sanitize_html_class( $args['id_suffix'] ) : '';
+$title_id      = 'recipe-' . $recipe_id . $id_suffix . '-title';
 /* translators: %s: Recipe title. */
 $recipe_link_label = sprintf( __( 'View recipe: %s', 'foundationpress' ), $recipe_title );
 $product_styles    = sprintf(
@@ -24,7 +26,7 @@ $product_styles    = sprintf(
 );
 ?>
 
-<article class="recipes__recipe" aria-labelledby="recipe-<?php echo esc_attr( $recipe_id ); ?>-title">
+<article class="recipes__recipe" aria-labelledby="<?php echo esc_attr( $title_id ); ?>">
 	<div class="recipes__recipe-content-wrapper">
 		<div class="recipes__recipe-content">
 			<?php if ( $thumbnail_id ) : ?>
@@ -53,7 +55,7 @@ $product_styles    = sprintf(
 					<?php echo esc_html( $product['label'] ); ?>
 				</span>
 
-				<h3 id="recipe-<?php echo esc_attr( $recipe_id ); ?>-title" class="title">
+				<h3 id="<?php echo esc_attr( $title_id ); ?>" class="title">
 					<a href="<?php echo esc_url( $recipe_url ); ?>"><?php echo esc_html( $recipe_title ); ?></a>
 				</h3>
 

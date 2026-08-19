@@ -130,7 +130,16 @@ $tabs_id         = 'recipes-' . get_the_ID();
 							<?php if ( ! empty( $recipe_panels[ $panel_slug ] ) ) : ?>
 								<div class="recipes__recipes-container">
 									<?php foreach ( $recipe_panels[ $panel_slug ] as $recipe_post ) : ?>
-										<?php get_template_part( 'template-parts/recipe-short', null, [ 'recipe_id' => $recipe_post->ID ] ); ?>
+										<?php
+										get_template_part(
+											'template-parts/recipe-short',
+											null,
+											[
+												'recipe_id' => $recipe_post->ID,
+												'id_suffix' => $tabs_id . '-' . $panel_slug,
+											]
+										);
+										?>
 									<?php endforeach; ?>
 								</div>
 							<?php else : ?>
