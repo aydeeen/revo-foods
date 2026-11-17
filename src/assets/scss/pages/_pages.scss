@@ -2,7 +2,8 @@
 @import 'single-post';
 @import 'recipes';
 @import 'single-recipe';
-@import 'single-product';
 @import 'job-post';
-@import 'shop';
 @import 'page-default';
+
+// WooCommerce is not installed, so _shop.scss and _single-product.scss (styles
+// for the theme's woocommerce/ templates) are not compiled.

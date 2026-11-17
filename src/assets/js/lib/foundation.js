@@ -21,27 +21,15 @@ import { Triggers } from 'foundation-sites/js/foundation.util.triggers';
 // If you comment out a plugin you will need to comment out
 // the corresponding Foundation.plugin line also.
 // This is a template project so they have all been imported.
-import { Abide } from 'foundation-sites/js/foundation.abide';
 import { Accordion } from 'foundation-sites/js/foundation.accordion';
 import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu';
-import { Drilldown } from 'foundation-sites/js/foundation.drilldown';
-import { Dropdown } from 'foundation-sites/js/foundation.dropdown';
 import { DropdownMenu } from 'foundation-sites/js/foundation.dropdownMenu';
-import { Equalizer } from 'foundation-sites/js/foundation.equalizer';
 import { Interchange } from 'foundation-sites/js/foundation.interchange';
-import { Magellan } from 'foundation-sites/js/foundation.magellan';
 import { OffCanvas } from 'foundation-sites/js/foundation.offcanvas';
-import { Orbit } from 'foundation-sites/js/foundation.orbit';
-import { ResponsiveMenu } from 'foundation-sites/js/foundation.responsiveMenu';
 import { ResponsiveToggle } from 'foundation-sites/js/foundation.responsiveToggle';
-import { Reveal } from 'foundation-sites/js/foundation.reveal';
-import { Slider } from 'foundation-sites/js/foundation.slider';
 import { SmoothScroll } from 'foundation-sites/js/foundation.smoothScroll';
-import { Sticky } from 'foundation-sites/js/foundation.sticky';
 import { Tabs } from 'foundation-sites/js/foundation.tabs';
 import { Toggler } from 'foundation-sites/js/foundation.toggler';
-import { Tooltip } from 'foundation-sites/js/foundation.tooltip';
-import { ResponsiveAccordionTabs } from 'foundation-sites/js/foundation.responsiveAccordionTabs';
 
 // Require non-modular scripts
 require('motion-ui');
@@ -71,31 +59,24 @@ Foundation.Timer = Timer;
 Touch.init(jQuery);
 Triggers.init(jQuery, Foundation);
 
+// Only the plugins the site uses are registered. Abide, Drilldown, Dropdown,
+// Equalizer, Magellan, Orbit, ResponsiveAccordionTabs, ResponsiveMenu, Reveal,
+// Slider, Sticky and Tooltip had no markup anywhere (templates, post content,
+// live pages; Nov 2026). Import and register one again before using it.
+
 // both parameters are needed, otherwise webpack will remove the
 // plugin from the global namespace.
 // see https://github.com/zurb/foundation-sites/issues/10792
 
-Foundation.plugin(Abide, 'Abide');
 Foundation.plugin(Accordion, 'Accordion');
 Foundation.plugin(AccordionMenu, 'AccordionMenu');
-Foundation.plugin(Drilldown, 'Drilldown');
-Foundation.plugin(Dropdown, 'Dropdown');
 Foundation.plugin(DropdownMenu, 'DropdownMenu');
-Foundation.plugin(Equalizer, 'Equalizer');
 Foundation.plugin(Interchange, 'Interchange');
-Foundation.plugin(Magellan, 'Magellan');
 Foundation.plugin(OffCanvas, 'OffCanvas');
-Foundation.plugin(Orbit, 'Orbit');
-Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
-Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
 Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
-Foundation.plugin(Reveal, 'Reveal');
-Foundation.plugin(Slider, 'Slider');
 Foundation.plugin(SmoothScroll, 'SmoothScroll');
-Foundation.plugin(Sticky, 'Sticky');
 Foundation.plugin(Tabs, 'Tabs');
 Foundation.plugin(Toggler, 'Toggler');
-Foundation.plugin(Tooltip, 'Tooltip');
 
 jQuery(($) => $(document).foundation());
 
