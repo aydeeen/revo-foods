@@ -29,7 +29,7 @@ $title        = get_field( 'title' ) ?: false;
 $description  = get_field( 'description' ) ?: false;
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-map <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-map <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
    <div class="section__inner grid-x grid-padding-x grid-padding-y">
 		<div class="cell">
          <div class="b-map__content-wrapper">

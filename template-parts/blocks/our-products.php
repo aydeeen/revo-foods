@@ -33,7 +33,7 @@ $image_4     = get_field( 'image_4' ) ?: false;
 $image_5     = get_field( 'image_5' ) ?: false;
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-our-products <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-our-products <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
     <div class="section__inner grid-x grid-padding-x grid-padding-y">
         <div class="cell">
             <div>

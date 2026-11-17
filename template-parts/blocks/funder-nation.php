@@ -39,7 +39,7 @@ $button_2_text = get_field( 'button_2_text' ) ?: false;
         <div class="b-funder-nation__left-part">
             <?php echo wp_get_attachment_image( $image, 'full', false ) ?>
         </div>
-        <div class="b-funder-nation__right-part" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+        <div class="b-funder-nation__right-part" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
             <h3 class="b-funder-nation__subtitle"><?php echo esc_html( $subtitle ); ?></h3>
             <h2 class="b-funder-nation__title"><?php echo esc_html( $title ); ?></h2>
             <p class="b-funder-nation__description"><?php echo wp_kses_post( $description ); ?></p>

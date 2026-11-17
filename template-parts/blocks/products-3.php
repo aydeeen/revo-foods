@@ -22,6 +22,7 @@ $block    = new Block_Products_3( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $title = get_field( 'title' ) ?: false;
 ?>
@@ -30,7 +31,7 @@ $title = get_field( 'title' ) ?: false;
    <div class="section__inner grid-x grid-padding-x grid-padding-y">
 
 		<div class="cell">
-         <h1 class="b-products-3__title"><?php echo esc_html( $title ); ?></h1>
+         <<?php echo tag_escape( $title_tag ); ?> class="b-products-3__title"><?php echo esc_html( $title ); ?></<?php echo tag_escape( $title_tag ); ?>>
       </div>
 
       <?php if ( have_rows( 'products' ) ):

@@ -27,7 +27,7 @@ $blog_link = get_field( 'blog_link', 'option' ) ?: false;
 
 		<div class="cell large-9">
 			<div>
-				<?php echo esc_url( the_post_thumbnail( 'full', ['class' => 'single-post__featured-image'] ) ); ?>
+				<?php the_post_thumbnail( 'full', [ 'class' => 'single-post__featured-image', 'fetchpriority' => 'high', 'loading' => 'eager' ] ); ?>
 				<div class="single-post__content"><?php the_content(); ?></div>
 			</div>
 		</div>
@@ -38,15 +38,21 @@ $blog_link = get_field( 'blog_link', 'option' ) ?: false;
             <div class="single-post__sidebar-posts">
                <?php
                $args = [
-                  'posts_per_page' => 6,
-                  'post_type'      => 'post',
+                  'posts_per_page'      => 6,
+                  'post_type'           => 'post',
+                  'post__not_in'        => [ get_the_ID() ],
+                  'ignore_sticky_posts' => true,
+                  'no_found_rows'       => true,
                ];
                $posts = new WP_Query( $args );
                while ( $posts->have_posts() ): $posts->the_post(); ?>
                   <div class="single-post__sidebar-post">
-                     <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail(); ?>
-                     </a>
+                     <?php if ( has_post_thumbnail() ) : ?>
+                        <?php // Same target as the title link below, so keep it out of the tab order and screen readers. ?>
+                        <a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
+                           <?php the_post_thumbnail( 'fp-small', [ 'alt' => '', 'loading' => 'lazy', 'sizes' => '(max-width: 1023px) 100vw, 25vw' ] ); ?>
+                        </a>
+                     <?php endif; ?>
                      <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
                      </a>

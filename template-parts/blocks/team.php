@@ -22,6 +22,7 @@ $block    = new Block_Team( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $title       = get_field( 'title' ) ?: false;
 $description = get_field( 'description' ) ?: false;
@@ -31,7 +32,7 @@ $description = get_field( 'description' ) ?: false;
 	<div class="section__inner grid-x grid-padding-x grid-padding-y">
 
 		<div class="cell">
-			<h2 class="text-center b-team__title"><?php echo esc_html( $title ); ?></h2>
+			<<?php echo tag_escape( $title_tag ); ?> class="text-center b-team__title"><?php echo esc_html( $title ); ?></<?php echo tag_escape( $title_tag ); ?>>
          <?php if ( $description ) : ?>
             <p class="b-team__description"><?php echo esc_html( $description ); ?></p>
          <?php endif; ?>  

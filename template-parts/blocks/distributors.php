@@ -83,7 +83,7 @@ $description = get_field( 'description' ) ?: false;
                                        <?php endif; ?>
 
                                        <?php if ( $website ) : ?>
-                                          <a href="<?php echo esc_url( $website ); ?>" target="_blank" class="b-distributors__distributor-link">
+                                          <a href="<?php echo esc_url( $website ); ?>" target="_blank" rel="noopener noreferrer" class="b-distributors__distributor-link"<?php echo $website_text ? '' : ' aria-label="' . esc_attr( $name ? $name : fopr_get_logo_label( 0, $website ) ) . '"'; ?>>
                                              <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M19.3958 10.9826C19.3958 15.6191 16.0492 19.3276 11.9792 19.3276C7.90916 19.3276 4.5625 15.6191 4.5625 10.9826C4.5625 6.34609 7.90916 2.63751 11.9792 2.63751C16.0492 2.63751 19.3958 6.34609 19.3958 10.9826Z" fill="#1E5064" stroke="#979797" stroke-width="0.5"/>
                                                 <ellipse cx="11.5" cy="11.4704" rx="11.5" ry="11.4704" fill="#59AFB0"/>
@@ -94,7 +94,7 @@ $description = get_field( 'description' ) ?: false;
                                        <?php endif; ?>
 
                                        <?php if ( $phone ) : ?>
-                                          <a href="<?php echo esc_url( $phone ); ?>" class="b-distributors__distributor-link">
+                                          <a href="<?php echo esc_url( $phone ); ?>" class="b-distributors__distributor-link"<?php echo $phone_text ? '' : ' aria-label="' . esc_attr( str_replace( 'tel:', '', $phone ) ) . '"'; ?>>
                                              <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="11.5" cy="11.5" r="11.5" fill="#59AFB0"/>
                                                 <path d="M17.7043 14.7148L15.9827 12.9969C15.3679 12.3833 14.3227 12.6288 14.0767 13.4264C13.8923 13.9786 13.2774 14.2854 12.7241 14.1626C11.4944 13.8558 9.83433 12.2606 9.52691 10.9722C9.34246 10.4199 9.71136 9.80639 10.2647 9.62235C11.064 9.37693 11.3099 8.3339 10.6951 7.72035L8.97355 6.00241C8.48168 5.57293 7.74387 5.57293 7.31348 6.00241L6.14528 7.16816C4.97709 8.39525 6.26825 11.6471 9.158 14.5307C12.0478 17.4144 15.3064 18.7643 16.5361 17.5371L17.7043 16.3714C18.1347 15.8806 18.1347 15.1443 17.7043 14.7148Z" fill="#145067"/>
@@ -104,7 +104,7 @@ $description = get_field( 'description' ) ?: false;
                                        <?php endif; ?>
 
                                        <?php if ( $email ) : ?>
-                                          <a href="<?php echo esc_url( $email ); ?>" class="b-distributors__distributor-link">
+                                          <a href="<?php echo esc_url( $email ); ?>" class="b-distributors__distributor-link"<?php echo $email_text ? '' : ' aria-label="' . esc_attr( str_replace( 'mailto:', '', $email ) ) . '"'; ?>>
                                              <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="11.5" cy="11.5" r="11.5" fill="#59AFB0"/>
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7891 6.46875H5.21094C4.76262 6.46875 4.40684 6.80905 4.33945 7.24722L11.5 12.0507L18.6605 7.24722C18.5932 6.80905 18.2374 6.46875 17.7891 6.46875ZM4.3125 14.6944V8.32391L9.15867 11.575L4.3125 14.6944ZM18.6875 14.6944L13.8413 11.575L18.6875 8.32391V14.6944ZM11.7471 12.9801L13.0184 12.1275L18.6588 15.7592C18.5896 16.1937 18.2356 16.5312 17.7891 16.5312H5.21094C4.76441 16.5312 4.41043 16.1937 4.34125 15.7592L9.98164 12.1266L11.2529 12.9801C11.3284 13.0304 11.4138 13.0551 11.5 13.0551C11.5862 13.0551 11.6716 13.0304 11.7471 12.9801Z" fill="#145067"/>
@@ -167,7 +167,7 @@ $description = get_field( 'description' ) ?: false;
                                        <?php endif; ?>
 
                                        <?php if ( $website ) : ?>
-                                          <a href="<?php echo esc_url( $website ); ?>" target="_blank" class="b-distributors__distributor-link">
+                                          <a href="<?php echo esc_url( $website ); ?>" target="_blank" rel="noopener noreferrer" class="b-distributors__distributor-link"<?php echo $website_text ? '' : ' aria-label="' . esc_attr( $name ? $name : fopr_get_logo_label( 0, $website ) ) . '"'; ?>>
                                              <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M19.3958 10.9826C19.3958 15.6191 16.0492 19.3276 11.9792 19.3276C7.90916 19.3276 4.5625 15.6191 4.5625 10.9826C4.5625 6.34609 7.90916 2.63751 11.9792 2.63751C16.0492 2.63751 19.3958 6.34609 19.3958 10.9826Z" fill="#1E5064" stroke="#979797" stroke-width="0.5"/>
                                                 <ellipse cx="11.5" cy="11.4704" rx="11.5" ry="11.4704" fill="#59AFB0"/>
@@ -178,7 +178,7 @@ $description = get_field( 'description' ) ?: false;
                                        <?php endif; ?>
 
                                        <?php if ( $phone ) : ?>
-                                          <a href="<?php echo esc_url( $phone ); ?>" class="b-distributors__distributor-link">
+                                          <a href="<?php echo esc_url( $phone ); ?>" class="b-distributors__distributor-link"<?php echo $phone_text ? '' : ' aria-label="' . esc_attr( str_replace( 'tel:', '', $phone ) ) . '"'; ?>>
                                              <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="11.5" cy="11.5" r="11.5" fill="#59AFB0"/>
                                                 <path d="M17.7043 14.7148L15.9827 12.9969C15.3679 12.3833 14.3227 12.6288 14.0767 13.4264C13.8923 13.9786 13.2774 14.2854 12.7241 14.1626C11.4944 13.8558 9.83433 12.2606 9.52691 10.9722C9.34246 10.4199 9.71136 9.80639 10.2647 9.62235C11.064 9.37693 11.3099 8.3339 10.6951 7.72035L8.97355 6.00241C8.48168 5.57293 7.74387 5.57293 7.31348 6.00241L6.14528 7.16816C4.97709 8.39525 6.26825 11.6471 9.158 14.5307C12.0478 17.4144 15.3064 18.7643 16.5361 17.5371L17.7043 16.3714C18.1347 15.8806 18.1347 15.1443 17.7043 14.7148Z" fill="#145067"/>
@@ -188,7 +188,7 @@ $description = get_field( 'description' ) ?: false;
                                        <?php endif; ?>
 
                                        <?php if ( $email ) : ?>
-                                          <a href="<?php echo esc_url( $email ); ?>" class="b-distributors__distributor-link">
+                                          <a href="<?php echo esc_url( $email ); ?>" class="b-distributors__distributor-link"<?php echo $email_text ? '' : ' aria-label="' . esc_attr( str_replace( 'mailto:', '', $email ) ) . '"'; ?>>
                                              <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="11.5" cy="11.5" r="11.5" fill="#59AFB0"/>
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7891 6.46875H5.21094C4.76262 6.46875 4.40684 6.80905 4.33945 7.24722L11.5 12.0507L18.6605 7.24722C18.5932 6.80905 18.2374 6.46875 17.7891 6.46875ZM4.3125 14.6944V8.32391L9.15867 11.575L4.3125 14.6944ZM18.6875 14.6944L13.8413 11.575L18.6875 8.32391V14.6944ZM11.7471 12.9801L13.0184 12.1275L18.6588 15.7592C18.5896 16.1937 18.2356 16.5312 17.7891 16.5312H5.21094C4.76441 16.5312 4.41043 16.1937 4.34125 15.7592L9.98164 12.1266L11.2529 12.9801C11.3284 13.0304 11.4138 13.0551 11.5 13.0551C11.5862 13.0551 11.6716 13.0304 11.7471 12.9801Z" fill="#145067"/>

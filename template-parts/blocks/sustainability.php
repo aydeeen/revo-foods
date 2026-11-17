@@ -22,6 +22,7 @@ $block    = new Block_Sustainability( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $bg_image      = get_field( 'bg_image' ) ?: false;
 $image         = get_field( 'image' ) ?: false;
@@ -39,10 +40,10 @@ $link          = get_field( 'link' ) ?: false;
 $link_text     = get_field( 'link_text' ) ?: false;
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-sustainability <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-sustainability <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
    <div class="section__inner grid-x grid-padding-x grid-padding-y position-relative align-middle">
 		<div class="cell">
-         <h1 class="b-sustainability__title"><?php echo wp_kses_post( $title ); ?></h1>
+         <<?php echo tag_escape( $title_tag ); ?> class="b-sustainability__title"><?php echo wp_kses_post( $title ); ?></<?php echo tag_escape( $title_tag ); ?>>
       </div>
       <div class="cell medium-6">
          <div class="b-sustainability__boxes">

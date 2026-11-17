@@ -22,6 +22,7 @@ $block    = new Block_Products_2( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $title        = get_field( 'title' ) ?: false;
 $description  = get_field( 'description' ) ?: false;
@@ -31,7 +32,7 @@ $description  = get_field( 'description' ) ?: false;
    <div class="section__inner grid-x grid-padding-x grid-padding-y">
 
 		<div class="cell">
-         <h1 class="b-products-2__title"><?php echo wp_kses_post( $title ); ?></h1>
+         <<?php echo tag_escape( $title_tag ); ?> class="b-products-2__title"><?php echo wp_kses_post( $title ); ?></<?php echo tag_escape( $title_tag ); ?>>
          <p class="text-center"><?php echo esc_html( $description ); ?></p>
       </div>
 

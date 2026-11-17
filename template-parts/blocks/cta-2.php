@@ -30,7 +30,7 @@ $button      = get_field( 'button' ) ?: false;
 $button_text = get_field( 'button_text' ) ?: false;
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-cta-2 <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-cta-2 <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
     <?php echo wp_get_attachment_image( $image, 'full', false )  ?>
     <div class="section__inner grid-x grid-padding-x grid-padding-y">
 	    <div class="cell">

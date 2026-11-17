@@ -34,7 +34,7 @@ $class_names = $block->get_class_names();
                         $title    = get_sub_field( 'title' ) ?: false;
                         $content  = get_sub_field( 'content' ) ?: false;
                         ?>
-                            <div class="b-boxes__box" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+                            <div class="b-boxes__box" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
                                 <h3 class="title"><?php echo esc_html( $title ); ?></h3>
                                 <p class="content"><?php echo esc_html( $content ); ?></p>
                             </div>

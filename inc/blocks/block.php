@@ -72,35 +72,39 @@ abstract class Block {
 	}
 
 	/**
+	 * Heading tag for the block's main title.
+	 *
+	 * The first block on a page that hides its template title supplies the
+	 * page's H1. Every other block title is an H2, so a page never ends up
+	 * with two H1s when blocks are reordered or reused.
+	 *
+	 * @param int|string $post_id ID of the current post.
+	 */
+	public function get_title_tag( $post_id ): string {
+		return \fopr_blocks_provide_page_heading( $post_id ) && $this->is_first_block( $post_id ) ? 'h1' : 'h2';
+	}
+
+	/**
 	 * Whether the current block is the first block in the page.
 	 *
-	 * @param int $post_id ID of the current post.
+	 * Blocks saved by ACF 6 no longer store an `id` attribute, so the block is
+	 * matched by its name and field data when no saved id is available.
+	 *
+	 * @param int|string $post_id ID of the current post.
 	 */
 	public function is_first_block( $post_id ): bool {
-		$post = get_post( $post_id );
+		$first = \fopr_get_first_block( (int) $post_id );
 
-		if ( ! empty( $post ) && has_blocks( $post->post_content ) ) {
-			$blocks = parse_blocks( $post->post_content );
-
-			foreach ( $blocks as $block ) {
-				if ( isset( $block['attrs']['id'] ) && $block['attrs']['id'] === $this->settings['id'] ) {
-						return true;
-				} elseif ( isset( $block['blockName'] ) && 'core/block' === $block['blockName'] && ! empty( $block['attrs']['ref'] ) ) {
-					$reusable_block = get_post( $block['attrs']['ref'] );
-					if ( empty( $reusable_block ) ) {
-						continue;
-					}
-
-					$block_content = parse_blocks( $reusable_block->post_content );
-					if ( isset( $block_content[0]['attrs']['id'] )
-					&& $block_content[0]['attrs']['id'] === $this->settings['id'] ) {
-						return true;
-					}
-				}
-			}
+		if ( ! $first || empty( $this->settings['name'] ) || $first['blockName'] !== $this->settings['name'] ) {
+			return false;
 		}
 
-		return false;
+		if ( ! empty( $first['attrs']['id'] ) ) {
+			return isset( $this->settings['id'] ) && $first['attrs']['id'] === $this->settings['id'];
+		}
+
+		// Loose comparison on purpose: ACF may cast numeric field values.
+		return ( $first['attrs']['data'] ?? [] ) == ( $this->settings['data'] ?? [] ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 	}
 }
 

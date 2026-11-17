@@ -19,6 +19,7 @@ $block    = new Block_FAQ( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 $title       = get_field( 'title' ) ?: false;
 $description = get_field( 'description' ) ?: false;
 $sections    = get_field( 'sections' ) ?: [];
@@ -50,7 +51,7 @@ foreach ( $sections as $section ) {
 	<div class="section__inner grid-x grid-padding-x grid-padding-y">
 		<div class="cell">
 			<?php if ( $title ) : ?>
-				<h2 class="b-faq__title"><?php echo esc_html( $title ); ?></h2>
+				<<?php echo tag_escape( $title_tag ); ?> class="b-faq__title"><?php echo esc_html( $title ); ?></<?php echo tag_escape( $title_tag ); ?>>
 			<?php endif; ?>
 
 			<?php if ( $description ) : ?>

@@ -88,7 +88,7 @@ $tabs_id         = 'recipes-' . get_the_ID();
 
 	<section class="recipes__hero"<?php echo $bg_image ? ' style="' . esc_attr( fopr_get_acf_bg_img_style( $bg_image ) ) . '"' : ''; ?>>
 		<?php if ( $title ) : ?>
-			<h1 class="recipes__hero-title"><?php echo wp_kses_post( $title ); ?></h1>
+			<h1 class="recipes__hero-title"><?php echo wp_kses_post( fopr_add_missing_img_alt( $title ) ); ?></h1>
 		<?php endif; ?>
 		<?php if ( $description ) : ?>
 			<p class="recipes__hero-description"><?php echo esc_html( $description ); ?></p>

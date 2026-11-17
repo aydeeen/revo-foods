@@ -34,8 +34,7 @@ $has_button_1 = ! empty( $button_1 ) && ! empty( $button_1_text );
 $has_button_2 = ! empty( $button_2 ) && ! empty( $button_2_text );
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-cta-3 <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
-    <?php echo wp_get_attachment_image( $image, 'full', false )  ?>
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-cta-3 <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
     <div class="section__inner grid-x grid-padding-x grid-padding-y">
 	    <div class="cell">
             <div>

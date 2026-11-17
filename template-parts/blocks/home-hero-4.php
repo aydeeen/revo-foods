@@ -22,6 +22,7 @@ $block    = new Block_Home_Hero_4( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $description = get_field( 'description' ) ?: false;
 $button_1    = get_field( 'button_1' ) ?: false;
@@ -33,9 +34,9 @@ $image_title = get_field( 'image_title' ) ?: false;
     <div class="section__inner grid-x grid-padding-x grid-padding-y b-home-hero-4__grid">
         <div class="cell">
             <div class="b-home-hero-4__content"> 
-                <h1 class="b-home-hero-4__title-wrapper">
-                    <?php echo wp_get_attachment_image( $image_title, 'full', false ); ?>
-                </h1>
+                <<?php echo tag_escape( $title_tag ); ?> class="b-home-hero-4__title-wrapper">
+                    <?php echo wp_get_attachment_image( $image_title, 'full', false, [ 'alt' => fopr_get_image_alt( $image_title ) ] ); ?>
+                </<?php echo tag_escape( $title_tag ); ?>>
                 <p class="b-home-hero-4__description"><?php echo wp_kses_post( $description ); ?></p>
                 <div class="b-home-hero-4__buttons-wrapper">
                     <div class="b-home-hero-4__button-wrapper">

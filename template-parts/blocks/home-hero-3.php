@@ -22,6 +22,7 @@ $block    = new Block_Home_Hero_3( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $bg_image    = get_field( 'bg_image' ) ?: false;
 $description = get_field( 'description' ) ?: false;
@@ -33,12 +34,13 @@ $link_2      = get_field( 'link_2' ) ?: false;
 $link_2_text = get_field( 'link_2_text' ) ?: false;
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-home-hero-3 <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-home-hero-3 <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
     <div class="section__inner grid-x grid-padding-x grid-padding-y b-home-hero-3__grid">
         <div class="cell">
             <div class="b-home-hero-3__content"> 
-                <h1 class="b-home-hero-3__title-wrapper">
-                    <img src="<?php fopr_assets_uri(); ?>/images/homepage-hero-title.png">
+                <<?php echo tag_escape( $title_tag ); ?> class="b-home-hero-3__title-wrapper">
+                    <img src="<?php fopr_assets_uri(); ?>/images/homepage-hero-title.png" alt="The Filet">
+                </<?php echo tag_escape( $title_tag ); ?>>
                 <p class="b-home-hero-3__title"><?php echo wp_kses_post( $description ); ?></p>
                 <?php if ( $button ): ?>
                     <div class="b-home-hero-3__button-wrapper">

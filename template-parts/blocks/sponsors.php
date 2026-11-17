@@ -43,9 +43,13 @@ $button_text = get_field( 'button_text' ) ?: false;
                         $link  = get_sub_field( 'link' ) ?: false;
                         $image = get_sub_field( 'image' ) ?: false;
                         ?>
-                            <a href="<?php echo esc_url( $link ); ?>" target="_blank">
-                                <?php echo wp_get_attachment_image( $image, 'full', false ); ?>
-                            </a>
+                            <?php if ( $link && '#' !== $link ) : ?>
+                                <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( fopr_get_logo_label( $image, $link ) ); ?>">
+                                    <?php echo wp_get_attachment_image( $image, 'full', false, [ 'alt' => '' ] ); ?>
+                                </a>
+                            <?php else : ?>
+                                <?php echo wp_get_attachment_image( $image, 'full', false, [ 'alt' => fopr_get_logo_label( $image ) ] ); ?>
+                            <?php endif; ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
