@@ -158,6 +158,52 @@ function fopr_get_logo_label( $attachment_id, $url = '' ) {
 }
 
 /**
+ * Accessible name for a social media icon link.
+ *
+ * The icon's alt text when set, otherwise the network named by the link, so
+ * screen readers announce "Instagram" or "LinkedIn" rather than the same
+ * generic label for every icon.
+ *
+ * @param int    $attachment_id Icon attachment ID.
+ * @param string $url           Profile URL.
+ * @return string
+ */
+function fopr_get_social_label( $attachment_id, $url ) {
+	$alt = $attachment_id ? trim( (string) get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) : '';
+	if ( '' !== $alt ) {
+		return $alt;
+	}
+
+	$networks = [
+		'facebook'  => 'Facebook',
+		'instagram' => 'Instagram',
+		'youtube'   => 'YouTube',
+		'youtu'     => 'YouTube',
+		'tiktok'    => 'TikTok',
+		'linkedin'  => 'LinkedIn',
+		'twitter'   => 'X (Twitter)',
+		'x'         => 'X (Twitter)',
+		'pinterest' => 'Pinterest',
+		'threads'   => 'Threads',
+		'bsky'      => 'Bluesky',
+		'whatsapp'  => 'WhatsApp',
+		'spotify'   => 'Spotify',
+	];
+
+	// "at.linkedin.com" and "www.facebook.com" both resolve to their brand label.
+	$labels = explode( '.', strtolower( (string) wp_parse_url( (string) $url, PHP_URL_HOST ) ) );
+	foreach ( $labels as $label ) {
+		if ( isset( $networks[ $label ] ) ) {
+			return $networks[ $label ];
+		}
+	}
+
+	$label = fopr_get_logo_label( $attachment_id, $url );
+
+	return '' !== $label ? $label : __( 'Social media', 'foundationpress' );
+}
+
+/**
  * Get a list of pages wichh use specific template.
  *
  * @param string $template name of the template file. Must include .php ending.
