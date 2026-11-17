@@ -98,8 +98,7 @@ $fopr_mobile_menu_id     = foundationpress_get_mobile_menu_id();
                         $link       = get_sub_field( 'link' ) ?: false;
 						$icon       = get_sub_field( 'icon' ) ?: false;
 						$icon_hover = get_sub_field( 'icon_hover' ) ?: false;
-						$social_label = $icon ? get_post_meta( $icon, '_wp_attachment_image_alt', true ) : '';
-						$social_label = $social_label ?: __( 'Social media', 'foundationpress' );
+						$social_label = fopr_get_social_label( $icon, $link );
 						?>
 							<a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer" class="social" aria-label="<?php echo esc_attr( $social_label ); ?>">
 								<?php echo wp_get_attachment_image( $icon, 'full', false, [ 'alt' => '' ] ); ?>
