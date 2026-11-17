@@ -22,6 +22,7 @@ $block    = new Block_Contact( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $bg_image       = get_field( 'bg_image' ) ?: false;
 $title          = get_field( 'title' ) ?: false;
@@ -29,12 +30,12 @@ $description    = get_field( 'description' ) ?: false;
 $form_shortcode = get_field( 'form_shortcode' ) ?: false;
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-contact <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-contact <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
 	<div class="section__inner grid-x grid-padding-x grid-padding-y align-middle">
 
       <div class="cell medium-6">
          <div class="margin-bottom-1 medium-margin-bottom-0">
-            <h1 class="b-contact__title"><?php echo wp_kses_post( $title ); ?></h1>
+            <<?php echo tag_escape( $title_tag ); ?> class="b-contact__title"><?php echo wp_kses_post( $title ); ?></<?php echo tag_escape( $title_tag ); ?>>
             <p class="b-contact__description"><?php echo esc_html( $description ); ?></p>
             <div class="b-contact__items-wrapper b-contact__items-wrapper-mobile">
                <?php if ( have_rows( 'items' ) ) : ?>

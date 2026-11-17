@@ -75,6 +75,89 @@ function fopr_translate_string( $string ) {
 }
 
 /**
+ * Whether a block, rather than the page template, supplies the page's H1.
+ *
+ * True for pages that tick "Hide title". Job posts and the recipes template
+ * print their own H1, so their blocks never take it.
+ *
+ * @param int|string $post_id Post ID.
+ * @return bool
+ */
+function fopr_blocks_provide_page_heading( $post_id ) {
+	if ( ! $post_id || 'page' !== get_post_type( $post_id ) || ! function_exists( 'get_field' ) ) {
+		return false;
+	}
+
+	if ( in_array( get_page_template_slug( $post_id ), [ 'template-job-post.php', 'template-recipes.php' ], true ) ) {
+		return false;
+	}
+
+	return true === get_field( 'hide_title', $post_id );
+}
+
+/**
+ * Get an image's alt text, falling back to a readable version of its title.
+ *
+ * For images that carry meaning (for example a hero title drawn as an SVG)
+ * when the alt text was never filled in the Media Library.
+ *
+ * @param int $attachment_id Attachment ID.
+ * @return string
+ */
+function fopr_get_image_alt( $attachment_id ) {
+	if ( ! $attachment_id ) {
+		return '';
+	}
+
+	$alt = trim( (string) get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) );
+	if ( '' !== $alt ) {
+		return $alt;
+	}
+
+	$title = str_replace( [ '-', '_' ], ' ', (string) get_the_title( $attachment_id ) );
+	$title = preg_replace( '/\s+(title|logo|image|img|icon)$/i', '', trim( $title ) );
+	$title = trim( preg_replace( '/\s+/', ' ', $title ) );
+
+	// Camera and hashed upload names ("IMG 2041", "7b6d687d59c1...") say nothing.
+	if ( preg_match( '/^(?:[a-f0-9 ]{16,}|(?:img|dsc|image|screenshot|photo|frame)?\s*[\d ]+)$/i', $title ) ) {
+		return '';
+	}
+
+	return $title;
+}
+
+/**
+ * Mark images without an alt attribute as decorative.
+ *
+ * For editor-entered HTML such as a ™ graphic inside a heading, where screen
+ * readers would otherwise announce the file name.
+ *
+ * @param string $html HTML.
+ * @return string
+ */
+function fopr_add_missing_img_alt( $html ) {
+	return preg_replace( '/<img\b(?![^>]*\balt=)/i', '<img alt=""', (string) $html );
+}
+
+/**
+ * Accessible name for a logo, used when the logo is the only content of a link.
+ *
+ * @param int    $attachment_id Logo attachment ID.
+ * @param string $url           Link target, used for the domain as a last resort.
+ * @return string
+ */
+function fopr_get_logo_label( $attachment_id, $url = '' ) {
+	$label = fopr_get_image_alt( $attachment_id );
+
+	if ( '' === $label && $url ) {
+		$host  = (string) wp_parse_url( $url, PHP_URL_HOST );
+		$label = preg_replace( '/^www\./', '', $host );
+	}
+
+	return $label;
+}
+
+/**
  * Get a list of pages wichh use specific template.
  *
  * @param string $template name of the template file. Must include .php ending.
@@ -107,38 +190,67 @@ function fopr_generate_random_string( $length = 10 ) {
 }
 
 /**
+ * Get the first block of a post, looking inside a leading reusable block.
+ *
+ * Whitespace between blocks is parsed as nameless blocks; those are skipped.
+ *
+ * @param int $post_id Post ID. Defaults to the current post.
+ * @return array|false Parsed block, or false when the post has no blocks.
+ */
+function fopr_get_first_block( $post_id = 0 ) {
+	static $cache = [];
+
+	$post = get_post( $post_id ?: null );
+	if ( empty( $post ) || ! has_blocks( $post->post_content ) ) {
+		return false;
+	}
+
+	if ( array_key_exists( $post->ID, $cache ) ) {
+		return $cache[ $post->ID ];
+	}
+
+	$first   = false;
+	$content = $post->post_content;
+
+	// Resolve nested reusable blocks, but never loop forever on a self-reference.
+	for ( $depth = 0; $depth < 3; $depth++ ) {
+		$next = '';
+
+		foreach ( parse_blocks( $content ) as $block ) {
+			if ( empty( $block['blockName'] ) ) {
+				continue;
+			}
+
+			if ( 'core/block' === $block['blockName'] && ! empty( $block['attrs']['ref'] ) ) {
+				$reusable = get_post( $block['attrs']['ref'] );
+				$next     = $reusable ? $reusable->post_content : '';
+			} else {
+				$first = $block;
+			}
+			break;
+		}
+
+		if ( false !== $first || '' === $next ) {
+			break;
+		}
+
+		$content = $next;
+	}
+
+	$cache[ $post->ID ] = $first;
+
+	return $first;
+}
+
+/**
  * Get the name of the first block.
  *
  * @return bool|string If post has blocks: block name. Else: false.
  */
 function fopr_get_first_block_name() {
-	$post = get_post();
+	$block = fopr_get_first_block();
 
-	if ( ! empty( $post ) && has_blocks( $post->post_content ) ) {
-		$blocks = parse_blocks( $post->post_content );
-
-		if ( empty( $blocks[0]['blockName'] ) ) {
-			return false;
-		}
-
-		if ( 'core/block' === $blocks[0]['blockName'] ) {
-			if ( empty( $blocks[0]['attrs']['ref'] ) ) {
-				return false;
-			}
-
-			$reusable_block = get_post( $blocks[0]['attrs']['ref'] );
-			if ( empty( $reusable_block ) ) {
-				return false;
-			}
-
-			$block_content = parse_blocks( $reusable_block->post_content );
-			return $block_content[0]['blockName'] ?? false;
-		}
-
-		return $blocks[0]['blockName'];
-	}
-
-	return false;
+	return $block ? $block['blockName'] : false;
 }
 
 /**

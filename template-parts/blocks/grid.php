@@ -39,7 +39,7 @@ $button_text = get_field( 'button_text' ) ?: false;
 	    <div class="cell">
             <div class="b-grid__grid">
                 <?php echo wp_get_attachment_image( $image_1, 'full', false, ['class' => 'b-grid__image b-grid__image--1'] ); ?>
-                <div class="b-grid__content" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+                <div class="b-grid__content" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
                     <h2 class="b-grid__title"><?php echo wp_kses_post( $title ); ?></h2>
                     <p class="b-grid__description"><?php echo esc_html( $description ); ?></p>
                     <div class="b-grid__button-wrapper">

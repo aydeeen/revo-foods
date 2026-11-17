@@ -59,9 +59,11 @@ $title = get_field( 'title' ) ?: false;
                                     </div>
                                     <div class="b-news-tabs__tab-item-content">  
                                        <h5><?php echo esc_html( $title ); ?></h5>
-                                       <a href="<?php echo esc_url( $link ); ?>" target="_blank">
-                                          <?php echo esc_html_e( 'Read more', 'foundationpress' ); ?>
-                                       </a>
+                                       <?php if ( $link ) : ?>
+                                          <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
+                                             <?php esc_html_e( 'Read more', 'foundationpress' ); ?><span class="screen-reader-text">: <?php echo esc_html( $title ); ?></span>
+                                          </a>
+                                       <?php endif; ?>
                                     </div>
                                  </div>
                            <?php endwhile; ?>
@@ -82,9 +84,11 @@ $title = get_field( 'title' ) ?: false;
                                     </div>
                                     <div class="b-news-tabs__tab-item-content">  
                                        <h5><?php echo esc_html( $title ); ?></h5>
-                                       <a href="<?php echo esc_url( $link ); ?>" target="_blank">
-                                          <?php echo esc_html_e( 'Read more', 'foundationpress' ); ?>
-                                       </a>
+                                       <?php if ( $link ) : ?>
+                                          <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
+                                             <?php esc_html_e( 'Read more', 'foundationpress' ); ?><span class="screen-reader-text">: <?php echo esc_html( $title ); ?></span>
+                                          </a>
+                                       <?php endif; ?>
                                     </div>
                                  </div>
                            <?php endwhile; ?>
@@ -105,9 +109,11 @@ $title = get_field( 'title' ) ?: false;
                                     </div>
                                     <div class="b-news-tabs__tab-item-content">  
                                        <h5><?php echo esc_html( $title ); ?></h5>
-                                       <a href="<?php echo esc_url( $link ); ?>" target="_blank">
-                                          <?php echo esc_html_e( 'Read more', 'foundationpress' ); ?>
-                                       </a>
+                                       <?php if ( $link ) : ?>
+                                          <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
+                                             <?php esc_html_e( 'Read more', 'foundationpress' ); ?><span class="screen-reader-text">: <?php echo esc_html( $title ); ?></span>
+                                          </a>
+                                       <?php endif; ?>
                                     </div>
                                  </div>
                            <?php endwhile; ?>
@@ -130,9 +136,11 @@ $title = get_field( 'title' ) ?: false;
                                     </div>
                                     <div class="b-news-tabs__tab-item-content">  
                                        <h5><?php echo esc_html( $title ); ?></h5>
-                                       <a href="<?php echo esc_url( $link ); ?>" target="_blank">
-                                          <?php echo esc_html_e( 'Read more', 'foundationpress' ); ?>
-                                       </a>
+                                       <?php if ( $link ) : ?>
+                                          <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
+                                             <?php esc_html_e( 'Read more', 'foundationpress' ); ?><span class="screen-reader-text">: <?php echo esc_html( $title ); ?></span>
+                                          </a>
+                                       <?php endif; ?>
                                     </div>
                                  </div>
                            <?php endwhile; ?>
@@ -153,9 +161,11 @@ $title = get_field( 'title' ) ?: false;
                                     </div>
                                     <div class="b-news-tabs__tab-item-content">  
                                        <h5><?php echo esc_html( $title ); ?></h5>
-                                       <a href="<?php echo esc_url( $link ); ?>" target="_blank">
-                                          <?php echo esc_html_e( 'Read more', 'foundationpress' ); ?>
-                                       </a>
+                                       <?php if ( $link ) : ?>
+                                          <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
+                                             <?php esc_html_e( 'Read more', 'foundationpress' ); ?><span class="screen-reader-text">: <?php echo esc_html( $title ); ?></span>
+                                          </a>
+                                       <?php endif; ?>
                                     </div>
                                  </div>
                            <?php endwhile; ?>
@@ -176,9 +186,11 @@ $title = get_field( 'title' ) ?: false;
                                     </div>
                                     <div class="b-news-tabs__tab-item-content">  
                                        <h5><?php echo esc_html( $title ); ?></h5>
-                                       <a href="<?php echo esc_url( $link ); ?>" target="_blank">
-                                          <?php echo esc_html_e( 'Read more', 'foundationpress' ); ?>
-                                       </a>
+                                       <?php if ( $link ) : ?>
+                                          <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
+                                             <?php esc_html_e( 'Read more', 'foundationpress' ); ?><span class="screen-reader-text">: <?php echo esc_html( $title ); ?></span>
+                                          </a>
+                                       <?php endif; ?>
                                     </div>
                                  </div>
                            <?php endwhile; ?>

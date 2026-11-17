@@ -27,6 +27,8 @@ $cta_button_text = get_field( 'cta_button_text', 363 ) ?: false;
 
 <?php echo wp_get_attachment_image( $bg_image, 'full', false ); ?>
 
+<h1 class="screen-reader-text"><?php echo esc_html( single_post_title( '', false ) ?: __( 'Blog', 'foundationpress' ) ); ?></h1>
+
 <section class="section section--full blog">
 	<div class="section__inner grid-x grid-padding-x grid-padding-y">
 		<div class="cell">
@@ -37,7 +39,7 @@ $cta_button_text = get_field( 'cta_button_text', 363 ) ?: false;
 	</div>
 </section>
 
-<section class="section section--full b-cta" style="background-image: url('<?php echo esc_url( $cta_bg_image['url'] ); ?>');">
+<section class="section section--full b-cta" style="<?php fopr_acf_bg_img( $cta_bg_image ); ?>">
    <div class="section__inner grid-x grid-padding-x grid-padding-y"> 
 	   <div class="cell">
          <div class="text-center">

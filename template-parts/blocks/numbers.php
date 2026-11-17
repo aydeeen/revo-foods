@@ -27,7 +27,7 @@ $bg_image = get_field( 'bg_image' ) ?: false;
 $title = get_field( 'title' ) ?: false;
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-numbers <?php echo esc_attr( $class_names ); ?>" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>');">
+<section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-numbers <?php echo esc_attr( $class_names ); ?>" style="<?php fopr_acf_bg_img( $bg_image ); ?>">
    <div class="section__inner grid-x grid-padding-x grid-padding-y">
       <div class="cell">
          <h2 class="b-numbers__title"><?php echo esc_html( $title ); ?></h2>

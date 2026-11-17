@@ -22,6 +22,7 @@ $block    = new Block_Find_Store( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $title_1            = get_field( 'title_1' ) ?: false;
 $description_1      = get_field( 'description_1' ) ?: false;
@@ -46,7 +47,7 @@ $banner_button_text = get_field( 'banner_button_text' ) ?: false;
          <?php if ( have_rows( 'items' ) ):  ?>
             <div class="b-find-store__top-part">
                <div class="b-find-store__top-part-content">
-                  <h1 class="b-find-store__title"><?php echo esc_html( $title_1 ); ?></h1>
+                  <<?php echo tag_escape( $title_tag ); ?> class="b-find-store__title"><?php echo esc_html( $title_1 ); ?></<?php echo tag_escape( $title_tag ); ?>>
                   <div class="flex-container align-middle">
                      <?php echo wp_get_attachment_image( $icon_1, 'full', false )  ?>
                      <p class="margin-bottom-0"><?php echo esc_html( $description_1 ); ?></p>
@@ -71,7 +72,7 @@ $banner_button_text = get_field( 'banner_button_text' ) ?: false;
 	   </div>
 
 	   <div class="cell medium-6">
-         <div class="banner" style="background-image: url('<?php echo esc_url( $banner_bg_image['url'] ); ?>');">
+         <div class="banner" style="<?php fopr_acf_bg_img( $banner_bg_image ); ?>">
             <?php echo wp_get_attachment_image( $banner_image_1, 'full', false )  ?>
             <?php echo wp_get_attachment_image( $banner_image_2, 'full', false )  ?>
             <?php if ( $banner_title ) : ?>

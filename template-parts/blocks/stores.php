@@ -45,8 +45,8 @@ $class_names = $block->get_class_names();
                                  $logo = get_sub_field( 'logo' ) ?: false; 
                                  ?>
                                     <div class="b-stores__store">
-                                       <a href="<?php echo esc_url( $link ); ?>" target="_blank">
-                                          <?php echo wp_get_attachment_image( $logo, 'full', false ); ?>
+                                       <a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( fopr_get_logo_label( $logo, $link ) ); ?>">
+                                          <?php echo wp_get_attachment_image( $logo, 'full', false, [ 'alt' => '' ] ); ?>
                                        </a>
                                     </div>
                               <?php endwhile; ?>

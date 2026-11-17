@@ -22,6 +22,7 @@ $block    = new Block_Custom_Food_Hero( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
+$title_tag   = $block->get_title_tag( $post_id );
 
 $eyebrow          = get_field( 'eyebrow' ) ?: 'Customizable Food Experience';
 $title            = get_field( 'title' ) ?: 'A Food Experience you will not forget';
@@ -50,7 +51,7 @@ $style            = $image_url ? ' style="background-image: url(' . esc_url( $im
 			<?php endif; ?>
 
 			<?php if ( $title ): ?>
-				<h1 class="b-custom-food-hero__title"><?php echo wp_kses_post( $title ); ?></h1>
+				<<?php echo tag_escape( $title_tag ); ?> class="b-custom-food-hero__title"><?php echo wp_kses_post( $title ); ?></<?php echo tag_escape( $title_tag ); ?>>
 			<?php endif; ?>
 
 			<?php if ( $has_primary_button || $has_secondary_button ): ?>
