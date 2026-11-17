@@ -1,5 +1,3 @@
-import { dom } from '@fortawesome/fontawesome-svg-core';
-
 const blockName = 'accordion';
 
 /**
@@ -17,9 +15,6 @@ const blockName = 'accordion';
 function initializeBlock($block) {
 	// initialize element with foundation plugin.
 	$block.find('[data-accordion]').foundation();
-
-	// Font Awesome Icons -> SVG
-	dom.i2svg({ node: $block[0] });
 }
 
 // Initialize each block on page load (front end).

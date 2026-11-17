@@ -12,20 +12,15 @@ if (
 
 import './lib/foundation';
 
-// helper
-import './helper/exit-intent-reveal';
-
 // components
-import './components/iconlist';
 import './components/number-counter';
 import './components/back-to-top';
 import './components/home-header-bg-color';
 import './components/close-topbar';
 import './components/mobile-menu-a11y';
 
-// import FA last, to kick off the process of finding <i> tags and
-// replacing with <svg> tags, after importing all components.
-import './lib/FontAwesome';
+// FontAwesome (lib/FontAwesome.js), the iconlist component and the exit-intent
+// Reveal helper are no longer bundled: no page uses them. Re-import to use.
 import './lib/reCaptcha';
 
 // because jQuery is included with webpack.ProvidePlugin we can

@@ -12,7 +12,8 @@ function findReCaptchaWrapper() {
 }
 
 const initializeReCaptchaObserver = () => {
-	if (findReCaptchaWrapper()) {
+	// reCAPTCHA only comes with a form; don't watch the DOM on pages without one.
+	if (!document.querySelector('form') || findReCaptchaWrapper()) {
 		return;
 	}
 
