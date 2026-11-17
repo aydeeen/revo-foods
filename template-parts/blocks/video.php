@@ -28,7 +28,7 @@ $video = get_field( 'video' ) ?: false;
 	<div class="section__inner grid-x grid-padding-x grid-padding-y">
 		<div class="cell">
 			<?php if ( $video ) : ?>
-				<iframe src="<?php echo esc_url( $video ); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe src="<?php echo esc_url( $video ); ?>" title="<?php echo esc_attr( fopr_get_video_title( $video ) ); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<?php endif; ?>
 		</div>
 	</div>

@@ -204,6 +204,39 @@ function fopr_get_social_label( $attachment_id, $url ) {
 }
 
 /**
+ * Title for a video iframe, so screen readers can tell what the frame holds.
+ *
+ * Looks the title up through oEmbed (YouTube embed URLs are mapped to their
+ * watch URL first) and caches it for a month, or a day when the lookup fails.
+ *
+ * @param string $url Video URL as entered in the block.
+ * @return string
+ */
+function fopr_get_video_title( $url ) {
+	$fallback = __( 'Video', 'foundationpress' );
+	if ( ! $url ) {
+		return $fallback;
+	}
+
+	$key   = 'fopr_video_title_' . md5( $url );
+	$title = get_transient( $key );
+
+	if ( false === $title ) {
+		$lookup_url = $url;
+		if ( preg_match( '~(?:youtube(?:-nocookie)?\.com/(?:embed/|watch\?v=|shorts/)|youtu\.be/)([\w-]{11})~', $url, $matches ) ) {
+			$lookup_url = 'https://www.youtube.com/watch?v=' . $matches[1];
+		}
+
+		$data  = _wp_oembed_get_object()->get_data( $lookup_url, [ 'discover' => false ] );
+		$title = ( $data && ! empty( $data->title ) ) ? wp_strip_all_tags( $data->title ) : '';
+
+		set_transient( $key, $title, $title ? MONTH_IN_SECONDS : DAY_IN_SECONDS );
+	}
+
+	return '' !== $title ? $title : $fallback;
+}
+
+/**
  * Get a list of pages wichh use specific template.
  *
  * @param string $template name of the template file. Must include .php ending.
