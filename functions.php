@@ -46,12 +46,3 @@ function foundationpress_recursive_require_dir( $path ) {
 }
 
 foundationpress_recursive_require_dir( get_template_directory() . '/inc' );
-
-/**
- * Prevent Polylang's internal language taxonomy from claiming every
- * single-segment URL (for example /recipes/ or /faq/).
- *
- * Polylang normally suppresses these rules itself, but the installed legacy
- * version can miss the filter when rewrite rules are regenerated.
- */
-add_filter( 'language_rewrite_rules', '__return_empty_array', 1 );
