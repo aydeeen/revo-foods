@@ -99,33 +99,44 @@ function fopr_rewrite_rules_need_rebuild( $rules ) {
 }
 
 /**
- * Make sure Polylang's rewrite filters are in place, then repair the stored
- * rules if an earlier flush built them without Polylang.
+ * Attach Polylang 3.2-3.4's rewrite filters before any flush in this request.
  *
- * Polylang 3.2 attaches its /de/ rule filters from the `pre_option_rewrite_rules`
- * hook, i.e. the first time the rules are read after `wp_loaded`. Since
- * WordPress 6.4, `flush_rewrite_rules()` rebuilds the rules without reading the
- * option first, so a flush (saving permalinks, a plugin update) only included
- * the German rules when something had happened to read them earlier in the
- * same request. Otherwise every German URL 404ed until the next lucky flush.
+ * Those versions attach their /de/ rule filters from the
+ * `pre_option_rewrite_rules` hook, i.e. the first time the rules are read
+ * after `wp_loaded`. Since WordPress 6.4, `flush_rewrite_rules()` rebuilds the
+ * rules without reading the option first, so a flush (saving permalinks, a
+ * plugin update) only included the German rules when something had happened
+ * to read them earlier in the same request. Reading the option here, ahead of
+ * WordPress's deferred flush at priority 10, closes that gap. It is
+ * autoloaded, so this costs no query. Polylang 3.5+ attaches its filters on
+ * `wp_loaded` at priority 9 and ignores this.
+ */
+function fopr_prime_polylang_rewrite_filters() {
+	get_option( 'rewrite_rules' );
+}
+add_action( 'wp_loaded', 'fopr_prime_polylang_rewrite_filters', 1 );
+
+/**
+ * Repair the stored rules once if an earlier flush built them without
+ * Polylang's language rules or without the custom post types.
  *
- * Reading the option first thing on `wp_loaded` attaches Polylang's filters
- * for the rest of the request (it is autoloaded, so this costs no query). Any
- * rules stored by an earlier incomplete flush are then rebuilt once; the
- * transient keeps a persistent mismatch from flushing on every request.
+ * Runs after priority 9, where Polylang 3.5+ attaches its rewrite filters, so
+ * the rebuilt rules include the /de/ URLs on every Polylang version. The
+ * transient keeps a persistent mismatch from flushing on every request; its
+ * key carries a version so a deploy that changes this logic re-arms it.
  */
 function fopr_maybe_rebuild_polylang_rewrite_rules() {
-	$rules = get_option( 'rewrite_rules' );
+	$lock = 'fopr_rewrite_rules_rebuilt_v2';
 
-	if ( ! get_option( 'permalink_structure' ) || get_transient( 'fopr_rewrite_rules_rebuilt' ) ) {
+	if ( ! get_option( 'permalink_structure' ) || get_transient( $lock ) ) {
 		return;
 	}
 
-	if ( ! fopr_rewrite_rules_need_rebuild( $rules ) ) {
+	if ( ! fopr_rewrite_rules_need_rebuild( get_option( 'rewrite_rules' ) ) ) {
 		return;
 	}
 
-	set_transient( 'fopr_rewrite_rules_rebuilt', time(), HOUR_IN_SECONDS );
+	set_transient( $lock, time(), HOUR_IN_SECONDS );
 	flush_rewrite_rules( false );
 }
-add_action( 'wp_loaded', 'fopr_maybe_rebuild_polylang_rewrite_rules', 1 );
+add_action( 'wp_loaded', 'fopr_maybe_rebuild_polylang_rewrite_rules', 20 );
