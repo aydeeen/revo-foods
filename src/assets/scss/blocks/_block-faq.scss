@@ -60,6 +60,8 @@
 			padding: rem-calc(20) rem-calc(20) rem-calc(20) rem-calc(16);
 			position: relative;
 
+			// Foundation positions this absolutely; `position: static` keeps it in
+			// the flex row so long questions wrap before the arrow, not under it.
 			&::before {
 				content: '';
 				background: url('../images/accordion-arrow-down.png') center / contain no-repeat;
@@ -67,7 +69,9 @@
 				flex: 0 0 rem-calc(24);
 				height: rem-calc(14);
 				margin-left: auto;
+				margin-top: 0;
 				order: 2;
+				position: static;
 				width: rem-calc(24);
 			}
 
