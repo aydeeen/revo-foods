@@ -26,6 +26,11 @@ $class_names = $block->get_class_names();
 $title      = get_field( 'title' ) ?: false;
 $subtitle_1 = get_field( 'subtitle_1' ) ?: false;
 $subtitle_2 = get_field( 'subtitle_2' ) ?: false;
+
+// A column with no positions is left out; a lone column is centred under the title.
+$has_left    = ! empty( get_field( 'items_left' ) );
+$has_right   = ! empty( get_field( 'items_right' ) );
+$column_cell = ( $has_left && $has_right ) ? 'cell medium-6' : 'cell medium-8 medium-offset-2 large-6 large-offset-3';
 ?>
 
 <section id="<?php echo esc_attr( $id ); ?>" class="section section--full b-available-positions <?php echo esc_attr( $class_names ); ?>">
@@ -35,8 +40,11 @@ $subtitle_2 = get_field( 'subtitle_2' ) ?: false;
          <h2 class="text-center b-available-positions__title"><?php echo esc_html( $title ); ?></h2>
 	   </div>
 
-	   <div class="cell medium-6">
+	   <?php if ( $has_left ) : ?>
+	   <div class="<?php echo esc_attr( $column_cell ); ?>">
+         <?php if ( $subtitle_1 ) : ?>
          <h2 class="b-available-positions__subtitle"><?php echo esc_html( $subtitle_1 ); ?></h2>
+         <?php endif; ?>
 			<ul class="margin-bottom-1 medium-margin-bottom-0 accordion b-available-positions__accordion" data-accordion data-allow-all-closed="true">
             <?php if ( have_rows( 'items_left' ) ): ?>
                <?php while ( have_rows( 'items_left' ) ): the_row();
@@ -58,9 +66,13 @@ $subtitle_2 = get_field( 'subtitle_2' ) ?: false;
 				?>
 			</ul>
 	   </div>
+	   <?php endif; ?>
 
-      <div class="cell medium-6">
+      <?php if ( $has_right ) : ?>
+      <div class="<?php echo esc_attr( $column_cell ); ?>">
+         <?php if ( $subtitle_2 ) : ?>
          <h2 class="b-available-positions__subtitle b-available-positions__subtitle--2"><?php echo esc_html( $subtitle_2 ); ?></h2>
+         <?php endif; ?>
 			<ul class="accordion b-available-positions__accordion" data-accordion data-allow-all-closed="true">
             <?php if ( have_rows( 'items_right' ) ): ?>
                <?php while ( have_rows( 'items_right' ) ): the_row();
@@ -82,6 +94,7 @@ $subtitle_2 = get_field( 'subtitle_2' ) ?: false;
 				?>
 			</ul>
 	   </div>
+	   <?php endif; ?>
 
 	</div>
 </section>
